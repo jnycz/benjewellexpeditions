@@ -11,10 +11,10 @@ const TemplateWrapper = ({ children }) => {
   return (
     <div>
       <Helmet>
-        <html lang="en" />
+        <html lang="en" class="has-navbar-fixed-tops" />
         <title>{title}</title>
         <meta name="description" content={description} />
-
+        <meta name="robots" content="noindex" />
         <link
           rel="apple-touch-icon"
           sizes="180x180"
