@@ -15,4 +15,4 @@ During your time on the water, you'll undoubtedly encounter various challenges -
 
 Beyond the technical aspects of fly fishing, our trips provide you with the chance to immerse yourself in the beauty of nature. Picture yourself surrounded by stunning landscapes, casting your line into crystal-clear waters, and experiencing the serenity that comes from being in harmony with the outdoors. Fishing teaches us invaluable life lessons - the importance of staying **p**ositive, practicing **p**atience, and **p**ersevering even when faced with challenges (**The** **P's of life**). It's a journey that rewards both the body and the soul. 
 
-Don't miss out on this extraordinary angling adventure. [Join us](/contact) at Jewell Expeditions and let us guide you to unforgettable fishing experiences. Fish on!
+Don't miss out on this extraordinary angling adventure. [Book](/contact) with Jewell Expeditions and let me guide you to unforgettable fishing experiences. Fish on!
