@@ -17,33 +17,31 @@ const Footer = () => {
               style={{ width: "14em", height: "10em" }}
             />
         </Link>
-        <p className=" is-6">Ruidoso, New Mexico<br />
-          Phone Number: (575) 973-1396<br />
-          Email: benjewell222@gmail.com
+        <p className="is-size-6">Ruidoso, New Mexico<br />
+          Phone Number: <a href="tel:+5759731396">(575) 973-1396</a><br />
+          Email: <a href="mailto:benjewell222@gmail.com">benjewell222@gmail.com</a>
         </p>
         </div>
         <div className="content has-text-left">
           <div className="container">
             <div style={{ maxWidth: "100vw" }} className="">
-              <div className="column is-4">
-                <section className="menu">
-                  <ul className="menu-list">
-                    <li>
-                      <Link className="navbar-item" to="/about">
+              <div className="column has-text-weight-semibold is-uppercase">
+                <section className="">
+                  <div className="footer-menu">
+
+                      <Link className="" to="/about">
                         About
                       </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/faqs">
+ 
+                      <Link className="" to="/faqs">
                         FAQs
                       </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/contact">
+
+                      <Link className="" to="/contact">
                         Contact
                       </Link>
-                    </li>
-                  </ul>
+
+                  </div>
                 </section>
               </div>
               <div className="column is-4 social">
