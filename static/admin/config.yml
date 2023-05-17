@@ -35,6 +35,7 @@ collections:
   - name: "standard-page"
     label: "Standard Pages"
     label_singular: "Standard Page"
+    folder: "src/pages"
     create: true
     path: "{{title}}"
     fields:
