@@ -1,5 +1,5 @@
 ---
-templateKey: faqs-page
+templateKey: about-page
 path: /faqs
 title: Frequently Asked Questions
 ---
