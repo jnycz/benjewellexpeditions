@@ -3,7 +3,7 @@ templateKey: index-page
 title: Jewell Expeditions
 image: /img/landscape-water-mountains.png
 heading: Great coffee with a conscience
-subheading: Support sustainable farming while enjoying a cup
+subheading: A year-round fishing guide service in the Ruidoso New Mexico area
 mainpitch:
   title: Why Kaldi
   description: >
