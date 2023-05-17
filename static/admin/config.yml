@@ -35,7 +35,6 @@ collections:
   - name: "standard-page"
     label: "Standard Pages"
     label_singular: "Standard Page"
-    folder: "src/pages"
     create: true
     path: "{{title}}"
     fields:
@@ -50,7 +49,7 @@ collections:
   - name: "pages"
     label: "Pages"
     files:
-      - file: "src/pages/landing-page/index.md"
+      - file: "src/pages/index.md"
         label: "Landing Page"
         name: "index"
         fields:
