@@ -20,12 +20,11 @@ description: ""
 intro:
   blurbs:
     - image: /img/lake-new-mexico.png
-      text: |
-        Public lakes
+      text: "#### Public lakes"
     - image: /img/kneeling-by-stream.jpg
-      text: Freestone streams
+      text: "#### Freestone streams"
     - image: /img/stream-mountains-dry-grass.jpg
-      text: Private spring creek
+      text: "#### Private spring creek"
   heading: Services
   description: ""
 main:
