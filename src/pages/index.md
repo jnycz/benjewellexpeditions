@@ -22,7 +22,7 @@ description: Kaldi is the ultimate spot for coffee lovers who want to learn
   knowledge to anyone.
 intro:
   blurbs:
-    - image: /img/coffee.png
+    - image: /img/lake-new-mexico.png
       text: |
         Public lakes
     - image: /img/coffee-gear.png
