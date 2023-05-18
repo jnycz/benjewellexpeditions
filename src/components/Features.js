@@ -1,17 +1,20 @@
 import * as React from "react";
 import PropTypes from "prop-types";
+import remark from 'remark'
+import remarkHTML from 'remark-html'
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 
+const toHTML = value => remark()
+                    .use(remarkHTML)
+                    .processSync(value)
+                    .toString()
+
 const FeatureGrid = ({ gridItems }) => (
-  <div className="columns is-multiline  ">
+  <div className="columns is-multiline">
     {gridItems.map((item) => (
       <div key={item.text} className="column is-4">
-        <div className="has-text-centered">
-          <div>
-            <PreviewCompatibleImage imageInfo={item} />
-          </div>
-        </div>
-        <p>{item.text}</p>
+        <PreviewCompatibleImage imageInfo={item} />  
+        <div className="description" dangerouslySetInnerHTML={{ __html: toHTML(item.text) }} />
       </div>
     ))}
   </div>

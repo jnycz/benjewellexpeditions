@@ -28,7 +28,7 @@ const Navbar = () => {
           </button>
         </div>
         <div id="navMenu" className={`has-text-centered navbar-menu ${isActive && "is-active"}`}>
-          <ul class="navbar-end">
+          <ul className="navbar-end">
               <li className="navbar-item" style={{padding: "0px"}}>
                 <Link className="navbar-item is-uppercase has-text-weight-semibold" to="/about">
                   About

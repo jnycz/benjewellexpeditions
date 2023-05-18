@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Link, graphql } from "gatsby";
+import { graphql } from "gatsby";
 import { getImage } from "gatsby-plugin-image";
 
 import Layout from "../components/Layout";
@@ -23,31 +23,38 @@ export const IndexPageTemplate = ({
   return (
     <div>
       <FullWidthImage img={heroImage} title={title} subheading={subheading} />
-      <section class="section">
+      <section className="section">
         <div className="container">
 
-            <div class="content why">
+            <div className="content why">
               <h2 className="title">{mainpitch.title}</h2>
               <p>{mainpitch.description}</p>
             </div>
 
-            <div class="content">
+            <div className="content">
               <h3 className="has-text-weight-semibold">
                 {heading}
               </h3>
               <p>{description}</p>
             </div>
 
-            <div class="content">
+            <div className="content features">
               <h3 className="has-text-weight-semibold">
                 {intro.heading}
               </h3>
               <p>{intro.description}</p>
+              <Features gridItems={intro.blurbs} />
             </div>
 
+            {gallery ? (
+              <div className="columns is-centered">
+                <div className="column is-10 slideshow-container">
+                    <Slideshow items={testimonials.items} />
+                </div>
+              </div>
+            ) : null}
 
 
-            <Features gridItems={intro.blurbs} />
 
             {/* <div className="columns">
               <div className="column is-12 has-text-centered">
@@ -84,6 +91,9 @@ IndexPageTemplate.propTypes = {
   intro: PropTypes.shape({
     blurbs: PropTypes.array,
   }),
+  testimonials: PropTypes.shape({
+    items: PropTypes.array,
+  }),
 };
 
 const IndexPage = ({ data }) => {
@@ -99,6 +109,7 @@ const IndexPage = ({ data }) => {
         mainpitch={frontmatter.mainpitch}
         description={frontmatter.description}
         intro={frontmatter.intro}
+        testimonials={frontmatter.gallery}
       />
     </Layout>
   );
@@ -142,6 +153,20 @@ export const pageQuery = graphql`
           }
           heading
           description
+        }
+        testimonials {
+          items {
+            image {
+              childImageSharp {
+                gatsbyImageData(
+                  layout: CONSTRAINED
+                  height: 800
+                  formats: [AUTO,WEBP]
+                )
+              }
+            }
+            text
+          }
         }
       }
     }
