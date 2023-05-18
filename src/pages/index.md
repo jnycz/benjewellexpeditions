@@ -1,9 +1,9 @@
 ---
 templateKey: index-page
 title: Jewell Expeditions
-image: /img/landscape-water-mountains.png
-heading: "Great coffee with a conscience "
 subheading: A year-round fly fishing guide service in the Ruidoso New Mexico area
+image: /img/landscape-water-mountains.png
+heading: ""
 mainpitch:
   title: Why Choose Jewell Expeditions?
   description: "Experience the ultimate fly fishing adventures in Ruidoso, New
@@ -16,10 +16,7 @@ mainpitch:
     individualized attention, valuable insights, and constructive feedback.
     Immerse yourself in the beauty of nature, learn life lessons of patience and
     perseverance, and embark on an unforgettable angling journey. "
-description: Kaldi is the ultimate spot for coffee lovers who want to learn
-  about their java’s origin and support the farmers that grew it. We take coffee
-  production, roasting and brewing seriously and we’re glad to pass that
-  knowledge to anyone.
+description: ""
 intro:
   blurbs:
     - image: /img/lake-new-mexico.png
