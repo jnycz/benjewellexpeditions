@@ -29,14 +29,16 @@ export const IndexPageTemplate = ({
             <div className="columns">
               <div className="column is-10 is-offset-1">
                 <div className="content">
+
                   <div className="content">
                     <div className="tile">
-                      <h1 className="title">{mainpitch.title}</h1>
+                      <h2 className="title">{mainpitch.title}</h2>
                     </div>
                     <div className="tile">
-                      <h3 className="subtitle">{mainpitch.description}</h3>
+                      <p className="subtitle">{mainpitch.description}</p>
                     </div>
                   </div>
+
                   <div className="columns">
                     <div className="column is-12">
                       <h3 className="has-text-weight-semibold is-size-2">
@@ -45,13 +47,15 @@ export const IndexPageTemplate = ({
                       <p>{description}</p>
                     </div>
                   </div>
+
                   <div className="column is-12">
                       <h3 className="has-text-weight-semibold is-size-2">
                         {intro.heading}
                       </h3>
                       <p>{intro.description}</p>
-                    </div>
+                  </div>
                   <Features gridItems={intro.blurbs} />
+
                   {/* <div className="columns">
                     <div className="column is-12 has-text-centered">
                       <Link className="btn" to="/products">
@@ -141,7 +145,7 @@ export const pageQuery = graphql`
           blurbs {
             image {
               childImageSharp {
-                gatsbyImageData(width: 240, quality: 64, layout: CONSTRAINED)
+                gatsbyImageData(quality: 64, layout: CONSTRAINED)
               }
             }
             text
