@@ -27,6 +27,22 @@ intro:
       text: "#### Private spring creek"
   heading: Services
   description: ""
+testimonials:
+  items:
+    - text: >-
+        I have been fishing with Ben for 13 years.  Every single trip fishing
+        with him is Epic. You won’t find a guide with more energy and
+        positivity. Watching my son enjoy and learn from him was truly special.\
+
+        -﻿ Mike T.
+      image: /img/mike-t-testimonial.jpg
+    - text: >-
+        I have been fishing with Ben for 13 years.  Every single trip fishing
+        with him is Epic. You won’t find a guide with more energy and
+        positivity. Watching my son enjoy and learn from him was truly special.\
+
+        -﻿ Mike T.
+      image: /img/mike-t-testimonial.jpg
 main:
   heading: Great coffee with no compromises
   description: >
