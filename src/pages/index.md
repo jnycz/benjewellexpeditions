@@ -25,8 +25,7 @@ intro:
     - image: /img/tutorials.png
       text: Private spring creek
   heading: Services
-  description: "Offering half and full day trips on public lakes, freestone
-    streams and a private spring creek in the area. "
+  description: ""
 main:
   heading: Great coffee with no compromises
   description: >
