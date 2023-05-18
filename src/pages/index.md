@@ -25,9 +25,9 @@ intro:
     - image: /img/lake-new-mexico.png
       text: |
         Public lakes
-    - image: /img/coffee-gear.png
+    - image: /img/kneeling-by-stream.jpg
       text: Freestone streams
-    - image: /img/tutorials.png
+    - image: /img/stream-mountains-dry-grass.jpg
       text: Private spring creek
   heading: Services
   description: ""
