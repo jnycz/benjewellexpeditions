@@ -23,64 +23,54 @@ export const IndexPageTemplate = ({
   return (
     <div>
       <FullWidthImage img={heroImage} title={title} subheading={subheading} />
-      <section className="section section--gradient">
+      <section class="section">
         <div className="container">
-          <div className="section">
-            <div className="columns">
-              <div className="column is-10 is-offset-1">
-                <div className="content">
 
-                  <div className="content">
-                    <div className="tile">
-                      <h2 className="title">{mainpitch.title}</h2>
-                    </div>
-                    <div className="tile">
-                      <p className="subtitle">{mainpitch.description}</p>
-                    </div>
-                  </div>
+            <div class="content why">
+              <h2 className="title">{mainpitch.title}</h2>
+              <p>{mainpitch.description}</p>
+            </div>
 
-                  <div className="columns">
-                    <div className="column is-12">
-                      <h3 className="has-text-weight-semibold is-size-2">
-                        {heading}
-                      </h3>
-                      <p>{description}</p>
-                    </div>
-                  </div>
+            <div class="content">
+              <h3 className="has-text-weight-semibold">
+                {heading}
+              </h3>
+              <p>{description}</p>
+            </div>
 
-                  <div className="column is-12">
-                      <h3 className="has-text-weight-semibold is-size-2">
-                        {intro.heading}
-                      </h3>
-                      <p>{intro.description}</p>
-                  </div>
-                  <Features gridItems={intro.blurbs} />
+            <div class="content">
+              <h3 className="has-text-weight-semibold">
+                {intro.heading}
+              </h3>
+              <p>{intro.description}</p>
+            </div>
 
-                  {/* <div className="columns">
-                    <div className="column is-12 has-text-centered">
-                      <Link className="btn" to="/products">
-                        See all products
-                      </Link>
-                    </div>
-                  </div>
-                  <div className="column is-12">
-                    <h3 className="has-text-weight-semibold is-size-2">
-                      Latest stories
-                    </h3>
-                    <BlogRoll />
-                    <div className="column is-12 has-text-centered">
-                      <Link className="btn" to="/blog">
-                        Read more
-                      </Link>
-                    </div>
-                  </div> */}
-                </div>
+
+
+            <Features gridItems={intro.blurbs} />
+
+            {/* <div className="columns">
+              <div className="column is-12 has-text-centered">
+                <Link className="btn" to="/products">
+                  See all products
+                </Link>
               </div>
             </div>
+            <div className="column is-12">
+              <h3 className="has-text-weight-semibold is-size-2">
+                Latest stories
+              </h3>
+              <BlogRoll />
+              <div className="column is-12 has-text-centered">
+                <Link className="btn" to="/blog">
+                  Read more
+                </Link>
+              </div>
+            </div> */}
           </div>
-        </div>
       </section>
     </div>
+
   );
 };
 
