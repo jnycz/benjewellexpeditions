@@ -16,23 +16,32 @@ const toHTML = value => remark()
                     .processSync(value)
                     .toString()
 
-const Slideshow = ({ items }) => (
+const Testimonials = ({ items }) => (
 
   <Swiper
     slidesPerView={1}
-    navigation
     autoHeight={true}
-    id={'gallery'}
+    loop={true}
+    id={'testimonials'}
     keyboard
-  >
+    pagination={true}
+    style={{
+        "--swiper-pagination-color": "#83CAF2",
+        "--swiper-pagination-bullet-inactive-color": "#999999",
+        "--swiper-pagination-bullet-inactive-opacity": "1",
+        "--swiper-pagination-bullet-size": "12px",
+        "--swiper-pagination-bullet-horizontal-gap": "6px",
+        "--swiper-pagination-bottom": "-10px"
+      }}
+    >
     {items.map((item) => (
       <SwiperSlide key={item.text}>
-        <GatsbyImage
-          image={item.image.childImageSharp.gatsbyImageData}
-        />
         <div className="columns">
-          <div className="column is-three-fifths is-offset-one-fifth">
-            <p className="has-text-centered is-size-7 pt-2"><div dangerouslySetInnerHTML={{ __html: toHTML(item.text) }} /></p>
+          <div className='column'>
+            <GatsbyImage image={item.image.childImageSharp.gatsbyImageData}/>
+          </div>
+          <div className="column is-centered">
+            <p className="is-centered"><div dangerouslySetInnerHTML={{ __html: toHTML(item.text) }} /></p>
           </div>
         </div>
       </SwiperSlide>
@@ -41,7 +50,7 @@ const Slideshow = ({ items }) => (
 
 )
 
-Slideshow.propTypes = {
+Testimonials.propTypes = {
   items: PropTypes.arrayOf(
     PropTypes.shape({
       image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
@@ -50,4 +59,4 @@ Slideshow.propTypes = {
   ),
 }
 
-export default Slideshow
+export default Testimonials

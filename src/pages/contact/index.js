@@ -40,88 +40,96 @@ export default class Index extends React.Component {
           <div className="container">
             <div className="content">
               <h1>Contact</h1>
-              <form
-                name="contact"
-                method="post"
-                action="/contact/thanks/"
-                data-netlify="true"
-                data-netlify-honeypot="bot-field"
-                onSubmit={this.handleSubmit}
-              >
-                {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
-                <input type="hidden" name="form-name" value="contact" />
-                <div hidden>
-                  <label>
-                    Don’t fill this out:{" "}
-                    <input name="bot-field" onChange={this.handleChange} />
-                  </label>
+              <div className="columns">
+                <div className="column">
+                  <p>Fill out the form</p>
                 </div>
-                <div className="field">
-                  <label className="label" htmlFor={"name"}>
-                    Your name
-                  </label>
-                  <div className="control">
-                    <input
-                      className="input"
-                      type={"text"}
-                      name={"name"}
-                      onChange={this.handleChange}
-                      id={"name"}
-                      required={true}
-                    />
+                <div className="column">
+                  <form
+                  name="contact"
+                  method="post"
+                  action="/contact/thanks/"
+                  data-netlify="true"
+                  data-netlify-honeypot="bot-field"
+                  onSubmit={this.handleSubmit}
+                >
+                  {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
+                  <input type="hidden" name="form-name" value="contact" />
+                  <div hidden>
+                    <label>
+                      Don’t fill this out:{" "}
+                      <input name="bot-field" onChange={this.handleChange} />
+                    </label>
                   </div>
-                </div>
-                <div className="field">
-                  <label className="label" htmlFor={"email"}>
-                    Email
-                  </label>
-                  <div className="control">
-                    <input
-                      className="input"
-                      type={"email"}
-                      name={"email"}
-                      onChange={this.handleChange}
-                      id={"email"}
-                      required={true}
-                    />
+                  <div className="field">
+                    <label className="label" htmlFor={"name"}>
+                      Your name
+                    </label>
+                    <div className="control">
+                      <input
+                        className="input"
+                        type={"text"}
+                        name={"name"}
+                        onChange={this.handleChange}
+                        id={"name"}
+                        required={true}
+                      />
+                    </div>
                   </div>
-                </div>
-                <div className="field">
-                  <label className="label" htmlFor={"phone"}>
-                    Phone
-                  </label>
-                  <div className="control">
-                    <input
-                      className="input"
-                      type={"tel"}
-                      name={"phone"}
-                      onChange={this.handleChange}
-                      id={"phone"}
-                      // pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
-                      required={true}
-                    />
+                  <div className="field">
+                    <label className="label" htmlFor={"email"}>
+                      Email
+                    </label>
+                    <div className="control">
+                      <input
+                        className="input"
+                        type={"email"}
+                        name={"email"}
+                        onChange={this.handleChange}
+                        id={"email"}
+                        required={true}
+                      />
+                    </div>
                   </div>
-                </div>
-                <div className="field">
-                  <label className="label" htmlFor={"message"}>
-                    Message
-                  </label>
-                  <div className="control">
-                    <textarea
-                      className="textarea"
-                      name={"message"}
-                      onChange={this.handleChange}
-                      id={"message"}
-                      required={true}
-                    />
+                  <div className="field">
+                    <label className="label" htmlFor={"phone"}>
+                      Phone
+                    </label>
+                    <div className="control">
+                      <input
+                        className="input"
+                        type={"tel"}
+                        name={"phone"}
+                        onChange={this.handleChange}
+                        id={"phone"}
+                        // pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+                        required={true}
+                      />
+                    </div>
                   </div>
+                  <div className="field">
+                    <label className="label" htmlFor={"message"}>
+                      Message
+                    </label>
+                    <div className="control">
+                      <textarea
+                        className="textarea"
+                        name={"message"}
+                        onChange={this.handleChange}
+                        id={"message"}
+                        required={true}
+                      />
+                    </div>
+                  </div>
+                  <div className="field">
+                    <button className="button is-link" type="submit">
+                      Send
+                    </button>
+                  </div>
+                </form>
                 </div>
-                <div className="field">
-                  <button className="button is-link" type="submit">
-                    Send
-                  </button>
-                </div>
-              </form>
+              </div>
+
             </div>
           </div>
         </section>

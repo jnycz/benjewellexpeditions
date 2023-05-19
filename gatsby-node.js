@@ -28,8 +28,24 @@ exports.createPages = ({ actions, graphql }) => {
       return Promise.reject(result.errors)
     }
 
-    const posts = result.data.allMarkdownRemark.edges
+    // Testimonials.
+    const testimonials = result.data.allMarkdownRemark.edges
+    testimonials.forEach((edge) => {
+        const id = edge.node.id
+        createPage({
+            path: edge.node.fields.slug,
+            tags: edge.node.frontmatter.tags,
+            component: path.resolve(
+                `src/templates/index-page.js`
+            ),
+            context: {
+                id,
+            },
+        })
+    })
 
+    // Posts.
+    const posts = result.data.allMarkdownRemark.edges
     posts.forEach((edge) => {
       const id = edge.node.id
       createPage({

@@ -44,15 +44,8 @@ const Footer = () => {
                   </div>
                 </section>
               </div>
-              <div className="column is-4 social">
-                <a title="facebook" href="https://facebook.com">
-                  <img
-                    src={facebook}
-                    alt="Facebook"
-                    style={{ width: "1em", height: "1em" }}
-                  />
-                </a>
-                <a title="instagram" href="https://instagram.com">
+              <div className="column social">
+                <a title="instagram" target="_blank" href="https://www.instagram.com/benjewellflyfishing_/">
                   <img
                     src={instagram}
                     alt="Instagram"

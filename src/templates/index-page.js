@@ -5,6 +5,7 @@ import { getImage } from "gatsby-plugin-image";
 
 import Layout from "../components/Layout";
 import Features from "../components/Features";
+import Slideshow from '../components/Slideshow';
 //import BlogRoll from "../components/BlogRoll";
 import FullWidthImage from "../components/FullWidthImage";
 
@@ -17,6 +18,7 @@ export const IndexPageTemplate = ({
   mainpitch,
   description,
   intro,
+  testimonials,
 }) => {
   const heroImage = getImage(image) || image;
 
@@ -46,36 +48,19 @@ export const IndexPageTemplate = ({
               <Features gridItems={intro.blurbs} />
             </div>
 
-            {gallery ? (
-              <div className="columns is-centered">
-                <div className="column is-10 slideshow-container">
-                    <Slideshow items={testimonials.items} />
-                </div>
-              </div>
-            ) : null}
-
-
-
-            {/* <div className="columns">
-              <div className="column is-12 has-text-centered">
-                <Link className="btn" to="/products">
-                  See all products
-                </Link>
-              </div>
-            </div>
-            <div className="column is-12">
-              <h3 className="has-text-weight-semibold is-size-2">
-                Latest stories
-              </h3>
-              <BlogRoll />
-              <div className="column is-12 has-text-centered">
-                <Link className="btn" to="/blog">
-                  Read more
-                </Link>
-              </div>
-            </div> */}
           </div>
       </section>
+
+      {testimonials ? (
+        <section className="section testimonials is-large">
+          <div className="columns is-centered">
+            <div className="column is-6 slideshow-container">
+              <Slideshow items={testimonials.items} />
+            </div>
+          </div>
+        </section>
+      ) : null}
+
     </div>
 
   );
@@ -109,7 +94,7 @@ const IndexPage = ({ data }) => {
         mainpitch={frontmatter.mainpitch}
         description={frontmatter.description}
         intro={frontmatter.intro}
-        testimonials={frontmatter.gallery}
+        testimonials={frontmatter.testimonials}
       />
     </Layout>
   );
@@ -160,7 +145,7 @@ export const pageQuery = graphql`
               childImageSharp {
                 gatsbyImageData(
                   layout: CONSTRAINED
-                  height: 800
+                  height: 300
                   formats: [AUTO,WEBP]
                 )
               }

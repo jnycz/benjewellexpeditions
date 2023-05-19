@@ -7,7 +7,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className="navbar is-transparent is-fixed-top has-shadow"
+      className="navbar is-transparent is-fixed-top"
       role="navigation"
       aria-label="main-navigation"
     >
@@ -40,6 +40,11 @@ const Navbar = () => {
                 </Link>
               </li>
               <li className="navbar-item" style={{padding: "0px"}}>
+                <Link className="navbar-item is-uppercase has-text-weight-semibold" to="/photos">
+                  Photos
+                </Link>
+              </li>
+              <li className="navbar-item" style={{padding: "0px"}}>
                 <Link className="navbar-item is-uppercase has-text-weight-semibold" to="/faqs">
                   FAQs
                 </Link>
@@ -53,8 +58,8 @@ const Navbar = () => {
           <div className="navbar-end">
             <div className="navbar-item">
               <div className="buttons">
-                <Link className="button is-primary is-centered" to="/contact">
-                  <strong>Contact</strong>
+                <Link to="/contact">
+                  <button class="button contact has-text-weight-semibold">Book Now</button>
                 </Link>
               </div>
             </div>
