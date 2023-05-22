@@ -49,14 +49,14 @@ testimonials:
         the second meadow of Slough Creek.  Ben is exceptional at reading water,
         analyzing insect life, and tirelessly putting us on wonderful trout. 
         His enthusiasm for our sport is infectious.  Ben is the best.
-      image: PJP
+      author: PJP
     - text: >-
         I have been guided by Ben on numerous days, under differing conditions
         for more than 10 years. Above everything but his family, Ben is
         passionate about fly fishing! He loves teaching novices and more
         experienced anglers. He is enthusiastic, and makes the day on the water
         a memorable, fun experience. You can't go wrong utilizing his talents.
-      image: Warren K.
+      author: Warren K.
     - text: >-
         Ben Jewel is the most passionate angler I’ve ever met.  I’ve fished with
         guides all over the world but I always come back to Ben.  His energy is
