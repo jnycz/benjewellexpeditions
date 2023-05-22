@@ -75,7 +75,7 @@ testimonials:
         if you can get a day on the water with Ben.  You won’t regret it.\
 
         -﻿ Brian C.
-      image: /img/mike-t-testimonial.jpg
+      image: /img/brian-c-testimonial.jpg
     - text: >-
         I have had the pleasure of traveling to Gardiner Montana and fishing
         with Ben Jewell for over a decade.  During that time Ben has never
