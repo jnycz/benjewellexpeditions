@@ -50,7 +50,7 @@ const Testimonials = ({ items }) => (
           <div className="column">
             <div className="is-centered content">
               <div dangerouslySetInnerHTML={{ __html: toHTML(item.text) }} />
-              <em dangerouslySetInnerHTML={{ __html: toHTML(author.text) }} />
+              <em dangerouslySetInnerHTML={{ __html: toHTML(item.author) }} />
             </div>
           </div>
         </div>

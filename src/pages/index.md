@@ -33,18 +33,12 @@ testimonials:
         I have been fishing with Ben for 13 years.  Every single trip fishing
         with him is Epic. You won’t find a guide with more energy and
         positivity. Watching my son enjoy and learn from him was truly special.
-
-
-        *\-﻿ Mike T.*
-      author: /img/mike-t-testimonial.jpg
+      author: Mike T.
     - text: >-
         I have known and fished with Ben since 2017. He is very knowledgeable
         and fun to fish with. At times he has an uncanny ability to know what
         the fish are doing. He is one of the greats!
-
-
-        *\-﻿ Jack G.*
-      author: /img/mike-t-testimonial.jpg
+      author: Jack G.
     - text: >-
         I heartily recommend Ben Jewell as one of the finest guides with whom
         I've had the pleasure of sharing great fly fishing adventures.  I've
@@ -55,20 +49,14 @@ testimonials:
         the second meadow of Slough Creek.  Ben is exceptional at reading water,
         analyzing insect life, and tirelessly putting us on wonderful trout. 
         His enthusiasm for our sport is infectious.  Ben is the best.
-
-
-        *\-﻿ PJP*
-      image: /img/mike-t-testimonial.jpg
+      image: PJP
     - text: >-
         I have been guided by Ben on numerous days, under differing conditions
         for more than 10 years. Above everything but his family, Ben is
         passionate about fly fishing! He loves teaching novices and more
         experienced anglers. He is enthusiastic, and makes the day on the water
         a memorable, fun experience. You can't go wrong utilizing his talents.
-
-
-        *\-﻿ Warren K.*
-      image: /img/mike-t-testimonial.jpg
+      image: Warren K.
     - text: >-
         Ben Jewel is the most passionate angler I’ve ever met.  I’ve fished with
         guides all over the world but I always come back to Ben.  His energy is
@@ -77,10 +65,7 @@ testimonials:
         what they are doing but they aren’t willing to put in the hard work to
         make that special fish possible, such as Ben does.  Count yourself lucky
         if you can get a day on the water with Ben.  You won’t regret it.
-
-
-        *\-﻿ Brian C.*
-      author: /img/brian-c-testimonial.jpg
+      author: Brian C.
     - text: >-
         I have had the pleasure of traveling to Gardiner Montana and fishing
         with Ben Jewell for over a decade.  During that time Ben has never
@@ -91,10 +76,7 @@ testimonials:
         would highly recommend using Ben Jewell's services if you can, You will
         not regret it.  Ben will help make you a much better fly fisher, and you
         will have a first class professional experience!
-
-
-        *\-﻿ John H.*
-      author: /img/mike-t-testimonial.jpg
+      author: John H.
 main:
   heading: Great coffee with no compromises
   description: >
