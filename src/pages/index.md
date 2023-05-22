@@ -41,24 +41,24 @@ testimonials:
         *\-﻿ Mike T.*
       image: /img/mike-t-testimonial.jpg
     - text: >-
-        **I have known and fished with Ben since 2017. He is very knowledgeable
+        > I have known and fished with Ben since 2017. He is very knowledgeable
         and fun to fish with. At times he has an uncanny ability to know what
-        the fish are doing. He is one of the greats!**\
+        the fish are doing. He is one of the greats!\
 
-        *\-﻿ Jack G.*
+        > *\-﻿ Jack G.*
       image: /img/mike-t-testimonial.jpg
     - text: >-
-        **I heartily recommend Ben Jewell as one of the finest guides with whom
-        I've had the pleasure of sharing great fly fishing adventures.  I've
-        been traveling to the Paradise Valley / Yellowstone National Park area
-        for the past 25 years and Ben has guided me and my daughter for the past
-        seven years on float trips on the Yellowstone, walk and wades on the
-        Gardiner, hikes into the Black Canyon of the Yellowstone, and hikes into
-        the second meadow of Slough Creek.  Ben is exceptional at reading water,
-        analyzing insect life, and tirelessly putting us on wonderful trout. 
-        His enthusiasm for our sport is infectious.  Ben is the best.**\
+        > **I heartily recommend Ben Jewell as one of the finest guides with
+        whom I've had the pleasure of sharing great fly fishing adventures. 
+        I've been traveling to the Paradise Valley / Yellowstone National Park
+        area for the past 25 years and Ben has guided me and my daughter for the
+        past seven years on float trips on the Yellowstone, walk and wades on
+        the Gardiner, hikes into the Black Canyon of the Yellowstone, and hikes
+        into the second meadow of Slough Creek.  Ben is exceptional at reading
+        water, analyzing insect life, and tirelessly putting us on wonderful
+        trout.  His enthusiasm for our sport is infectious.  Ben is the best.**\
 
-        *\-﻿ PJP*
+        > *\-﻿ PJP*
       image: /img/mike-t-testimonial.jpg
     - text: >-
         **I have been guided by Ben on numerous days, under differing conditions
