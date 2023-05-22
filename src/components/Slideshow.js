@@ -19,12 +19,22 @@ const toHTML = value => remark()
 const Testimonials = ({ items }) => (
 
   <Swiper
-    slidesPerView={3}
-    autoHeight={true}
+    slidesPerView={1}
+    autoHeight={false}
     loop={true}
     id={'testimonials'}
     keyboard
-    pagination={true}
+    autoPlay={{
+      delay: 2500,
+      disableOnInteraction: false,
+    }}
+    pagination={{
+      el: '.custom-pagination',
+      clickable: true,
+      renderBullet: (index, className) => {
+       return '<span class="' + className + '">' + "</span>";
+      },
+    }}
     style={{
         "--swiper-pagination-color": "#83CAF2",
         "--swiper-pagination-bullet-inactive-color": "#999999",
@@ -32,16 +42,21 @@ const Testimonials = ({ items }) => (
         "--swiper-pagination-bullet-size": "12px",
         "--swiper-pagination-bullet-horizontal-gap": "6px",
       }}
+      
     >
     {items.map((item) => (
       <SwiperSlide key={item.text}>
         <div className="columns">
           <div className="column">
-            <p className="is-centered"><div dangerouslySetInnerHTML={{ __html: toHTML(item.text) }} /></p>
+            <div className="is-centered content">
+              <div dangerouslySetInnerHTML={{ __html: toHTML(item.text) }} />
+              <em dangerouslySetInnerHTML={{ __html: toHTML(author.text) }} />
+            </div>
           </div>
         </div>
       </SwiperSlide>
     ))}
+    <div class="custom-pagination" />
   </Swiper>
 
 )
@@ -50,6 +65,7 @@ Testimonials.propTypes = {
   items: PropTypes.arrayOf(
     PropTypes.shape({
       text: PropTypes.string,
+      author: PropTypes.string,
     })
   ),
 }

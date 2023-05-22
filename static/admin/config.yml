@@ -93,7 +93,8 @@ collections:
                     widget: list, 
                     fields: 
                       [
-                        { label: Text, name: text, widget: markdown, required: false },
+                        { label: Quote, name: text, widget: markdown, required: false },
+                        { label: Author, name: author, widget: string, required: false },
                       ],
                   },
                 ],
