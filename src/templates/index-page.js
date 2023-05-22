@@ -54,7 +54,7 @@ export const IndexPageTemplate = ({
       {testimonials ? (
         <section className="section testimonials is-large">
           <div className="columns is-centered">
-            <div className="column is-6 slideshow-container">
+            <div className="column is-10 slideshow-container">
               <Slideshow items={testimonials.items} />
             </div>
           </div>
@@ -141,15 +141,6 @@ export const pageQuery = graphql`
         }
         testimonials {
           items {
-            image {
-              childImageSharp {
-                gatsbyImageData(
-                  layout: CONSTRAINED
-                  height: 300
-                  formats: [AUTO,WEBP]
-                )
-              }
-            }
             text
           }
         }

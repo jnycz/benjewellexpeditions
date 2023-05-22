@@ -93,8 +93,7 @@ collections:
                     widget: list, 
                     fields: 
                       [
-                        { label: Image, name: image, widget: image }, 
-                        { label: Text, name: text, widget: markdown, required: false, hint: "Add an image caption" },
+                        { label: Text, name: text, widget: markdown, required: false },
                       ],
                   },
                 ],

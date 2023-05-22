@@ -19,7 +19,7 @@ const toHTML = value => remark()
 const Testimonials = ({ items }) => (
 
   <Swiper
-    slidesPerView={1}
+    slidesPerView={3}
     autoHeight={true}
     loop={true}
     id={'testimonials'}
@@ -31,16 +31,12 @@ const Testimonials = ({ items }) => (
         "--swiper-pagination-bullet-inactive-opacity": "1",
         "--swiper-pagination-bullet-size": "12px",
         "--swiper-pagination-bullet-horizontal-gap": "6px",
-        "--swiper-pagination-bottom": "-10px"
       }}
     >
     {items.map((item) => (
       <SwiperSlide key={item.text}>
         <div className="columns">
-          <div className='column'>
-            <GatsbyImage image={item.image.childImageSharp.gatsbyImageData}/>
-          </div>
-          <div className="column is-centered">
+          <div className="column">
             <p className="is-centered"><div dangerouslySetInnerHTML={{ __html: toHTML(item.text) }} /></p>
           </div>
         </div>
@@ -53,7 +49,6 @@ const Testimonials = ({ items }) => (
 Testimonials.propTypes = {
   items: PropTypes.arrayOf(
     PropTypes.shape({
-      image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
       text: PropTypes.string,
     })
   ),
