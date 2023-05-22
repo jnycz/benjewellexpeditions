@@ -36,7 +36,7 @@ testimonials:
 
 
         *\-﻿ Mike T.*
-      image: /img/mike-t-testimonial.jpg
+      author: /img/mike-t-testimonial.jpg
     - text: >-
         I have known and fished with Ben since 2017. He is very knowledgeable
         and fun to fish with. At times he has an uncanny ability to know what
@@ -44,7 +44,7 @@ testimonials:
 
 
         *\-﻿ Jack G.*
-      image: /img/mike-t-testimonial.jpg
+      author: /img/mike-t-testimonial.jpg
     - text: >-
         I heartily recommend Ben Jewell as one of the finest guides with whom
         I've had the pleasure of sharing great fly fishing adventures.  I've
@@ -80,7 +80,7 @@ testimonials:
 
 
         *\-﻿ Brian C.*
-      image: /img/brian-c-testimonial.jpg
+      author: /img/brian-c-testimonial.jpg
     - text: >-
         I have had the pleasure of traveling to Gardiner Montana and fishing
         with Ben Jewell for over a decade.  During that time Ben has never
@@ -94,7 +94,7 @@ testimonials:
 
 
         *\-﻿ John H.*
-      image: /img/mike-t-testimonial.jpg
+      author: /img/mike-t-testimonial.jpg
 main:
   heading: Great coffee with no compromises
   description: >
