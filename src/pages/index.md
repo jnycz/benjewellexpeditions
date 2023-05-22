@@ -30,23 +30,18 @@ intro:
 testimonials:
   items:
     - text: >-
-        **I have been fishing with Ben for 13 years.  Every single trip fishing
+        I have been fishing with Ben for 13 years.  Every single trip fishing
         with him is Epic. You won’t find a guide with more energy and
-        positivity. Watching my son enjoy and learn from him was truly
-        special.**
+        positivity. Watching my son enjoy and learn from him was truly special.
 
-
-        \
 
         *\-﻿ Mike T.*
       image: /img/mike-t-testimonial.jpg
     - text: >-
-        **I have known and fished with Ben since 2017. He is very knowledgeable
+        I have known and fished with Ben since 2017. He is very knowledgeable
         and fun to fish with. At times he has an uncanny ability to know what
-        the fish are doing. He is one of the greats!**
+        the fish are doing. He is one of the greats!
 
-
-        \
 
         *\-﻿ Jack G.*
       image: /img/mike-t-testimonial.jpg
@@ -62,8 +57,6 @@ testimonials:
         His enthusiasm for our sport is infectious.  Ben is the best.
 
 
-        \
-
         *\-﻿ PJP*
       image: /img/mike-t-testimonial.jpg
     - text: >-
@@ -73,8 +66,6 @@ testimonials:
         experienced anglers. He is enthusiastic, and makes the day on the water
         a memorable, fun experience. You can't go wrong utilizing his talents.
 
-
-        \
 
         *\-﻿ Warren K.*
       image: /img/mike-t-testimonial.jpg
@@ -87,8 +78,6 @@ testimonials:
         make that special fish possible, such as Ben does.  Count yourself lucky
         if you can get a day on the water with Ben.  You won’t regret it.
 
-
-        \
 
         *\-﻿ Brian C.*
       image: /img/brian-c-testimonial.jpg
