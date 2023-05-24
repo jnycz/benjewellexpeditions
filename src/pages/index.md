@@ -25,7 +25,7 @@ intro:
       text: "#### Freestone streams"
     - image: /img/stream-mountains-dry-grass.jpg
       text: "#### Private spring creek"
-  heading: Services
+  heading: ""
   description: ""
 testimonials:
   items:
