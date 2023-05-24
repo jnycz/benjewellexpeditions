@@ -1,11 +1,14 @@
 import * as React from "react";
 import PropTypes from "prop-types";
 import { GatsbyImage } from "gatsby-plugin-image";
+//import FullWidthImage from "./FullWidthImage";
 
 const PreviewCompatibleImage = ({ imageInfo }) => {
   const imageStyle = {};
 
   const { alt = "", childImageSharp, image } = imageInfo;
+
+  //console.log(imageInfo);
 
   if (!!image && !!image.childImageSharp) {
     return (

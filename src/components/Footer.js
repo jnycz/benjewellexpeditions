@@ -2,7 +2,7 @@ import * as React from "react";
 import { Link } from "gatsby";
 
 import logo from "../img/jewell-expedition-logo.svg";
-import facebook from "../img/social/facebook.svg";
+//import facebook from "../img/social/facebook.svg";
 import instagram from "../img/social/instagram.svg";
 
 const Footer = () => {
@@ -45,7 +45,7 @@ const Footer = () => {
                 </section>
               </div>
               <div className="column social">
-                <a title="instagram" target="_blank" href="https://www.instagram.com/benjewellflyfishing_/">
+                <a title="instagram" target="_blank" rel="noreferrer" href="https://www.instagram.com/benjewellflyfishing_/">
                   <img
                     src={instagram}
                     alt="Instagram"

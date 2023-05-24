@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { graphql } from "gatsby";
+import { Link, graphql } from "gatsby";
 import { getImage } from "gatsby-plugin-image";
 
 import Layout from "../components/Layout";
@@ -51,36 +51,68 @@ export const IndexPageTemplate = ({
             </div>
 
             <div className="columns">
-                  <div className="column is-7">
-                    <h3 className="has-text-weight-semibold is-size-3">
-                      {main.heading}
-                    </h3>
-                    <p>{main.description}</p>
+              <div className="column is-7">
+                <h3 className="has-text-weight-semibold is-size-3">
+                  {main.heading}
+                </h3>
+                <p>{main.description}</p>
+              </div>
+            </div>
+
+            <div className="tile is-ancestor">
+              <div className="tile is-vertical">
+
+                <div className="tile">
+                  <div className="tile is-parent is-vertical">
+                    <article className="tile is-child">
+                      <Link to="/faqs" className="img-hover-zoom">
+                        <div className="card">
+                          <div className="card-image">
+                            <PreviewCompatibleImage imageInfo={main.image1} />
+                          </div>
+                          <div className="card-content is-overlay is-overlay-bg is-flex is-justify-content-center is-align-content-center is-align-items-center">
+                            <span className="is-size-3 has-text-centeredis-uppercase has-text-weight-semibold has-text-white is-uppercase">FAQs</span>
+                          </div>
+                        </div>
+                      </Link>
+                    </article>
                   </div>
-                </div>
-                <div className="tile is-ancestor">
-                  <div className="tile is-vertical">
-                    <div className="tile">
-                      <div className="tile is-parent is-vertical">
-                        <article className="tile is-child">
-                          <PreviewCompatibleImage imageInfo={main.image1} />
-                        </article>
-                      </div>
-                      <div className="tile is-parent">
-                        <article className="tile is-child">
-                          <PreviewCompatibleImage imageInfo={main.image2} />
-                        </article>
-                      </div>
-                    </div>
-                    <div className="tile is-parent">
-                      <article className="tile is-child">
-                        <PreviewCompatibleImage imageInfo={main.image3} />
-                      </article>
-                    </div>
+                  <div className="tile is-parent">
+                    <article className="tile is-child">
+                      <Link to="/photos" className="img-hover-zoom">
+                        <div className="card">
+                          <div className="card-image">
+                            <PreviewCompatibleImage imageInfo={main.image2} />
+                          </div>
+                          <div className="card-content is-overlay is-overlay-bg is-flex is-justify-content-center is-align-content-center is-align-items-center">
+                            <span className="is-size-3 has-text-centeredis-uppercase has-text-weight-semibold has-text-white is-uppercase">Photo Gallery</span>
+                          </div>
+                        </div>
+                      </Link>
+                    </article>
                   </div>
                 </div>
 
+                <div className="tile is-parent">
+                  <article className="tile is-child">
+                    <Link to="/testimonials" className="img-hover-zoom">
+                      <div className="card">
+                        <div className="card-image">
+                          <PreviewCompatibleImage imageInfo={main.image3} />
+                        </div>
+                        <div className="card-content is-overlay is-overlay-bg is-flex is-justify-content-center is-align-content-center is-align-items-center">
+                            <span className="is-size-3 has-text-centeredis-uppercase has-text-weight-semibold has-text-white is-uppercase">Testimonials</span>
+                        </div>
+                      </div>
+                    </Link>
+                  </article>
+                </div>
+
+              </div>
+            </div>
+
           </div>
+
       </section>
 
       {testimonials ? (
@@ -186,7 +218,7 @@ export const pageQuery = graphql`
             alt
             image {
               childImageSharp {
-                gatsbyImageData(width: 526, quality: 92, layout: CONSTRAINED)
+                gatsbyImageData(width: 526, quality: 92, layout: FULL_WIDTH)
               }
             }
           }
@@ -194,7 +226,7 @@ export const pageQuery = graphql`
             alt
             image {
               childImageSharp {
-                gatsbyImageData(width: 526, quality: 92, layout: CONSTRAINED)
+                gatsbyImageData(width: 526, quality: 92, layout: FULL_WIDTH)
               }
             }
           }
@@ -202,7 +234,7 @@ export const pageQuery = graphql`
             alt
             image {
               childImageSharp {
-                gatsbyImageData(quality: 72, layout: FULL_WIDTH)
+                gatsbyImageData(quality: 72, layout: FULL_WIDTH, transformOptions: {fit: COVER})
               }
             }
           }

@@ -59,7 +59,7 @@ const Navbar = () => {
             <div className="navbar-item">
               <div className="buttons">
                 <Link to="/contact">
-                  <button class="button contact has-text-weight-semibold">Book Now</button>
+                  <button className="button contact has-text-weight-semibold">Book Now</button>
                 </Link>
               </div>
             </div>

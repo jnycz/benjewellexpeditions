@@ -105,8 +105,8 @@ collections:
               widget: object,
               fields:
                 [
-                  { label: Heading, name: heading, widget: string },
-                  { label: Description, name: description, widget: text },
+                  { label: Heading, name: heading, widget: string, required: false },
+                  { label: Description, name: description, widget: text, required: false },
                   {
                     label: Image1,
                     name: image1,

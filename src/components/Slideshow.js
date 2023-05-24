@@ -4,7 +4,7 @@ import remarkHTML from 'remark-html'
 import PropTypes from 'prop-types'
 import SwiperCore, { Navigation, Pagination, Keyboard } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { getImage, GatsbyImage } from "gatsby-plugin-image"
+//import { getImage, GatsbyImage } from "gatsby-plugin-image"
 
 // Import Swiper styles
 import 'swiper/swiper-bundle.min.css'
@@ -31,9 +31,6 @@ const Testimonials = ({ items }) => (
     pagination={{
       el: '.custom-pagination',
       clickable: true,
-      renderBullet: (index, className) => {
-       return '<span class="' + className + '">' + "</span>";
-      },
     }}
     style={{
         "--swiper-pagination-color": "#83CAF2",
@@ -56,7 +53,7 @@ const Testimonials = ({ items }) => (
         </div>
       </SwiperSlide>
     ))}
-    <div class="custom-pagination" />
+    <div className="custom-pagination" />
   </Swiper>
 
 )

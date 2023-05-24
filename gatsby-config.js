@@ -20,8 +20,8 @@ module.exports = {
         preconnect: [`https://fonts.googleapis.com`, `https://fonts.gstatic.com`],
         web: [
           {
-            name: `Open Sans`,
-            file: `https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap`,
+            name: `Roboto`,
+            file: `https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700&display=swap`,
           },
         ],
       },
