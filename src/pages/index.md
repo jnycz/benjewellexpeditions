@@ -86,5 +86,5 @@ main:
     image: /img/ben-huge-fish.jpg
   image3:
     alt: Coffee beans
-    image: /img/products-grid1.jpg
+    image: /img/testimonials-3-pics.jpg
 ---
