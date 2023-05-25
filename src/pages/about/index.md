@@ -2,9 +2,9 @@
 templateKey: about-page
 path: /about
 title: About
+subheading: Your Premier Fishing Guide Service in Ruidoso, New Mexico
+image: /img/hero-lake-mountains.jpg
 ---
-## Jewell Expeditions: Your Premier Fishing Guide Service in Ruidoso, New Mexico
-
 Discover the ultimate fishing experience with Jewell Expeditions, your year-round fishing guide service in the breathtaking Ruidoso, New Mexico area. With over 17 years of guiding experience in New Mexico, Montana, and Yellowstone National Park, Ben Jewell brings unparalleled expertise to every trip.
 
 We offer half and full day fishing excursions on a variety of pristine waters, including public lakes, freestone streams, and our **exclusive** private spring creek. Each trip is carefully tailored to provide you with an unforgettable angling adventure.
