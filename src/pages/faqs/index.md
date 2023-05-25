@@ -2,6 +2,7 @@
 templateKey: about-page
 path: /faqs
 title: Frequently Asked Questions
+image: /img/hero-rainbow-landscape-mountains.jpg
 ---
 ### What should I bring?
 
