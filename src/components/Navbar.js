@@ -28,6 +28,7 @@ const Navbar = () => {
           </button>
         </div>
         <div id="navMenu" className={`has-text-centered navbar-menu ${isActive && "is-active"}`}>
+
           <ul className="navbar-end">
               <li className="navbar-item" style={{padding: "0px"}}>
                 <Link className="navbar-item is-uppercase has-text-weight-semibold" to="/about">
@@ -55,15 +56,15 @@ const Navbar = () => {
                 </Link>
               </li>
           </ul>
+          
           <div className="navbar-end">
             <div className="navbar-item">
-              <div className="buttons">
-                <Link to="/contact">
-                  <button className="button contact has-text-weight-semibold">Book Now</button>
-                </Link>
-              </div>
+              <Link to="/contact">
+                <button className="button is-primary is-rounded contact has-text-weight-semibold">Book Now</button>
+              </Link>
             </div>
           </div>
+
         </div>
       </div>
     </nav>

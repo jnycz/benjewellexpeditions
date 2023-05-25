@@ -150,6 +150,8 @@ collections:
               default: "about-page",
             }
           - { label: "Title", name: "title", widget: "string" }
+          - { label: Subheading, name: subheading, widget: string, required: false }
+          - { label: Image, name: image, widget: image }
           - { label: "Body", name: "body", widget: "markdown" }
       - file: "src/pages/photos/index.md"
         label: "Photos"
@@ -162,6 +164,8 @@ collections:
               default: "photos-page",
             }
           - { label: "Title", name: "title", widget: "string" }
+          - { label: Subheading, name: subheading, widget: string, required: false }
+          - { label: Image, name: image, widget: image }
           - { label: "Body", name: "body", widget: "markdown" }
       - file: "src/pages/faqs/index.md"
         label: "FAQs"
@@ -174,6 +178,8 @@ collections:
               default: "about-page",
             }
           - { label: "Title", name: "title", widget: "string" }
+          - { label: Subheading, name: subheading, widget: string, required: false }
+          - { label: Image, name: image, widget: image }
           - { label: "Body", name: "body", widget: "markdown" }
       - file: "src/pages/testimonials/index.md"
         label: "Testimonials"
@@ -186,4 +192,6 @@ collections:
               default: "about-page",
             }
           - { label: "Title", name: "title", widget: "string" }
+          - { label: Subheading, name: subheading, widget: string, required: false }
+          - { label: Image, name: image, widget: image }
           - { label: "Body", name: "body", widget: "markdown" }
