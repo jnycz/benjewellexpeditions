@@ -2,5 +2,6 @@
 templateKey: photos-page
 path: /photos
 title: Photos
+image: /img/landscape-water-mountains.png
 ---
-## Photos
+J﻿ewell Expeditions Photos
