@@ -115,9 +115,11 @@ export const IndexPageTemplate = ({
 
       {testimonials ? (
         <section className="section testimonials is-medium">
-          <div className="columns is-centered">
-            <div className="column content is-10 slideshow-container">
-              <Slideshow items={testimonials.items} />
+          <div className="container">
+            <div className="columns is-centered">
+              <div className="column content is-10 slideshow-container">
+                <Slideshow items={testimonials.items} />
+              </div>
             </div>
           </div>
         </section>

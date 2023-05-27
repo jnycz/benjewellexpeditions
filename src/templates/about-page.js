@@ -22,9 +22,6 @@ export const AboutPageTemplate = ({
       <FullWidthImage img={heroImage} title={title} subheading={subheading} />
       <section className="section section--gradient">
         <div className="container">
-          <h2 className="title is-size-3 has-text-weight-bold is-bold-light">
-            {title}
-          </h2>
           <PageContent className="content" content={content} />
         </div>
       </section>
@@ -43,7 +40,7 @@ AboutPageTemplate.propTypes = {
 const AboutPage = ({ data }) => {
   const { markdownRemark: post } = data;
   const { frontmatter } = data.markdownRemark;
-  
+
   return (
     <Layout>
       <AboutPageTemplate

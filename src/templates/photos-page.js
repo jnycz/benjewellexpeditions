@@ -5,6 +5,7 @@ import { getImage } from "gatsby-plugin-image";
 import Layout from "../components/Layout";
 import Content, { HTMLContent } from "../components/Content";
 import FullWidthImage from "../components/FullWidthImage";
+import ImageGallery from "../components/ImageGallery";
 
 // eslint-disable-next-line
 export const PhotosPageTemplate = ({ 
@@ -22,10 +23,8 @@ export const PhotosPageTemplate = ({
       <FullWidthImage img={heroImage} title={title} subheading={subheading} />
       <section className="section section--gradient">
         <div className="container">
-          <h2 className="title is-size-3 has-text-weight-bold is-bold-light">
-            {title}
-          </h2>
           <PageContent className="content" content={content} />
+          {/* <ImageGallery images={images} /> */}
         </div>
       </section>
     </div>
