@@ -1,7 +1,7 @@
 ---
 templateKey: photos-page
 path: /photos
-title: Photos
+title: Photo Gallery
 image: /img/landscape-water-mountains.png
 gallery:
   items:
@@ -9,4 +9,4 @@ gallery:
     - image: /img/brian-c-testimonial.jpg
     - image: /img/kneeling-by-stream.jpg
 ---
-J﻿ewell Expeditions Photos
+J﻿ewell Expeditions Photo Gallery
