@@ -108,6 +108,27 @@ export default class Index extends React.Component {
                     </div>
                   </div>
                   <div className="field">
+                    <label className="label" htmlFor={"experience"}>
+                      Experience
+                    </label>
+                    <div className="select">
+                      <select
+                        className="select"
+                        type={"select"}
+                        name={"experience"}
+                        onChange={this.handleChange}
+                        id={"experience"}
+                        // pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+                        required={true}
+                      >
+                        <option value="" disabled="" selected="">Select Level</option>
+                        <option name="rookie" value="rookie">Rookie</option>
+                        <option name="novice" value="novice">Novice</option>
+                        <option name="experienced" value="experienced">Experienced</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div className="field">
                     <label className="label" htmlFor={"message"}>
                       Message
                     </label>

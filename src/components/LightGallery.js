@@ -1,5 +1,5 @@
 import React from 'react'
-import { getImage, GatsbyImage } from "gatsby-plugin-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 import PropTypes from 'prop-types'
 //import { LightGallerySettings } from 'lightgallery/lg-settings';
 import { LIGHTGALLERY_LICENSE } from '../constants';

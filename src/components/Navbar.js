@@ -36,11 +36,6 @@ const Navbar = () => {
                 </Link>
               </li>
               <li className="navbar-item" style={{padding: "0px"}}>
-                <Link className="navbar-item is-uppercase has-text-weight-semibold" to="/photos">
-                  Photos
-                </Link>
-              </li>
-              <li className="navbar-item" style={{padding: "0px"}}>
                 <Link className="navbar-item is-uppercase has-text-weight-semibold" to="/testimonials">
                   Testimonials
                 </Link>
@@ -48,6 +43,11 @@ const Navbar = () => {
               <li className="navbar-item" style={{padding: "0px"}}>
                 <Link className="navbar-item is-uppercase has-text-weight-semibold" to="/faqs">
                   FAQs
+                </Link>
+              </li>
+              <li className="navbar-item" style={{padding: "0px"}}>
+                <Link className="navbar-item is-uppercase has-text-weight-semibold" to="/photos">
+                  Photos
                 </Link>
               </li>
               <li className="navbar-item" style={{padding: "0px"}}>

@@ -28,19 +28,21 @@ const Footer = () => {
               <div className="column has-text-weight-semibold is-uppercase">
                 <section className="">
                   <div className="footer-menu">
-
                       <Link className="" to="/about">
                         About
                       </Link>
- 
+                      <Link className="navbar-item is-uppercase has-text-weight-semibold" to="/testimonials">
+                        Testimonials
+                      </Link>
                       <Link className="" to="/faqs">
                         FAQs
                       </Link>
-
+                      <Link className="navbar-item is-uppercase has-text-weight-semibold" to="/photos">
+                        Photos
+                      </Link>
                       <Link className="" to="/contact">
                         Contact
                       </Link>
-
                   </div>
                 </section>
               </div>
