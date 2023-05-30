@@ -141,7 +141,7 @@ export default class Index extends React.Component {
                         required={false}
                       />
                     </div>
-                    <p class="help">Enter desired date of trip using this format: mm/dd/yy</p>
+                    <p className="help">Enter desired date of trip using this format: mm/dd/yy</p>
                   </div>
                   <div className="field">
                     <label className="label" htmlFor={"experience"}>
@@ -162,7 +162,7 @@ export default class Index extends React.Component {
                         <option name="experienced" value="Experienced">Experienced</option>
                       </select>
                     </div>
-                    <p class="help">Rookie has never fly fished, novice fly fishes 5-10 times a year, experienced fishes at least once a week 50+ times a year for many years.</p>
+                    <p className="help">Rookie has never fly fished, novice fly fishes 5-10 times a year, experienced fishes at least once a week 50+ times a year for many years.</p>
                   </div>
                   <div className="field">
                     <label className="label" htmlFor={"hiking"}>
@@ -217,7 +217,7 @@ export default class Index extends React.Component {
                         <option name="combo_boat_walk" value="Combo trip boat and walk">Combo trip boat and walk</option>
                       </select>
                     </div>
-                    <p class="help">Half days are on one body of water, full days can be river and lake or 2 lakes.</p>
+                    <p className="help">Half days are on one body of water, full days can be river and lake or 2 lakes.</p>
                   </div>
                   <div className="field">
                     <label className="label" htmlFor={"goals"}>
@@ -246,7 +246,7 @@ export default class Index extends React.Component {
                         required={false}
                       />
                     </div>
-                    <p class="help">Please specify what gear you will bring such as rod and real, waders, etc.  Note rod size and wt. Example 9 ft. 5 wt.</p>
+                    <p className="help">Please specify what gear you will bring such as rod and real, waders, etc.  Note rod size and wt. Example 9 ft. 5 wt.</p>
                   </div>
                   <div className="field">
                     <label className="label" htmlFor={"restrictions"}>
@@ -261,7 +261,7 @@ export default class Index extends React.Component {
                         required={false}
                       />
                     </div>
-                    <p class="help">Only valid for full day trips.</p>
+                    <p className="help">Only valid for full day trips.</p>
                   </div>
                   <div className="field">
                     <label className="label" htmlFor={"message"}>
@@ -290,7 +290,7 @@ export default class Index extends React.Component {
                         id={"referral"}
                         required={true}
                       >
-                        <option name="website" value="Website" selected>Website</option>
+                        <option name="website" value="Website">Website</option>
                         <option name="Repeat" value="Repeat">Repeat client</option>
                         <option name="Señor" value="Señor">Señor Fishing Outdoor Gear store</option>
                       </select>

@@ -24,10 +24,11 @@ export const IndexPageTemplate = ({
 
   return (
     <div>
+
       <FullWidthImage img={heroImage} title={title} subheading={subheading} />
+      
       <section className="section">
         <div className="container">
-
             <div className="content why">
               <h2 className="title">{mainpitch.title}</h2>
               <p>{mainpitch.description}</p>
@@ -56,7 +57,23 @@ export const IndexPageTemplate = ({
                 <p>{main.description}</p>
               </div>
             </div>
+        </div>
+      </section>
 
+      {testimonials ? (
+        <section className="section testimonials is-medium">
+          <div className="container">
+            <div className="columns is-centered">
+              <div className="column content is-10 slideshow-container">
+                <Slideshow items={testimonials.items} />
+              </div>
+            </div>
+          </div>
+        </section>
+      ) : null}
+
+      <section className="section">
+        <div className="container">
             <div className="tile is-ancestor">
               <div className="tile is-vertical">
 
@@ -108,23 +125,8 @@ export const IndexPageTemplate = ({
 
               </div>
             </div>
-
-          </div>
-
+        </div>
       </section>
-
-      {testimonials ? (
-        <section className="section testimonials is-medium">
-          <div className="container">
-            <div className="columns is-centered">
-              <div className="column content is-10 slideshow-container">
-                <Slideshow items={testimonials.items} />
-              </div>
-            </div>
-          </div>
-        </section>
-      ) : null}
-
     </div>
 
   );
@@ -203,7 +205,7 @@ export const pageQuery = graphql`
           blurbs {
             image {
               childImageSharp {
-                gatsbyImageData(quality: 64, layout: CONSTRAINED)
+                gatsbyImageData(quality: 64, width: 435, layout: CONSTRAINED)
               }
             }
             text
@@ -218,7 +220,7 @@ export const pageQuery = graphql`
             alt
             image {
               childImageSharp {
-                gatsbyImageData(width: 526, quality: 92, layout: FULL_WIDTH)
+                gatsbyImageData(width: 660, quality: 64, layout: CONSTRAINED)
               }
             }
           }
@@ -226,7 +228,7 @@ export const pageQuery = graphql`
             alt
             image {
               childImageSharp {
-                gatsbyImageData(width: 526, quality: 92, layout: FULL_WIDTH)
+                gatsbyImageData(width: 660, quality: 64, layout: CONSTRAINED)
               }
             }
           }
@@ -234,7 +236,7 @@ export const pageQuery = graphql`
             alt
             image {
               childImageSharp {
-                gatsbyImageData(quality: 72, layout: FULL_WIDTH, transformOptions: {fit: COVER})
+                gatsbyImageData(quality: 64, layout: FULL_WIDTH, transformOptions: {fit: COVER})
               }
             }
           }
