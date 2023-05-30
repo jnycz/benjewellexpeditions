@@ -42,19 +42,19 @@ export default class Index extends React.Component {
               <h1>Book Your Trip</h1>
               <div className="columns">
                 <div className="column">
-                  <p>Thanks for your interest in booking with Jewell Expeditions.  Please fill out the form with as much information as possible.  This will help expedite the process and allow me to plan a customized trip based on what the information provided.</p>
-                  <p>Once you submit the form I will be notified by email. I will reach out by phone or email (based on your selection) to discuss the trip details and to answer any questions.</p>
+                  <p>Thanks for your interest in booking with Jewell Expeditions.  Please fill out the form with as much information as possible.  This will help expedite the process and allow me to plan a customized trip based on the information provided.</p>
+                  <p>Once you submit the form I will be notified by email. I will then reach out by phone or email (based on your selection) to discuss the trip details and to answer any questions.</p>
                 </div>
                 <div className="column">
                   <form
-                  name="contact"
-                  method="post"
-                  action="/contact/thanks/"
-                  data-netlify="true"
-                  data-netlify-recaptcha="true"
-                  data-netlify-honeypot="bot-field"
-                  onSubmit={this.handleSubmit}
-                >
+                    name="contact"
+                    method="post"
+                    action="/contact/thanks/"
+                    data-netlify="true"
+                    data-netlify-recaptcha="true"
+                    data-netlify-honeypot="bot-field"
+                    onSubmit={this.handleSubmit}
+                  >
                   {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
                   <input type="hidden" name="form-name" value="contact" />
                   <div hidden>

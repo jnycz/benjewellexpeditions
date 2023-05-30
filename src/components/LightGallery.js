@@ -2,7 +2,7 @@ import React from 'react'
 import { GatsbyImage } from "gatsby-plugin-image"
 import PropTypes from 'prop-types'
 //import { LightGallerySettings } from 'lightgallery/lg-settings';
-import { LIGHTGALLERY_LICENSE } from '../constants';
+//import { GATSBY_LIGHTGALLERY_LICENSE } from '../constants';
 import LightGallery from 'lightgallery/react';
 import lgZoom from 'lightgallery/plugins/zoom';
 import lgThumbnail from 'lightgallery/plugins/thumbnail';
@@ -14,8 +14,8 @@ import 'lightgallery/css/lg-thumbnail.css';
 
 function Gallery({ items }) {
     const onInit = () => {
-      console.log('lightGallery has been initialized');
-      console.log(items)
+      //console.log('lightGallery has been initialized');
+      //console.log(items)
     };
 
     return (
@@ -23,7 +23,7 @@ function Gallery({ items }) {
           <LightGallery
             onInit={onInit}
             speed={500}
-            licenseKey={LIGHTGALLERY_LICENSE}
+            licenseKey={GATSBY_LIGHTGALLERY_LICENSE}
             plugins={[lgZoom, lgThumbnail]}
             thumbnail
             download={false}
