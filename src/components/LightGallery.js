@@ -1,8 +1,6 @@
 import React from 'react'
 import { GatsbyImage } from "gatsby-plugin-image"
 import PropTypes from 'prop-types'
-//import { LightGallerySettings } from 'lightgallery/lg-settings';
-//import { GATSBY_LIGHTGALLERY_LICENSE } from '../constants';
 import LightGallery from 'lightgallery/react';
 import lgZoom from 'lightgallery/plugins/zoom';
 import lgThumbnail from 'lightgallery/plugins/thumbnail';
@@ -23,7 +21,7 @@ function Gallery({ items }) {
           <LightGallery
             onInit={onInit}
             speed={500}
-            licenseKey={GATSBY_LIGHTGALLERY_LICENSE}
+            licenseKey={process.env.GATSBY_LIGHTGALLERY_LICENSE}
             plugins={[lgZoom, lgThumbnail]}
             thumbnail
             download={false}
