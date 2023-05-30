@@ -39,10 +39,11 @@ export default class Index extends React.Component {
         <section className="section">
           <div className="container">
             <div className="content">
-              <h1>Contact</h1>
+              <h1>Book Your Trip</h1>
               <div className="columns">
                 <div className="column">
-                  <p>Fill out the form</p>
+                  <p>Thanks for your interest in booking with Jewell Expeditions.  Please fill out the form with as much information as possible.  This will help expedite the process and allow me to plan a customized trip based on what the information provided.</p>
+                  <p>Once you submit the form I will be notified by email. I will reach out by phone or email (based on your selection) to discuss the trip details and to answer any questions.</p>
                 </div>
                 <div className="column">
                   <form
@@ -50,6 +51,7 @@ export default class Index extends React.Component {
                   method="post"
                   action="/contact/thanks/"
                   data-netlify="true"
+                  data-netlify-recaptcha="true"
                   data-netlify-honeypot="bot-field"
                   onSubmit={this.handleSubmit}
                 >
@@ -63,7 +65,7 @@ export default class Index extends React.Component {
                   </div>
                   <div className="field">
                     <label className="label" htmlFor={"name"}>
-                      Your name
+                      Full Name
                     </label>
                     <div className="control">
                       <input
@@ -108,8 +110,42 @@ export default class Index extends React.Component {
                     </div>
                   </div>
                   <div className="field">
+                    <label className="label" htmlFor={"contacted"}>
+                      How do you wish to be contacted?
+                    </label>
+                    <div className="select">
+                      <select
+                        className="select"
+                        type={"select"}
+                        name={"contacted"}
+                        onChange={this.handleChange}
+                        id={"contacted"}
+                        required={false}
+                      >
+                        <option value="" disabled="" selected="">Select contact method</option>
+                        <option name="phone" value="Phone">Phone</option>
+                        <option name="email" value="Email">Email</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div className="field">
+                    <label className="label" htmlFor={"age_weight_height"}>
+                      Trip Date
+                    </label>
+                    <div className="control">
+                      <input
+                        className="input"
+                        name={"age_weight_height"}
+                        onChange={this.handleChange}
+                        id={"age_weight_height"}
+                        required={false}
+                      />
+                    </div>
+                    <p class="help">Enter desired date of trip using this format: mm/dd/yy</p>
+                  </div>
+                  <div className="field">
                     <label className="label" htmlFor={"experience"}>
-                      Experience
+                      What is your fly fishing experience level?
                     </label>
                     <div className="select">
                       <select
@@ -118,19 +154,118 @@ export default class Index extends React.Component {
                         name={"experience"}
                         onChange={this.handleChange}
                         id={"experience"}
-                        // pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
-                        required={true}
+                        required={false}
                       >
-                        <option value="" disabled="" selected="">Select Level</option>
-                        <option name="rookie" value="rookie">Rookie</option>
-                        <option name="novice" value="novice">Novice</option>
-                        <option name="experienced" value="experienced">Experienced</option>
+                        <option value="" disabled="" selected="">Select level</option>
+                        <option name="rookie" value="Rookie">Rookie</option>
+                        <option name="novice" value="Novice">Novice</option>
+                        <option name="experienced" value="Experienced">Experienced</option>
+                      </select>
+                    </div>
+                    <p class="help">Rookie has never fly fished, novice fly fishes 5-10 times a year, experienced fishes at least once a week 50+ times a year for many years.</p>
+                  </div>
+                  <div className="field">
+                    <label className="label" htmlFor={"hiking"}>
+                      What is your hiking ability?
+                    </label>
+                    <div className="select">
+                      <select
+                        className="select"
+                        type={"select"}
+                        name={"hiking"}
+                        onChange={this.handleChange}
+                        id={"hiking"}
+                        required={false}
+                      >
+                        <option value="" disabled="" selected="">Select ability</option>
+                        <option name="less_than_one" value="Less than 1 mile">Less than 1 mile</option>
+                        <option name="1_2_miles" value="1-2 miles">1-2 miles</option>
+                        <option name="3_4_miles" value="3-4 miles">3-4 miles</option>
                       </select>
                     </div>
                   </div>
                   <div className="field">
+                    <label className="label" htmlFor={"age_weight_height"}>
+                      Please specify your age, weight, and height.  
+                    </label>
+                    <div className="control">
+                      <input
+                        className="input"
+                        name={"age_weight_height"}
+                        onChange={this.handleChange}
+                        id={"age_weight_height"}
+                        required={false}
+                      />
+                    </div>
+                  </div>
+                  <div className="field">
+                    <label className="label" htmlFor={"trip"}>
+                      What type of a trip are you looking to plan?
+                    </label>
+                    <div className="select">
+                      <select
+                        className="select"
+                        type={"select"}
+                        name={"trip"}
+                        onChange={this.handleChange}
+                        id={"trip"}
+                        required={false}
+                      >
+                        <option value="" disabled="" selected="">Select trip type</option>
+                        <option name="walk_wade" value="Walk/wade">Walk/wade</option>
+                        <option name="belly_boat_trip" value="Belly boat trip">Belly boat trip</option>
+                        <option name="combo_boat_walk" value="Combo trip boat and walk">Combo trip boat and walk</option>
+                      </select>
+                    </div>
+                    <p class="help">Half days are on one body of water, full days can be river and lake or 2 lakes.</p>
+                  </div>
+                  <div className="field">
+                    <label className="label" htmlFor={"goals"}>
+                      What are your goals for the day?
+                    </label>
+                    <div className="control">
+                      <input
+                        className="input"
+                        name={"goals"}
+                        onChange={this.handleChange}
+                        id={"goals"}
+                        required={false}
+                      />
+                    </div>
+                  </div>
+                  <div className="field">
+                    <label className="label" htmlFor={"gear"}>
+                      Do you have gear?
+                    </label>
+                    <div className="control">
+                      <input
+                        className="input"
+                        name={"gear"}
+                        onChange={this.handleChange}
+                        id={"gear"}
+                        required={false}
+                      />
+                    </div>
+                    <p class="help">Please specify what gear you will bring such as rod and real, waders, etc.  Note rod size and wt. Example 9 ft. 5 wt.</p>
+                  </div>
+                  <div className="field">
+                    <label className="label" htmlFor={"restrictions"}>
+                      Do you have any food allergies or dietary restrictions?
+                    </label>
+                    <div className="control">
+                      <input
+                        className="input"
+                        name={"restrictions"}
+                        onChange={this.handleChange}
+                        id={"restrictions"}
+                        required={false}
+                      />
+                    </div>
+                    <p class="help">Only valid for full day trips.</p>
+                  </div>
+                  <div className="field">
                     <label className="label" htmlFor={"message"}>
-                      Message
+                      Additional information
                     </label>
                     <div className="control">
                       <textarea
@@ -138,10 +273,30 @@ export default class Index extends React.Component {
                         name={"message"}
                         onChange={this.handleChange}
                         id={"message"}
-                        required={true}
+                        required={false}
                       />
                     </div>
                   </div>
+                  <div className="field">
+                    <label className="label" htmlFor={"referral"}>
+                      How did you find Jewell Expeditions?
+                    </label>
+                    <div className="select">
+                      <select
+                        className="select"
+                        type={"select"}
+                        name={"referral"}
+                        onChange={this.handleChange}
+                        id={"referral"}
+                        required={true}
+                      >
+                        <option name="website" value="Website" selected>Website</option>
+                        <option name="Repeat" value="Repeat">Repeat client</option>
+                        <option name="Señor" value="Señor">Señor Fishing Outdoor Gear store</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div data-netlify-recaptcha="true"></div>
                   <div className="field">
                     <button className="button is-link" type="submit">
                       Send
