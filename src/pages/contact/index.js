@@ -122,7 +122,7 @@ export default class Index extends React.Component {
                         id={"contacted"}
                         required={false}
                       >
-                        <option value="" disabled="" selected="">Select contact method</option>
+                        <option value="" disabled="">Select contact method</option>
                         <option name="phone" value="Phone">Phone</option>
                         <option name="email" value="Email">Email</option>
                       </select>
@@ -156,7 +156,7 @@ export default class Index extends React.Component {
                         id={"experience"}
                         required={false}
                       >
-                        <option value="" disabled="" selected="">Select level</option>
+                        <option value="" disabled="">Select level</option>
                         <option name="rookie" value="Rookie">Rookie</option>
                         <option name="novice" value="Novice">Novice</option>
                         <option name="experienced" value="Experienced">Experienced</option>
@@ -177,7 +177,7 @@ export default class Index extends React.Component {
                         id={"hiking"}
                         required={false}
                       >
-                        <option value="" disabled="" selected="">Select ability</option>
+                        <option value="" disabled="">Select ability</option>
                         <option name="less_than_one" value="Less than 1 mile">Less than 1 mile</option>
                         <option name="1_2_miles" value="1-2 miles">1-2 miles</option>
                         <option name="3_4_miles" value="3-4 miles">3-4 miles</option>
@@ -211,7 +211,7 @@ export default class Index extends React.Component {
                         id={"trip"}
                         required={false}
                       >
-                        <option value="" disabled="" selected="">Select trip type</option>
+                        <option value="" disabled="">Select trip type</option>
                         <option name="walk_wade" value="Walk/wade">Walk/wade</option>
                         <option name="belly_boat_trip" value="Belly boat trip">Belly boat trip</option>
                         <option name="combo_boat_walk" value="Combo trip boat and walk">Combo trip boat and walk</option>
@@ -290,7 +290,8 @@ export default class Index extends React.Component {
                         id={"referral"}
                         required={true}
                       >
-                        <option name="website" value="Website">Website</option>
+                        <option value="" disabled="">Select</option>
+                        <option name="Website" value="Website">Website</option>
                         <option name="Repeat" value="Repeat">Repeat client</option>
                         <option name="Señor" value="Señor">Señor Fishing Outdoor Gear store</option>
                       </select>
