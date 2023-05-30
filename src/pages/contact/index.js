@@ -3,8 +3,6 @@ import { navigate } from "gatsby-link";
 import Layout from "../../components/Layout";
 import Recaptcha from "react-google-recaptcha";
 
-const RECAPTCHA_KEY = process.env.SITE_RECAPTCHA_KEY;
-
 function encode(data) {
   return Object.keys(data)
     .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
@@ -306,7 +304,7 @@ export default class Index extends React.Component {
                   </div>
                   <Recaptcha
                     ref="recaptcha"
-                    sitekey={RECAPTCHA_KEY}
+                    sitekey={process.env.SITE_RECAPTCHA_KEY}
                     onChange={this.handleRecaptcha}
                   />
                   <div className="field">
