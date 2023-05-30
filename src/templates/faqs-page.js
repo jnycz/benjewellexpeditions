@@ -68,7 +68,7 @@ export const FAQsPageQuery = graphql`
         title
         image {
           childImageSharp {
-            gatsbyImageData(quality: 100, layout: FULL_WIDTH)
+            gatsbyImageData(quality: 64, layout: FULL_WIDTH)
           }
         }
         subheading
