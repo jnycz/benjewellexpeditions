@@ -1,7 +1,7 @@
 import * as React from "react";
 import { navigate } from "gatsby-link";
 import Layout from "../../components/Layout";
-import Recaptcha from "react-google-recaptcha";
+// import Recaptcha from "react-google-recaptcha";
 
 function encode(data) {
   return Object.keys(data)
@@ -19,9 +19,9 @@ export default class Index extends React.Component {
     this.setState({ [e.target.name]: e.target.value });
   };
 
-  handleRecaptcha = value => {
-    this.setState({ "g-recaptcha-response": value });
-  };
+  // handleRecaptcha = value => {
+  //   this.setState({ "g-recaptcha-response": value });
+  // };
 
   handleSubmit = (e) => {
     e.preventDefault();
@@ -56,7 +56,7 @@ export default class Index extends React.Component {
                     method="post"
                     action="/contact/thanks/"
                     data-netlify="true"
-                    data-netlify-recaptcha="true"
+                    // data-netlify-recaptcha="true"
                     data-netlify-honeypot="bot-field"
                     onSubmit={this.handleSubmit}
                   >
@@ -302,11 +302,11 @@ export default class Index extends React.Component {
                       </select>
                     </div>
                   </div>
-                  <Recaptcha
+                  {/* <Recaptcha
                     ref="recaptcha"
                     sitekey={process.env.GATSBY_SITE_RECAPTCHA_KEY}
                     onChange={this.handleRecaptcha}
-                  />
+                  /> */}
                   <div className="field">
                     <button className="button is-link" type="submit">
                       Send
