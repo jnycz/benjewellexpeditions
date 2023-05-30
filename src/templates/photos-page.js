@@ -5,7 +5,7 @@ import { getImage } from "gatsby-plugin-image";
 import Layout from "../components/Layout";
 import Content, { HTMLContent } from "../components/Content";
 import FullWidthImage from "../components/FullWidthImage";
-import ImageGallery from "../components/ImageGallery";
+import LightGallery from "../components/LightGallery";
 
 // eslint-disable-next-line
 export const PhotosPageTemplate = ({ 
@@ -13,7 +13,8 @@ export const PhotosPageTemplate = ({
   title,
   subheading,
   content, 
-  contentComponent 
+  contentComponent, 
+  gallery
 }) => {
   const PageContent = contentComponent || Content;
   const heroImage = getImage(image) || image;
@@ -24,7 +25,13 @@ export const PhotosPageTemplate = ({
       <section className="section section--gradient">
         <div className="container">
           <PageContent className="content" content={content} />
-          {/* <ImageGallery images={images} /> */}
+          {gallery ? (
+          <div className="columns is-centered">
+            <div className="column is-10 slideshow-container">
+                <LightGallery items={gallery.items} />
+            </div>
+          </div>
+        ) : null}
         </div>
       </section>
     </div>
@@ -37,6 +44,9 @@ PhotosPageTemplate.propTypes = {
   subheading: PropTypes.string,
   content: PropTypes.string,
   contentComponent: PropTypes.func,
+  gallery: PropTypes.shape({
+    items: PropTypes.array,
+  }),
 };
 
 const PhotosPage = ({ data }) => {
@@ -50,6 +60,7 @@ const PhotosPage = ({ data }) => {
         image={frontmatter.image}
         title={frontmatter.title}
         subheading={frontmatter.subheading}
+        gallery={frontmatter.gallery}
         content={post.html}
       />
     </Layout>
@@ -74,6 +85,18 @@ export const photosPageQuery = graphql`
           }
         }
         subheading
+        gallery {
+          items {
+            image {
+              childImageSharp {
+                gatsbyImageData(layout: FULL_WIDTH, formats: [AUTO, WEBP], quality: 88)
+              }
+              childrenImageSharp {
+                gatsbyImageData(layout: CONSTRAINED, height: 150)
+              }
+            }
+          }
+        }
       }
     }
   }
