@@ -59,8 +59,8 @@ const Navbar = () => {
           
           <div className="navbar-end">
             <div className="navbar-item">
-              <Link to="/contact">
-                <button className="button is-primary is-rounded contact has-text-weight-semibold is-normal is-fullwidth">Book Now</button>
+              <Link to="/book">
+                <button className="button is-rounded contact has-text-weight-semibold is-normal is-fullwidth">Book Now</button>
               </Link>
             </div>
           </div>

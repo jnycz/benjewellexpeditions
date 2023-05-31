@@ -33,10 +33,12 @@ const Testimonials = ({ items }) => (
       clickable: true,
     }}
     style={{
-        "--swiper-pagination-color": "#83CAF2",
+        "--swiper-pagination-color": "#fff",
         "--swiper-pagination-bullet-inactive-color": "#999999",
         "--swiper-pagination-bullet-inactive-opacity": "1",
         "--swiper-pagination-bullet-size": "12px",
+        "--swiper-pagination-bullet-height": "12px",
+        "--swiper-pagination-bullet-width": "12px",
         "--swiper-pagination-bullet-horizontal-gap": "6px",
       }}
       

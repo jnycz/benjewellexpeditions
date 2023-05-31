@@ -2,6 +2,23 @@
 @import "override-variables.sass"
 @import "~bulma"
 
+// BG Coloras
+.bg-brand-green
+  background-color: $brand-green
+  
+.booking-form
+  border-radius: 1rem
+  background-color: #fff
+  padding: 1rem
+  @include tablet
+    padding: 2rem
+  @include desktop
+    padding: 4rem
+
+button.bg-brand-green::hover
+  background-color: darken($brand-green, 10%)
+
+  
 // Navbar
 .navbar-item img
   @include desktop
@@ -33,13 +50,6 @@
   .description
     margin-top: 1rem
 
-// Navbar.
-// .button.contact
-//   background-color: $brand-green
-//   color: #fff
-//   :hover
-//     color: #fff
-
 // Footer
 .footer-menu 
   @include desktop
@@ -51,21 +61,18 @@
     text-align: center
     padding: 1rem
     line-height: 1.5
-    color: $black
-    ::hover
-      text-decoration: underline
 
 
 // Testimonials
 .testimonials
-  background: #e7e7e7
+  background: $light-sky-blue
   .quote
     font-size: .8rem
     font-weight: 600
   .author
     font-style: italic
     font-size: .8rem
-    margin: 1rem 0 0 0
+    margin: 1rem 0 0 0 
   @include desktop
     .quote
       font-size: 1.25rem
@@ -91,3 +98,6 @@
   gap: 1rem
   flex-wrap: wrap
 
+.content
+  a
+    text-decoration: underline

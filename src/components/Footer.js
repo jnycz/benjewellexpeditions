@@ -9,7 +9,7 @@ const Footer = () => {
   
     return (
       <footer className="footer">
-        <div className="content has-text-centered">
+        <div className="has-text-centered">
         <Link to="/" className="is-centered is-align-content-center" title="Logo">
           <img
               src={logo}
@@ -22,26 +22,29 @@ const Footer = () => {
           Email: <a href="mailto:benjewell222@gmail.com">benjewell222@gmail.com</a>
         </p>
         </div>
-        <div className="content has-text-left">
+        <div className=" has-text-left">
           <div className="container">
             <div style={{ maxWidth: "100vw" }} className="">
               <div className="column has-text-weight-semibold is-uppercase">
                 <section className="">
                   <div className="footer-menu">
-                      <Link className="" to="/about">
+                      <Link className="navbar-item is-uppercase has-text-weight-semibold" to="/about">
                         About
                       </Link>
                       <Link className="navbar-item is-uppercase has-text-weight-semibold" to="/testimonials">
                         Testimonials
                       </Link>
-                      <Link className="" to="/faqs">
+                      <Link className="navbar-item is-uppercase has-text-weight-semibold" to="/faqs">
                         FAQs
                       </Link>
                       <Link className="navbar-item is-uppercase has-text-weight-semibold" to="/photos">
                         Photos
                       </Link>
-                      <Link className="" to="/contact">
+                      <Link className="navbar-item is-uppercase has-text-weight-semibold" to="/contact">
                         Contact
+                      </Link>
+                      <Link className="navbar-item is-uppercase has-text-weight-semibold" to="/book">
+                        Book
                       </Link>
                   </div>
                 </section>

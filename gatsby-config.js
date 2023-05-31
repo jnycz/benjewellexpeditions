@@ -4,7 +4,7 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: "Jewell Expeditions - Fly Fishing Guide Service",
+    title: "Jewell Expeditions | Fly Fishing Guide Service",
     description: "Jewell Expeditions is a year-round fishing guide service in the Ruidoso New Mexico area.",
   },
   plugins: [

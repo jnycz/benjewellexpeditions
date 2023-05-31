@@ -1,5 +1,6 @@
 import * as React from "react";
 import { navigate } from "gatsby-link";
+import { Link } from "gatsby";
 import Layout from "../../components/Layout";
 // import Recaptcha from "react-google-recaptcha";
 
@@ -41,17 +42,17 @@ export default class Index extends React.Component {
   render() {
     return (
       <Layout>
+        <div className="bg-brand-green">
+
+
         <section className="section">
           <div className="container">
             <div className="content">
-
-              <h1>Book Your Trip</h1>
-
-              <div className="columns">
-                <div className="column">
-                  <p>Thanks for your interest in booking with Jewell Expeditions.  Please fill out the form with as much information as possible.  This will help expedite the process and allow me to plan a customized trip based on the information provided.</p>
-                  <p>Once you submit the form I will be notified by email. I will then reach out by phone or email (based on your selection) to discuss the trip details and to answer any questions.</p>
-
+              <div className="columns is-centered">
+                <div className="column is-10 booking-form">
+                  <h1>Contact</h1>
+                  <p>To book a trip, please use the <Link to="/book">Book a Trip</Link> form. For all other questions please use this contact form or reach out by phone or email.</p>
+                  
                   <form
                     name="contact"
                     method="post"
@@ -141,153 +142,12 @@ export default class Index extends React.Component {
                           </select>
                         </div>
                       </div>
-                      <div className="field column">
-                        <label className="label" htmlFor={"age_weight_height"}>
-                          Trip Date
-                        </label>
-                        <div className="control">
-                          <input
-                            className="input"
-                            name={"age_weight_height"}
-                            onChange={this.handleChange}
-                            id={"age_weight_height"}
-                            required={false}
-                          />
-                        </div>
-                        <p className="help">Enter desired date of trip using this format: mm/dd/yy</p>
-                      </div>
-                      <div className="field column">
-                        <label className="label" htmlFor={"trip"}>
-                          What type of a trip are you looking to plan?
-                        </label>
-                        <div className="select is-fullwidth">
-                          <select
-                            className="select"
-                            type={"select"}
-                            name={"trip"}
-                            onChange={this.handleChange}
-                            id={"trip"}
-                            required={false}
-                          >
-                            <option value="" disabled="">Select type</option>
-                            <option name="walk_wade" value="Walk/wade">Walk/wade</option>
-                            <option name="belly_boat_trip" value="Belly boat trip">Belly boat trip</option>
-                            <option name="combo_boat_walk" value="Combo trip boat and walk">Combo trip boat and walk</option>
-                          </select>
-                        </div>
-                        <p className="help">Half days are on one body of water, full days can be river and lake or 2 lakes.</p>
-                      </div>
-                    </div>
-
-                    <div className="columns">
-                      <div className="field column">
-                        <label className="label" htmlFor={"experience"}>
-                          What is your fly fishing experience level?
-                        </label>
-                        <div className="select is-fullwidth">
-                          <select
-                            className="select"
-                            type={"select"}
-                            name={"experience"}
-                            onChange={this.handleChange}
-                            id={"experience"}
-                            required={false}
-                          >
-                            <option value="" disabled="">Select level</option>
-                            <option name="rookie" value="Rookie">Rookie</option>
-                            <option name="novice" value="Novice">Novice</option>
-                            <option name="experienced" value="Experienced">Experienced</option>
-                          </select>
-                        </div>
-                        <p className="help">Rookie has never fly fished, novice fly fishes 5-10 times a year, experienced fishes at least once a week 50+ times a year for many years.</p>
-                      </div>
-                      <div className="field column">
-                        <label className="label" htmlFor={"hiking"}>
-                          What is your hiking ability?
-                        </label>
-                        <div className="select is-fullwidth">
-                          <select
-                            className="select"
-                            type={"select"}
-                            name={"hiking"}
-                            onChange={this.handleChange}
-                            id={"hiking"}
-                            required={false}
-                          >
-                            <option value="" disabled="">Select ability</option>
-                            <option name="less_than_one" value="Less than 1 mile">Less than 1 mile</option>
-                            <option name="1_2_miles" value="1-2 miles">1-2 miles</option>
-                            <option name="3_4_miles" value="3-4 miles">3-4 miles</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div className="field column">
-                        <label className="label" htmlFor={"age_weight_height"}>
-                          Please specify your age, weight, and height.  
-                        </label>
-                        <div className="control">
-                          <input
-                            className="input"
-                            name={"age_weight_height"}
-                            onChange={this.handleChange}
-                            id={"age_weight_height"}
-                            required={false}
-                          />
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="columns">
-                      <div className="field column">
-                        <label className="label" htmlFor={"goals"}>
-                          What are your goals for the day?
-                        </label>
-                        <div className="control">
-                          <input
-                            className="input"
-                            name={"goals"}
-                            onChange={this.handleChange}
-                            id={"goals"}
-                            required={false}
-                          />
-                        </div>
-                      </div>
-                      <div className="field column">
-                        <label className="label" htmlFor={"gear"}>
-                          Do you have gear?
-                        </label>
-                        <div className="control">
-                          <input
-                            className="input"
-                            name={"gear"}
-                            onChange={this.handleChange}
-                            id={"gear"}
-                            required={false}
-                          />
-                        </div>
-                        <p className="help">Please specify what gear you will bring such as rod and real, waders, etc.  Note rod size and wt. Example 9 ft. 5 wt.</p>
-                      </div>
-                      <div className="field column">
-                        <label className="label" htmlFor={"restrictions"}>
-                          Do you have any food allergies or dietary restrictions?
-                        </label>
-                        <div className="control">
-                          <input
-                            className="input"
-                            name={"restrictions"}
-                            onChange={this.handleChange}
-                            id={"restrictions"}
-                            required={false}
-                          />
-                        </div>
-                        <p className="help">Only valid for full day trips.</p>
-                      </div>
                     </div>
 
 
                     <div className="field">
                       <label className="label" htmlFor={"message"}>
-                        Additional information
+                        Message
                       </label>
                       <div className="control">
                         <textarea
@@ -325,7 +185,7 @@ export default class Index extends React.Component {
                       onChange={this.handleRecaptcha}
                     /> */}
                     <div className="field">
-                      <button className="button is-link" type="submit">
+                      <button className="button is-rounded contact has-text-weight-semibold is-normal is-fullwidth bg-brand-green bg-brand-green-hover has-text-white" type="submit">
                         Send
                       </button>
                     </div>
@@ -337,6 +197,7 @@ export default class Index extends React.Component {
             </div>
           </div>
         </section>
+        </div>
       </Layout>
     );
   }
