@@ -82,8 +82,8 @@ main:
     image: /img/ben-huge-fish.jpg
   image3:
     alt: Testimonials
-    image: /img/testimonials-3-pics.jpg
+    image: /img/brian-c-testimonial.jpg
   image4:
     alt: Book a Trip
-    image: /img/testimonials-3-pics.jpg
+    image: /img/ice-lake-blue-water.png
 ---
