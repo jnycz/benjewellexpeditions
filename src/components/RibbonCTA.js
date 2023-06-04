@@ -2,16 +2,20 @@ import * as React from "react";
 import { Link } from "gatsby";
 
 const RibbonCTA = () => (
-    <div className="has-text-centered bg-brand-blue py-6">
+    <section className="section testimonials is-medium">
         <div className="container">
-            <div className="content is-flex is-justify-content-center is-flex-direction-row is-align-items-center">
-                <h4 className="mb-0">Experience the ultimate fly fishing adventure in Ruidoso, New Mexico, all skill levels welcome.</h4>
-                <Link to="/book">
-                <button className="button is-rounded contact has-text-weight-semibold is-normal">Book Now</button>
-                </Link>
+            <div className="content columns">
+                <div className="column is-10">
+                    <h4 className="mb-0 has-text-left line-height-one">Experience the ultimate fly fishing adventure in Ruidoso, New Mexico, all skill levels welcome.</h4>
+                </div>
+                <div className="column is-2">
+                    <Link to="/book">
+                        <button className="button is-rounded has-text-weight-semibold is-normal">Book Now</button>
+                    </Link>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
 );
 
 export default RibbonCTA;
