@@ -137,6 +137,16 @@ collections:
                         { label: Alt, name: alt, widget: string },
                       ],
                   },
+                  {
+                    label: Image4,
+                    name: image4,
+                    widget: object,
+                    fields:
+                      [
+                        { label: Image, name: image, widget: image },
+                        { label: Alt, name: alt, widget: string },
+                      ],
+                  },
                 ],
             }
       - file: "src/pages/about/index.md"

@@ -108,19 +108,35 @@ export const IndexPageTemplate = ({
                   </div>
                 </div>
 
-                <div className="tile is-parent">
-                  <article className="tile is-child">
-                    <Link to="/testimonials" className="img-hover-zoom">
-                      <div className="card">
-                        <div className="card-image">
-                          <PreviewCompatibleImage imageInfo={main.image3} />
-                        </div>
-                        <div className="card-content is-overlay is-overlay-bg is-flex is-justify-content-center is-align-content-center is-align-items-center">
+                <div className="tile">
+                  <div className="tile is-parent is-vertical">
+                    <article className="tile is-child">
+                      <Link to="/testimonials" className="img-hover-zoom">
+                        <div className="card">
+                          <div className="card-image">
+                            <PreviewCompatibleImage imageInfo={main.image3} />
+                          </div>
+                          <div className="card-content is-overlay is-overlay-bg is-flex is-justify-content-center is-align-content-center is-align-items-center">
                             <span className="is-size-3 has-text-centeredis-uppercase has-text-weight-semibold has-text-white is-uppercase">Testimonials</span>
+                          </div>
                         </div>
-                      </div>
-                    </Link>
-                  </article>
+                      </Link>
+                    </article>
+                  </div>
+                  <div className="tile is-parent">
+                    <article className="tile is-child">
+                      <Link to="/photos" className="img-hover-zoom">
+                        <div className="card">
+                          <div className="card-image">
+                            <PreviewCompatibleImage imageInfo={main.image4} />
+                          </div>
+                          <div className="card-content is-overlay is-overlay-bg is-flex is-justify-content-center is-align-content-center is-align-items-center">
+                            <span className="is-size-3 has-text-centeredis-uppercase has-text-weight-semibold has-text-white is-uppercase">Book a Trip</span>
+                          </div>
+                        </div>
+                      </Link>
+                    </article>
+                  </div>
                 </div>
 
               </div>
@@ -148,6 +164,7 @@ IndexPageTemplate.propTypes = {
     image1: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
     image2: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
     image3: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+    image4: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   }),
   testimonials: PropTypes.shape({
     items: PropTypes.array,
@@ -236,7 +253,15 @@ export const pageQuery = graphql`
             alt
             image {
               childImageSharp {
-                gatsbyImageData(quality: 64, layout: FULL_WIDTH, transformOptions: {fit: COVER})
+                gatsbyImageData(width: 660, quality: 64, layout: CONSTRAINED)
+              }
+            }
+          }
+          image4 {
+            alt
+            image {
+              childImageSharp {
+                gatsbyImageData(width: 660, quality: 64, layout: CONSTRAINED)
               }
             }
           }

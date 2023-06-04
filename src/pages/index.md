@@ -81,6 +81,9 @@ main:
     alt: Photo Gallery
     image: /img/ben-huge-fish.jpg
   image3:
-    alt: Coffee beans
+    alt: Testimonials
+    image: /img/testimonials-3-pics.jpg
+  image4:
+    alt: Book a Trip
     image: /img/testimonials-3-pics.jpg
 ---
