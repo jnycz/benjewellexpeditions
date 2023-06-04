@@ -7,6 +7,7 @@ import Features from "../components/Features";
 import Slideshow from '../components/Slideshow';
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 import FullWidthImage from "../components/FullWidthImage";
+import RibbonCTA from "../components/RibbonCTA";
 
 // eslint-disable-next-line
 export const IndexPageTemplate = ({
@@ -125,7 +126,7 @@ export const IndexPageTemplate = ({
                   </div>
                   <div className="tile is-parent">
                     <article className="tile is-child">
-                      <Link to="/photos" className="img-hover-zoom">
+                      <Link to="/book" className="img-hover-zoom">
                         <div className="card">
                           <div className="card-image">
                             <PreviewCompatibleImage imageInfo={main.image4} />
@@ -143,6 +144,8 @@ export const IndexPageTemplate = ({
             </div>
         </div>
       </section>
+
+      <RibbonCTA />
     </div>
 
   );

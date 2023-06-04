@@ -6,6 +6,7 @@ import Layout from "../components/Layout";
 import Content, { HTMLContent } from "../components/Content";
 import FullWidthImage from "../components/FullWidthImage";
 import LightGallery from "../components/LightGallery";
+import RibbonCTA from "../components/RibbonCTA";
 
 // eslint-disable-next-line
 export const PhotosPageTemplate = ({ 
@@ -34,6 +35,7 @@ export const PhotosPageTemplate = ({
         ) : null}
         </div>
       </section>
+      <RibbonCTA />
     </div>
   );
 };

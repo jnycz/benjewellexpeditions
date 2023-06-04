@@ -5,6 +5,7 @@ import { getImage } from "gatsby-plugin-image";
 import Layout from "../components/Layout";
 import Content, { HTMLContent } from "../components/Content";
 import FullWidthImage from "../components/FullWidthImage";
+import RibbonCTA from "../components/RibbonCTA";
 
 // eslint-disable-next-line
 export const AboutPageTemplate = ({ 
@@ -50,6 +51,7 @@ const AboutPage = ({ data }) => {
         subheading={frontmatter.subheading}
         content={post.html}
       />
+      <RibbonCTA />
     </Layout>
   );
 };
