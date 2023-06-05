@@ -10,5 +10,6 @@ gallery:
     - image: /img/kneeling-by-stream.jpg
     - image: /img/float-fishing.jpg
     - image: /img/float-fishing-2.jpg
+    - image: /img/slingshot-cast.jpg
 ---
 J﻿ewell Expeditions Photo Gallery
