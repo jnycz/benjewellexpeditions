@@ -34,7 +34,7 @@ export const TestimonialsPageTemplate = ({
         <div className="container">
           <PageContent className="content" content={content} />
           {/* {testimonials ? ( */}
-            {items.map((item) => (
+            {/* {items.map((item) => (
                 <div className="columns">
                 <div className="column">
                     <div className="is-centered content">
@@ -44,7 +44,7 @@ export const TestimonialsPageTemplate = ({
                     </div>
                 </div>
                 </div>
-            ))}
+            ))} */}
           {/* ) : null} */}
         </div>
       </section>
