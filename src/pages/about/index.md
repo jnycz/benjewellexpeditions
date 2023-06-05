@@ -13,7 +13,7 @@ intro:
 
         About once a week, 3-4  times a month my family and I try to clean up local bodies of water in Southern New Mexico. I am trying to get people to volunteer and donate their time to help pick up trash. We have already cleaned Alto, Grindstone, Carrizozo, lower Rio Bonito, and lower Ruidoso. We have picked up over a half ton of trash in the last few months. Unfortunately they become littered again quickly after!
     - text: >-
-        #### **Señor Fishing**
+        #### **Señor Fishing Outdoor Gear**
 
 
         Señor Fishing Outdoor Gear store in Ruidoso is where you need to go if you need any custom tied flies for the area, conventional tackle, fly fishing gear, outdoor clothing ,sun glasses, belly boats, waders, rain jackets, bait, a fishing license, or local knowledge of access to the water. David is amazing and super helpful.
