@@ -6,6 +6,7 @@ import Layout from "../components/Layout";
 import Content, { HTMLContent } from "../components/Content";
 import FullWidthImage from "../components/FullWidthImage";
 import RibbonCTA from "../components/RibbonCTA";
+import Features from "../components/Features";
 
 // eslint-disable-next-line
 export const AboutPageTemplate = ({ 
@@ -13,7 +14,8 @@ export const AboutPageTemplate = ({
   title,
   subheading,
   content, 
-  contentComponent 
+  contentComponent,
+  intro,
 }) => {
   const PageContent = contentComponent || Content;
   const heroImage = getImage(image) || image;
@@ -26,6 +28,9 @@ export const AboutPageTemplate = ({
           <PageContent className="content" content={content} />
         </div>
       </section>
+      {intro ? (
+        <Features gridItems={intro.blurbs} />
+      ) : null}
     </div>
   );
 };
@@ -36,6 +41,9 @@ AboutPageTemplate.propTypes = {
   subheading: PropTypes.string,
   content: PropTypes.string,
   contentComponent: PropTypes.func,
+  intro: PropTypes.shape({
+    blurbs: PropTypes.array,
+  }),
 };
 
 const AboutPage = ({ data }) => {
@@ -50,6 +58,7 @@ const AboutPage = ({ data }) => {
         title={frontmatter.title}
         subheading={frontmatter.subheading}
         content={post.html}
+        intro={frontmatter.intro}
       />
       <RibbonCTA />
     </Layout>
@@ -74,6 +83,18 @@ export const aboutPageQuery = graphql`
           }
         }
         subheading
+        intro {
+          blurbs {
+            image {
+              childImageSharp {
+                gatsbyImageData(quality: 64, width: 435, layout: CONSTRAINED)
+              }
+            }
+            text
+          }
+          heading
+          description
+        }
       }
     }
   }

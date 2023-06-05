@@ -163,6 +163,16 @@ collections:
           - { label: Subheading, name: subheading, widget: string, required: false }
           - { label: Image, name: image, widget: image }
           - { label: "Body", name: "body", widget: "markdown" }
+          - {
+              label: Blurbs,
+              name: blurbs,
+              widget: list,
+              fields:
+                [
+                  { label: Image, name: image, widget: image },
+                  { label: Text, name: text, widget: markdown },
+                ],
+            },
       - file: "src/pages/photos/index.md"
         label: "Photos"
         name: "photos"

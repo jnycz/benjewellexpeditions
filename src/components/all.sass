@@ -10,8 +10,8 @@
 .bg-light-blue
   background-color: $light-sky-blue
 
-.line-height-one
-  line-height: 1
+.ribbon-btn
+  background: $brand-blue
 
 .booking-form
   border-radius: 1rem
@@ -34,26 +34,14 @@
 .menu-list
   list-style: none !important
 
-// Social icons.
-.social
-  padding: 2em
-  text-align: center
-.social a
-    padding: .5em .5em .3em .5em
-    border-radius: 1em
-    background-color: $white-ter
-    margin: .5em
-    width: 1em
-    height: 1em
-    vertical-align: middle
-    display: inline
-
 // Features
 .features
   .description
     margin-top: 1rem
 
 // Footer
+.footer
+  padding-bottom: 1rem
 .footer-menu 
   @include desktop
     display: flex
@@ -83,6 +71,16 @@
       font-size: 1.25rem
   .custom-pagination
     text-align: right 
+
+// Ribbon CTA
+.ribbon-cta
+  background: $light-sky-blue
+  h4
+    line-height: 1.5
+  .btn
+    margin-top: 2rem
+    @include desktop
+      margin-top: 0
 
 .is-overlay-bg
   background: rgba(50,54,64,.5)
