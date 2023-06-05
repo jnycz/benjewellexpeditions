@@ -11,5 +11,8 @@ gallery:
     - image: /img/float-fishing.jpg
     - image: /img/float-fishing-2.jpg
     - image: /img/slingshot-cast.jpg
+    - image: /img/stream-mountains-dry-grass.jpg
+    - image: /img/cast-lake-mts-bg.jpg
+    - image: /img/ben-rainbow-trout.jpg
 ---
 J﻿ewell Expeditions Photo Gallery
