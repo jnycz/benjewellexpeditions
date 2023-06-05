@@ -48,4 +48,4 @@ testimonials:
         will have a first class professional experience!
       author: -﻿ John H.
 ---
-H﻿ear what others had to say about their experience.
+Read what others had to say about their experience.
