@@ -169,8 +169,6 @@ collections:
               widget: object,
               fields:
                 [
-                  { label: Heading, name: heading, widget: string, required: false },
-                  { label: Description, name: description, widget: markdown, required: false },
                   {
                     label: Blurbs,
                     name: blurbs,
