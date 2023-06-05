@@ -15,7 +15,7 @@ export const AboutPageTemplate = ({
   subheading,
   content, 
   contentComponent,
-  intro,
+  features,
 }) => {
   const PageContent = contentComponent || Content;
   const heroImage = getImage(image) || image;
@@ -28,8 +28,8 @@ export const AboutPageTemplate = ({
           <PageContent className="content" content={content} />
         </div>
       </section>
-      {intro ? (
-        <Features gridItems={intro.blurbs} />
+      {features ? (
+        <Features gridItems={features.blurbs} />
       ) : null}
     </div>
   );
@@ -41,7 +41,7 @@ AboutPageTemplate.propTypes = {
   subheading: PropTypes.string,
   content: PropTypes.string,
   contentComponent: PropTypes.func,
-  intro: PropTypes.shape({
+  features: PropTypes.shape({
     blurbs: PropTypes.array,
   }),
 };
@@ -83,7 +83,7 @@ export const aboutPageQuery = graphql`
           }
         }
         subheading
-        intro {
+        features {
           blurbs {
             image {
               childImageSharp {

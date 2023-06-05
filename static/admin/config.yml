@@ -164,8 +164,8 @@ collections:
           - { label: Image, name: image, widget: image }
           - { label: "Body", name: "body", widget: "markdown" }
           - {
-              label: Intro,
-              name: intro,
+              label: Features,
+              name: features,
               widget: object,
               fields:
                 [
