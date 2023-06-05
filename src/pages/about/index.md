@@ -16,11 +16,10 @@ intro:
         #### **Señor Fishing**
 
 
-        Senor Fishing Outdoor Gear store in Ruidoso is where you need to go if you need any custom tied flies for the area, conventional tackle, fly fishing gear, outdoor clothing ,sun glasses, belly boats, waders, rain jackets, bait, a fishing license, or local knowledge of access to the water. David is amazing and super helpful.
+        Señor Fishing Outdoor Gear store in Ruidoso is where you need to go if you need any custom tied flies for the area, conventional tackle, fly fishing gear, outdoor clothing ,sun glasses, belly boats, waders, rain jackets, bait, a fishing license, or local knowledge of access to the water. David is amazing and super helpful.
 
 
-        [G﻿oogle](https://g.co/kgs/LzkQBN)
-
+        [G﻿oogle](https://g.co/kgs/LzkQBN)\
 
         [F﻿acebook](https://m.facebook.com/people/Se%C3%B1or-Fishing-Outdoor-Gear/100087778005373/)
       image: /img/senor-fishing.jpg
