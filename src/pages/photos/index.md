@@ -8,5 +8,7 @@ gallery:
     - image: /img/mike-t-testimonial.jpg
     - image: /img/brian-c-testimonial.jpg
     - image: /img/kneeling-by-stream.jpg
+    - image: /img/float-fishing.jpg
+    - image: /img/float-fishing-2.jpg
 ---
 J﻿ewell Expeditions Photo Gallery
