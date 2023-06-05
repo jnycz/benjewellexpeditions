@@ -7,7 +7,7 @@ import lgThumbnail from 'lightgallery/plugins/thumbnail';
 import 'lightgallery/css/lightgallery.css';
 import 'lightgallery/css/lg-zoom.css';
 import 'lightgallery/css/lg-thumbnail.css';
-
+import { v4 } from "uuid";
 
 
 function Gallery({ items }) {
@@ -32,8 +32,9 @@ function Gallery({ items }) {
                 href={item.image.childImageSharp.gatsbyImageData.images.fallback.src}
                 data-lg-size={item.image.childImageSharp.gatsbyImageData.width + '-' +  + item.image.childImageSharp.gatsbyImageData.height}
                 className="gallery-item"
+                key={v4()}
               >
-                <GatsbyImage image={item.image.childrenImageSharp[0].gatsbyImageData} />
+                <GatsbyImage image={item.image.childrenImageSharp[0].gatsbyImageData} alt="" />
               </a>
             ))}
           </LightGallery>

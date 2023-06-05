@@ -19,7 +19,6 @@ export const PhotosPageTemplate = ({
 }) => {
   const PageContent = contentComponent || Content;
   const heroImage = getImage(image) || image;
-  
   return (
     <div>
       <FullWidthImage img={heroImage} title={title} subheading={subheading} />
@@ -27,12 +26,12 @@ export const PhotosPageTemplate = ({
         <div className="container">
           <PageContent className="content" content={content} />
           {gallery ? (
-          <div className="columns is-centered">
-            <div className="column is-10 slideshow-container">
-                <LightGallery items={gallery.items} />
+            <div className="columns is-centered">
+              <div className="column is-10 slideshow-container">
+                  <LightGallery items={gallery.items} />
+              </div>
             </div>
-          </div>
-        ) : null}
+          ) : null}
         </div>
       </section>
       <RibbonCTA />

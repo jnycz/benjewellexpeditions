@@ -4,7 +4,8 @@ import remarkHTML from 'remark-html'
 import PropTypes from 'prop-types'
 import SwiperCore, { Navigation, Pagination, Keyboard } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
-//import { getImage, GatsbyImage } from "gatsby-plugin-image"
+import { FaQuoteLeft } from "react-icons/fa";
+import { v4 } from "uuid";
 
 // Import Swiper styles
 import 'swiper/swiper-bundle.min.css'
@@ -44,12 +45,13 @@ const Testimonials = ({ items }) => (
       
     >
     {items.map((item) => (
-      <SwiperSlide key={item.text}>
+      <SwiperSlide key={v4()}>
         <div className="columns">
           <div className="column">
             <div className="is-centered content">
-              <div className='quote' dangerouslySetInnerHTML={{ __html: toHTML(item.text) }} />
-              <div className='author'>{item.author}</div>
+              <FaQuoteLeft />
+              <div className='quote has-text-grey' dangerouslySetInnerHTML={{ __html: toHTML(item.text) }} />
+              <div className='author is-italic mt-1'>{item.author}</div>
             </div>
           </div>
         </div>

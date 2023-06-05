@@ -9,7 +9,7 @@ import Content, { HTMLContent } from "../components/Content";
 import FullWidthImage from "../components/FullWidthImage";
 import RibbonCTA from "../components/RibbonCTA";
 import { FaQuoteLeft } from "react-icons/fa";
-
+import { v4 } from "uuid";
 
 // eslint-disable-next-line
 export const TestimonialsPageTemplate = ({ 
@@ -18,7 +18,7 @@ export const TestimonialsPageTemplate = ({
   subheading,
   content, 
   contentComponent,
-  items,
+  testimonials,
 }) => {
   const PageContent = contentComponent || Content;
   const heroImage = getImage(image) || image;
@@ -26,26 +26,24 @@ export const TestimonialsPageTemplate = ({
                     .use(remarkHTML)
                     .processSync(value)
                     .toString()
-
+  
   return (
     <div>
       <FullWidthImage img={heroImage} title={title} subheading={subheading} />
-      <section className="section section--gradient">
+      <section className="section bg-light-light-blue testimonials">
         <div className="container">
           <PageContent className="content" content={content} />
-          {/* {testimonials ? ( */}
-            {/* {items.map((item) => (
-                <div className="columns">
-                <div className="column">
-                    <div className="is-centered content">
-                    <FaQuoteLeft />
-                    <div className='quote' dangerouslySetInnerHTML={{ __html: toHTML(item.text) }} />
-                    <div className='author'>{item.author}</div>
+            {testimonials.items.map((item) => (
+                <div className="columns" key={v4()}>
+                    <div className="column">
+                        <div className="is-centered content card p-5">
+                            <FaQuoteLeft />
+                            <div className='quote is-size-5 has-text-grey title' dangerouslySetInnerHTML={{ __html: toHTML(item.text) }} />
+                            <div className='author is-size-6 is-italic subtitle mt-1'>{item.author}</div>
+                        </div>
                     </div>
                 </div>
-                </div>
-            ))} */}
-          {/* ) : null} */}
+            ))}
         </div>
       </section>
     </div>
@@ -66,7 +64,6 @@ TestimonialsPageTemplate.propTypes = {
 const TestimonialsPage = ({ data }) => {
   const { markdownRemark: post } = data;
   const { frontmatter } = data.markdownRemark;
-
   return (
     <Layout>
       <TestimonialsPageTemplate
@@ -83,7 +80,11 @@ const TestimonialsPage = ({ data }) => {
 };
 
 TestimonialsPage.propTypes = {
-  data: PropTypes.object.isRequired,
+    data: PropTypes.shape({
+        markdownRemark: PropTypes.shape({
+          frontmatter: PropTypes.object,
+        }),
+      }),
 };
 
 export default TestimonialsPage;
@@ -101,10 +102,10 @@ export const TestimonialsPageQuery = graphql`
         }
         subheading
         testimonials {
-            items {
-              text
-              author
-            }
+          items {
+            text
+            author
+          }
         }
       }
     }

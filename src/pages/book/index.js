@@ -143,15 +143,15 @@ export default class Index extends React.Component {
                         </div>
                       </div>
                       <div className="field column">
-                        <label className="label" htmlFor={"age_weight_height"}>
+                        <label className="label" htmlFor={"trip_date"}>
                           Trip Date
                         </label>
                         <div className="control">
                           <input
                             className="input"
-                            name={"age_weight_height"}
+                            name={"trip_date"}
                             onChange={this.handleChange}
-                            id={"age_weight_height"}
+                            id={"trip_date"}
                             required={false}
                           />
                         </div>
