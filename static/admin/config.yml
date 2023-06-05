@@ -164,15 +164,25 @@ collections:
           - { label: Image, name: image, widget: image }
           - { label: "Body", name: "body", widget: "markdown" }
           - {
-              label: Blurbs,
-              name: blurbs,
-              widget: list,
+              label: Intro,
+              name: intro,
+              widget: object,
               fields:
                 [
-                  { label: Image, name: image, widget: image },
-                  { label: Text, name: text, widget: markdown },
+                  { label: Heading, name: heading, widget: string, required: false },
+                  { label: Description, name: description, widget: markdown, required: false },
+                  {
+                    label: Blurbs,
+                    name: blurbs,
+                    widget: list,
+                    fields:
+                      [
+                        { label: Image, name: image, widget: image },
+                        { label: Text, name: text, widget: markdown },
+                      ],
+                  },
                 ],
-            },
+            }
       - file: "src/pages/photos/index.md"
         label: "Photos"
         name: "photos"
