@@ -83,7 +83,7 @@ export const aboutPageQuery = graphql`
           }
         }
         subheading
-        features {
+        intro {
           blurbs {
             image {
               childImageSharp {
