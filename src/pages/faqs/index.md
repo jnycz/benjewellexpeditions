@@ -1,5 +1,5 @@
 ---
-templateKey: about-page
+templateKey: faqs-page
 path: /faqs
 title: Frequently Asked Questions
 image: /img/hero-rainbow-landscape-mountains.jpg
