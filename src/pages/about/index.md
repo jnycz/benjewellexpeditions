@@ -19,9 +19,9 @@ intro:
         Señor Fishing Outdoor Gear store in Ruidoso is where you need to go if you need any custom tied flies for the area, conventional tackle, fly fishing gear, outdoor clothing ,sun glasses, belly boats, waders, rain jackets, bait, a fishing license, or local knowledge of access to the water. David is amazing and super helpful.
 
 
-        [G﻿oogle](https://g.co/kgs/LzkQBN)\
+        [Google](https://g.co/kgs/LzkQBN)\
 
-        [F﻿acebook](https://m.facebook.com/people/Se%C3%B1or-Fishing-Outdoor-Gear/100087778005373/)
+        [Facebook](https://m.facebook.com/people/Se%C3%B1or-Fishing-Outdoor-Gear/100087778005373/)
       image: /img/senor-fishing.jpg
 ---
 Discover the ultimate fishing experience with Jewell Expeditions, your year-round fishing guide service in the breathtaking Ruidoso, New Mexico area. With over 17 years of guiding experience in New Mexico, Montana, and Yellowstone National Park, Ben Jewell brings unparalleled expertise to every trip.

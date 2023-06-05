@@ -224,3 +224,23 @@ collections:
           - { label: Subheading, name: subheading, widget: string, required: false }
           - { label: Image, name: image, widget: image }
           - { label: "Body", name: "body", widget: "markdown" }
+          - {
+              label: Testimonials, 
+              name: testimonials, 
+              widget: object, 
+              collapsed: true, 
+              fields: 
+                [
+                  { 
+                    label: Items, 
+                    name: items, 
+                    widget: list, 
+                    fields: 
+                      [
+                        { label: Quote, name: text, widget: markdown, required: false },
+                        { label: Author, name: author, widget: string, required: false },
+                      ],
+                  },
+                ],
+            }
+            
