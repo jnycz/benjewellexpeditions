@@ -14,5 +14,8 @@ gallery:
     - image: /img/stream-mountains-dry-grass.jpg
     - image: /img/cast-lake-mts-bg.jpg
     - image: /img/ben-rainbow-trout.jpg
+    - image: /img/person-fish.jpg
+    - image: /img/girl-with-trout.jpg
+    - image: /img/holding-trout-dock.jpg
 ---
 J﻿ewell Expeditions Photo Gallery
