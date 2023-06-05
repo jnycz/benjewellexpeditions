@@ -12,7 +12,7 @@ const toHTML = value => remark()
 const FeatureGrid = ({ gridItems }) => (
   <div className="columns is-multiline">
     {gridItems.map((item) => (
-      <div key={item.text} className="column is-4">
+      <div key={item.text} className="column">
         <PreviewCompatibleImage imageInfo={item} />  
         <div className="description" dangerouslySetInnerHTML={{ __html: toHTML(item.text) }} />
       </div>

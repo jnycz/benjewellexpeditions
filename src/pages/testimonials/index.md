@@ -1,5 +1,5 @@
 ---
-templateKey: about-page
+templateKey: testimonials-page
 path: /testimonials
 title: Testimonials
 image: /img/testimonials-3-pics.jpg

@@ -6,16 +6,14 @@ import Layout from "../components/Layout";
 import Content, { HTMLContent } from "../components/Content";
 import FullWidthImage from "../components/FullWidthImage";
 import RibbonCTA from "../components/RibbonCTA";
-import Features from "../components/Features";
 
 // eslint-disable-next-line
-export const AboutPageTemplate = ({ 
+export const TestimonialsPageTemplate = ({ 
   image,
   title,
   subheading,
   content, 
-  contentComponent,
-  intro,
+  contentComponent 
 }) => {
   const PageContent = contentComponent || Content;
   const heroImage = getImage(image) || image;
@@ -28,53 +26,44 @@ export const AboutPageTemplate = ({
           <PageContent className="content" content={content} />
         </div>
       </section>
-      <section className="section content features">
-        <div className="container">
-          <Features gridItems={intro.blurbs} />
-        </div>
-      </section>
     </div>
   );
 };
 
-AboutPageTemplate.propTypes = {
+TestimonialsPageTemplate.propTypes = {
   title: PropTypes.string.isRequired,
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   subheading: PropTypes.string,
   content: PropTypes.string,
   contentComponent: PropTypes.func,
-  intro: PropTypes.shape({
-    blurbs: PropTypes.array,
-  }),
 };
 
-const AboutPage = ({ data }) => {
+const TestimonialsPage = ({ data }) => {
   const { markdownRemark: post } = data;
   const { frontmatter } = data.markdownRemark;
 
   return (
     <Layout>
-      <AboutPageTemplate
+      <TestimonialsPageTemplate
         contentComponent={HTMLContent}
         image={frontmatter.image}
         title={frontmatter.title}
         subheading={frontmatter.subheading}
         content={post.html}
-        intro={frontmatter.intro}
       />
       <RibbonCTA />
     </Layout>
   );
 };
 
-AboutPage.propTypes = {
+TestimonialsPage.propTypes = {
   data: PropTypes.object.isRequired,
 };
 
-export default AboutPage;
+export default TestimonialsPage;
 
-export const aboutPageQuery = graphql`
-  query AboutPage($id: String!) {
+export const TestimonialsPageQuery = graphql`
+  query TestimonialsPage($id: String!) {
     markdownRemark(id: { eq: $id }) {
       html
       frontmatter {
@@ -85,18 +74,6 @@ export const aboutPageQuery = graphql`
           }
         }
         subheading
-        intro {
-          blurbs {
-            image {
-              childImageSharp {
-                gatsbyImageData(quality: 64, width: 435, layout: CONSTRAINED)
-              }
-            }
-            text
-          }
-          heading
-          description
-        }
       }
     }
   }
