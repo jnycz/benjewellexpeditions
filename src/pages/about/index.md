@@ -6,6 +6,14 @@ subheading: Your Premier Fishing Guide Service in Ruidoso, New Mexico
 image: /img/hero-lake-mountains.jpg
 intro:
   blurbs:
+    - image: /img/ben-rainbow-trout.jpg
+      text: |-
+        ### Y﻿our Guide
+
+        * A﻿lmost 20 years of experience
+        * CPR/ first aid certification
+        * Food handlers certification
+        * Ruidoso business license
     - image: /img/trash-pickup.jpg
       text: >-
         #### Save New Mexico Waters
