@@ -29,14 +29,6 @@ intro:
   description: ""
 testimonials:
   items:
-    - text: I have been fishing with Ben for 13 years.  Every single trip fishing with
-        him is Epic. You won’t find a guide with more energy and positivity.
-        Watching my son enjoy and learn from him was truly special.
-      author: "- Mike T."
-    - text: I have known and fished with Ben since 2017. He is very knowledgeable and
-        fun to fish with. At times he has an uncanny ability to know what the
-        fish are doing. He is one of the greats!
-      author: "- Jack G."
     - text: I heartily recommend Ben Jewell as one of the finest guides with whom I've
         had the pleasure of sharing great fly fishing adventures.  I've been
         traveling to the Paradise Valley / Yellowstone National Park area for
@@ -47,12 +39,6 @@ testimonials:
         analyzing insect life, and tirelessly putting us on wonderful trout. 
         His enthusiasm for our sport is infectious.  Ben is the best.
       author: "- PJP"
-    - text: I have been guided by Ben on numerous days, under differing conditions for
-        more than 10 years. Above everything but his family, Ben is passionate
-        about fly fishing! He loves teaching novices and more experienced
-        anglers. He is enthusiastic, and makes the day on the water a memorable,
-        fun experience. You can't go wrong utilizing his talents.
-      author: "- Warren K."
     - text: Ben Jewel is the most passionate angler I’ve ever met.  I’ve fished with
         guides all over the world but I always come back to Ben.  His energy is
         contagious and his knowledge of fish and insect patterns are
