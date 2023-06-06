@@ -47,5 +47,9 @@ testimonials:
         not regret it.  Ben will help make you a much better fly fisher, and you
         will have a first class professional experience!
       author: -﻿ John H.
+    - text: First time fly fishing, Ben had me catching within ten minutes of being on
+        the water. One of the politest people on the earth and very
+        knowledgeable. Best experience ever. Can’t wait to go with him again.
+      author: "- Gary D."
 ---
 Read what others had to say about their experience.
