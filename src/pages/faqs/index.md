@@ -36,6 +36,26 @@ Jewell Expeditions is a year-round fishing guide service in the Ruidoso New Mexi
 * Belly boat, flippers, waders, life jacket, net
 * Max. Weight in belly boat is 250 lbs.
 
+### Who will be my fishing guide?
+
+I (Ben Jewell) will be your fishing guide.
+
+### Gratuity for the guide?
+
+15-20% of the price of the guide trip is standard and greatly appreciated.  
+
+### What forms of payment do you except?
+
+Cash or Venmo
+
+### How should I dress for the trip?
+
+Wear long pants and long sleeve shirts that dry easily. Quick dry fish shirts and pants. Less meat showing the better.
+
+### How much advanced notice do I need for my trip?
+
+You should book your trip as soon as you know when you are going to be in the area. If you are lucky sometimes the day before is possible. Typically can not book for the same day you called. At least one day before. 
+
 ### How do I contact Jewell Expeditions?
 
 By filling out our [booking request form](/contact),  call **(575) 973-1396**, or email [benjewell222@gmail.com](mailto:benjewell222@gmail.com)
