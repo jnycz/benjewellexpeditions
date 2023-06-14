@@ -40,7 +40,7 @@ module.exports = {
           // Setting this parameter is also optional
           respectDNT: true,
           // Avoids sending pageview hits from custom paths
-          exclude: ["/admin/**", "/tags/**", "/blog/**", "/blog", "/tags"],
+          exclude: ["/admin/**", "/tags/**", "/blog/**", "/blog/", "/tags/"],
           // Delays processing pageview events on route update (in milliseconds)
           delayOnRouteUpdate: 0,
         },
