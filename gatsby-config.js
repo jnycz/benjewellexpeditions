@@ -2,10 +2,13 @@ require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
+const siteUrl = process.env.URL || `https://jewellexpeditions.com`
+
 module.exports = {
   siteMetadata: {
     title: "Jewell Expeditions | Fly Fishing Guide Service",
     description: "Jewell Expeditions is a year-round fishing guide service in the Ruidoso New Mexico area.",
+    siteUrl: "https://jewellexpeditions.com",
   },
   plugins: [
     "gatsby-plugin-react-helmet",
@@ -16,6 +19,10 @@ module.exports = {
           indentedSyntax: true,
         },
       },
+    },
+    {
+      resolve: "gatsby-plugin-sitemap",
+      options: {},
     },
     {
       resolve: `gatsby-plugin-google-gtag`,
