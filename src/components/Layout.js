@@ -14,7 +14,6 @@ const TemplateWrapper = ({ children }) => {
         <html lang="en" className="has-navbar-fixed-top" />
         <title>{title}</title>
         <meta name="description" content={description} />
-        <meta name="robots" content="noindex" />
         <link
           rel="apple-touch-icon"
           sizes="180x180"
