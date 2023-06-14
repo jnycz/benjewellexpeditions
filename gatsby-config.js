@@ -22,7 +22,9 @@ module.exports = {
     },
     {
       resolve: "gatsby-plugin-sitemap",
-      options: {},
+      options: {
+        excludes: ["/**/thanks", "/blog/**", "/tags/**"],
+      },
     },
     {
       resolve: `gatsby-plugin-google-gtag`,
