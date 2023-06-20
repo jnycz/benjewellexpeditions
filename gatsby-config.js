@@ -21,10 +21,24 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: `https://jewellexpeditions.com`,
+      },
+    },
+    {
       resolve: "gatsby-plugin-sitemap",
       options: {
         excludes: ["/**/thanks", "/blog/**", "/tags/**"],
       },
+    },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://jewellexpeditions.com',
+        sitemap: 'https://jewellexpeditions.com/sitemap-0.xml',
+        policy: [{userAgent: '*', allow: '/'}]
+      }
     },
     {
       resolve: `gatsby-plugin-google-gtag`,
