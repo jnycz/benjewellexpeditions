@@ -185,7 +185,7 @@ export default class Index extends React.Component {
                       onChange={this.handleRecaptcha}
                     /> */}
                     <div className="field">
-                      <button className="button is-rounded contact has-text-weight-semibold is-normal is-fullwidth bg-brand-green bg-brand-green-hover has-text-white" type="submit">
+                      <button className="button is-rounded contact has-text-weight-semibold is-normal bg-brand-green bg-brand-green-hover has-text-white" type="submit">
                         Send
                       </button>
                     </div>

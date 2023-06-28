@@ -27,6 +27,38 @@
 .navbar-item img
   @include desktop
     max-height: 2.75rem
+.navbar-brand
+  > .navbar-item
+    img
+      max-height: 2.75rem      
+ 
+#navMenu
+  &.navbar-menu
+    height: 100vh
+    padding: 0
+    @include desktop
+      height: auto
+  a.navbar-item
+    font-size: 1.5rem
+    border-top: 2px dotted #2e362848 
+    min-height: 4rem
+    line-height: 4rem
+    text-transform: uppercase
+    font-weight: 600
+    :hover
+      border: none
+    &.last
+      border-bottom: 2px dotted #2e362848 
+      @include desktop
+        border: none
+    @include desktop
+      font-size: inherit
+      border: none
+  .cta
+    .navbar-item
+      padding-top: 1.5rem
+      @include desktop
+        padding-top: .5rem
 
 .hero-text
   background: #00000071
@@ -97,7 +129,19 @@
   display: flex
   gap: 1rem
   flex-wrap: wrap
+  justify-content: center
 
 .content
   a
     text-decoration: underline
+
+.more-link
+  display: block
+  text-align: center
+  font-weight: 600
+  padding-top: 1rem
+  &.black-text
+    color: $black-olive
+  svg
+    vertical-align: middle
+    font-size: 1.25rem

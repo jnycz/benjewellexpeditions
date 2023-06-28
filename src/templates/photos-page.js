@@ -27,7 +27,7 @@ export const PhotosPageTemplate = ({
           <PageContent className="content" content={content} />
           {gallery ? (
             <div className="columns is-centered">
-              <div className="column is-10 slideshow-container">
+              <div className="column slideshow-container">
                   <LightGallery items={gallery.items} />
               </div>
             </div>

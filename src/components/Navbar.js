@@ -27,37 +27,37 @@ const Navbar = () => {
             <span />
           </button>
         </div>
-        <div id="navMenu" className={`has-text-centered navbar-menu ${isActive && "is-active"}`}>
+        <div id="navMenu" className={`navbar-menu ${isActive && "is-active"}`}>
 
           <ul className="navbar-end">
               <li className="navbar-item" style={{padding: "0px"}}>
-                <Link className="navbar-item is-uppercase has-text-weight-semibold" to="/about">
+                <Link className="navbar-item" to="/about">
                   About
                 </Link>
               </li>
               <li className="navbar-item" style={{padding: "0px"}}>
-                <Link className="navbar-item is-uppercase has-text-weight-semibold" to="/testimonials">
+                <Link className="navbar-item" to="/testimonials">
                   Testimonials
                 </Link>
               </li>
               <li className="navbar-item" style={{padding: "0px"}}>
-                <Link className="navbar-item is-uppercase has-text-weight-semibold" to="/faqs">
+                <Link className="navbar-item" to="/faqs">
                   FAQs
                 </Link>
               </li>
               <li className="navbar-item" style={{padding: "0px"}}>
-                <Link className="navbar-item is-uppercase has-text-weight-semibold" to="/photos">
+                <Link className="navbar-item" to="/photos">
                   Photos
                 </Link>
               </li>
               <li className="navbar-item" style={{padding: "0px"}}>
-                <Link className="navbar-item is-uppercase has-text-weight-semibold" to="/contact">
+                <Link className="navbar-item last" to="/contact">
                   Contact
                 </Link>
               </li>
           </ul>
           
-          <div className="navbar-end">
+          <div className="navbar-end cta">
             <div className="navbar-item">
               <Link to="/book">
                 <button className="button is-rounded contact has-text-weight-semibold is-normal is-fullwidth">Book Now</button>

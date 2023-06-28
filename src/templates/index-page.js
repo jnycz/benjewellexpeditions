@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link, graphql } from "gatsby";
+import { MdOutlineChevronRight } from "react-icons/md";
 import { getImage } from "gatsby-plugin-image";
 import Layout from "../components/Layout";
 import Features from "../components/Features";
@@ -70,6 +71,9 @@ export const IndexPageTemplate = ({
               </div>
             </div>
           </div>
+          <Link className="more-link black-text" to="/testimonials">
+            More Testimonials <MdOutlineChevronRight />
+          </Link>
         </section>
       ) : null}
 
