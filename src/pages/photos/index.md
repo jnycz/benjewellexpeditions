@@ -17,5 +17,7 @@ gallery:
     - image: /img/person-fish.jpg
     - image: /img/girl-with-trout.jpg
     - image: /img/holding-trout-dock.jpg
+    - image: /img/rb-oct-23-1.jpg
+    - image: /img/rb-oct-23-2.jpg
 ---
 J﻿ewell Expeditions Photo Gallery
