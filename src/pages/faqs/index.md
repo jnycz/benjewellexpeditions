@@ -10,7 +10,7 @@ Half and full day trips on public lakes, freestone streams, and a private spring
 
 ### When is the best time of year?
 
-Spring and fall offer prime conditions with optimal water temperatures, resulting in outstanding fly fishing experiences. While summer and winter have some limitations, we strive to provide excellent trips during these seasons as well. During the warm summer months, we recommend morning half-day trips to beat the heat, while in winter, we target the more favorable afternoon hours
+Spring and fall offer prime conditions with optimal water temperatures, resulting in outstanding fly fishing experiences. While summer and winter have some limitations, we strive to provide excellent trips during these seasons as well. During the warm summer months, we recommend morning half-day trips to beat the heat, while in winter, we target the more favorable afternoon hours.
 
 ### What is your service area?
 
