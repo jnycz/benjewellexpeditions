@@ -82,7 +82,7 @@ export const photosPageQuery = graphql`
         title
         image {
           childImageSharp {
-            gatsbyImageData(quality: 64, layout: FULL_WIDTH)
+            gatsbyImageData(quality: 50, layout: FULL_WIDTH)
           }
         }
         subheading
@@ -93,7 +93,7 @@ export const photosPageQuery = graphql`
                 gatsbyImageData(layout: FULL_WIDTH, formats: [AUTO, WEBP], quality: 88)
               }
               childrenImageSharp {
-                gatsbyImageData(layout: CONSTRAINED, height: 150, quality: 64)
+                gatsbyImageData(layout: CONSTRAINED, height: 150, quality: 25)
               }
             }
           }
