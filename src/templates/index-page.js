@@ -32,7 +32,7 @@ export const IndexPageTemplate = ({
       <section className="section">
         <div className="container">
             <div className="content why">
-              <h2 className="title">{mainpitch.title}</h2>
+              <h2 className="title is-size-5 is-size-3-tablet is-size-2-widescreen">{mainpitch.title}</h2>
               <p>{mainpitch.description}</p>
             </div>
 

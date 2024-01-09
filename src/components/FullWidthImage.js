@@ -8,7 +8,7 @@ export default function FullWidthImage(props) {
     img,
     title,
     subheading,
-    imgPosition = "top left",
+    imgPosition = "center center",
   } = props;
 
   return (
@@ -43,7 +43,7 @@ export default function FullWidthImage(props) {
               gridArea: "1/1",
               // You can set a maximum height for the image, if you wish.
               maxHeight: height,
-              minHeight: 330,
+              minHeight: 220,
             }}
             layout="fullWidth"
             // You can optionally force an aspect ratio for the generated image
@@ -70,7 +70,7 @@ export default function FullWidthImage(props) {
             {/* Any content here will be centered in the component */}
             {title && (
               <h1
-                className="has-text-weight-bold has-text-centered is-size-5 is-size-2-tablet is-size-1-widescreen"
+                className="has-text-weight-bold has-text-centered is-size-4 is-size-2-tablet is-size-1-widescreen"
                 style={{
                   color: "white",
                   lineHeight: "1",
