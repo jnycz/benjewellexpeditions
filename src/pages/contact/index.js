@@ -44,7 +44,6 @@ export default class Index extends React.Component {
       <Layout>
         <div className="bg-brand-green">
 
-
         <section className="section">
           <div className="container">
             <div className="content">
@@ -66,7 +65,7 @@ export default class Index extends React.Component {
                     <input type="hidden" name="form-name" value="contact" />
                     <div hidden>
                       <label>
-                        Don’t fill this out:{" "}
+                        Don't fill this out:{" "}
                         <input name="bot-field" onChange={this.handleChange} />
                       </label>
                     </div>

@@ -10,7 +10,7 @@ const toHTML = value => remark()
                     .toString()
 
 const FeatureGrid = ({ gridItems }) => (
-  <div className="columns is-mobile is-centered">
+  <div className="columns">
     {gridItems.map((item) => (
       <div key={item.text} className="column">
         <PreviewCompatibleImage imageInfo={item} />  

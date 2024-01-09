@@ -229,7 +229,7 @@ export const pageQuery = graphql`
           blurbs {
             image {
               childImageSharp {
-                gatsbyImageData(quality: 64, width: 435, layout: CONSTRAINED)
+                gatsbyImageData(quality: 55, width: 435, layout: CONSTRAINED)
               }
             }
             text
@@ -244,7 +244,7 @@ export const pageQuery = graphql`
             alt
             image {
               childImageSharp {
-                gatsbyImageData(width: 660, quality: 64, layout: CONSTRAINED)
+                gatsbyImageData(width: 660, quality: 55, layout: CONSTRAINED)
               }
             }
           }
@@ -252,7 +252,7 @@ export const pageQuery = graphql`
             alt
             image {
               childImageSharp {
-                gatsbyImageData(width: 660, quality: 64, layout: CONSTRAINED)
+                gatsbyImageData(width: 660, quality: 55, layout: CONSTRAINED)
               }
             }
           }
@@ -260,7 +260,7 @@ export const pageQuery = graphql`
             alt
             image {
               childImageSharp {
-                gatsbyImageData(width: 660, quality: 64, layout: CONSTRAINED)
+                gatsbyImageData(width: 660, quality: 55, layout: CONSTRAINED)
               }
             }
           }
@@ -268,7 +268,7 @@ export const pageQuery = graphql`
             alt
             image {
               childImageSharp {
-                gatsbyImageData(width: 660, quality: 64, layout: CONSTRAINED)
+                gatsbyImageData(width: 660, quality: 55, layout: CONSTRAINED)
               }
             }
           }
