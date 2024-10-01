@@ -7,7 +7,6 @@ import logo from "../img/jewell-expedition-logo.svg";
 const Footer = () => {
     const today = new Date();
     const year = today.getFullYear();
-
   
     return (
       <footer className="footer">
