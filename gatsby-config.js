@@ -11,7 +11,6 @@ module.exports = {
     siteUrl: "https://jewellexpeditions.com",
   },
   plugins: [
-    "gatsby-plugin-react-helmet",
     {
       resolve: "gatsby-plugin-sass",
       options: {
