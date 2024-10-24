@@ -54,7 +54,7 @@ const Footer = () => {
                   <a className="pl-1 has-text-weight-semibold" href="tel:+5759731396">(575) 973-1396</a>
                 </div>
                 <div className="is-flex is-justify-content-center is-align-items-center"><MdEmail />
-                  <a className="pl-1 has-text-weight-semibold" href="mailto:benjewell222@gmail.com">benjewell222@gmail.com</a>
+                  <a className="pl-1 has-text-weight-semibold" href="mailto:jewellexpeditions@gmail.com">jewellexpeditions@gmail.com</a>
                 </div>
                 <div className="is-flex is-justify-content-center is-align-items-center"><AiFillInstagram />
                   <a className="pl-1 has-text-weight-semibold" title="Instagram | Ben Jewell Fly Fishing" target="_blank" rel="noreferrer" href="https://www.instagram.com/benjewellflyfishing_/">Instagram</a>

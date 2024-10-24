@@ -58,4 +58,4 @@ You should book your trip as soon as you know when you are going to be in the ar
 
 ### How do I contact Jewell Expeditions?
 
-By filling out our [booking request form](/contact),  call **(575) 973-1396**, or email [benjewell222@gmail.com](mailto:benjewell222@gmail.com)
+By filling out our [booking request form](/contact),  call **(575) 973-1396**, or email [jewellexpeditions@gmail.com](mailto:jewellexpeditions@gmail.com)
