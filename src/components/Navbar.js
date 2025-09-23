@@ -20,6 +20,8 @@ const Navbar = () => {
           <button
             className={`navbar-burger burger ${isActive && "is-active"}`}
             aria-expanded={isActive}
+            aria-controls="navMenu"
+            aria-label="Toggle navigation menu"
             onClick={() => setIsActive(!isActive)}
           >
             <span />
@@ -30,33 +32,33 @@ const Navbar = () => {
         <div id="navMenu" className={`navbar-menu ${isActive && "is-active"}`}>
 
           <ul className="navbar-end">
-              <li className="navbar-item" style={{padding: "0px"}}>
-                <Link className="navbar-item" to="/about">
-                  About
-                </Link>
-              </li>
-              <li className="navbar-item" style={{padding: "0px"}}>
-                <Link className="navbar-item" to="/testimonials">
-                  Testimonials
-                </Link>
-              </li>
-              <li className="navbar-item" style={{padding: "0px"}}>
-                <Link className="navbar-item" to="/faqs">
-                  FAQs
-                </Link>
-              </li>
-              <li className="navbar-item" style={{padding: "0px"}}>
-                <Link className="navbar-item" to="/photos">
-                  Photos
-                </Link>
-              </li>
-              <li className="navbar-item" style={{padding: "0px"}}>
-                <Link className="navbar-item last" to="/contact">
-                  Contact
-                </Link>
-              </li>
+            <li className="navbar-item" style={{ padding: "0px" }}>
+              <Link className="navbar-item" to="/about">
+                About
+              </Link>
+            </li>
+            <li className="navbar-item" style={{ padding: "0px" }}>
+              <Link className="navbar-item" to="/testimonials">
+                Testimonials
+              </Link>
+            </li>
+            <li className="navbar-item" style={{ padding: "0px" }}>
+              <Link className="navbar-item" to="/faqs">
+                FAQs
+              </Link>
+            </li>
+            <li className="navbar-item" style={{ padding: "0px" }}>
+              <Link className="navbar-item" to="/photos">
+                Photos
+              </Link>
+            </li>
+            <li className="navbar-item" style={{ padding: "0px" }}>
+              <Link className="navbar-item last" to="/contact">
+                Contact
+              </Link>
+            </li>
           </ul>
-          
+
           <div className="navbar-end cta">
             <div className="navbar-item">
               <Link to="/book">

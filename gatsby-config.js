@@ -16,6 +16,7 @@ module.exports = {
       options: {
         sassOptions: {
           indentedSyntax: true,
+          quietDeps: true,
         },
       },
     },
@@ -28,7 +29,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-sitemap",
       options: {
-        excludes: ["/**/thanks", "/blog/**", "/tags/**" , "/blog"],
+        excludes: ["/**/thanks", "/blog/**", "/tags/**", "/blog"],
       },
     },
     {
@@ -36,7 +37,7 @@ module.exports = {
       options: {
         host: 'https://jewellexpeditions.com',
         sitemap: 'https://jewellexpeditions.com/sitemap-0.xml',
-        policy: [{userAgent: '*', allow: '/'}]
+        policy: [{ userAgent: '*', allow: '/' }]
       }
     },
     {
@@ -60,7 +61,7 @@ module.exports = {
       },
     },
     {
-    resolve: `gatsby-omni-font-loader`,
+      resolve: `gatsby-omni-font-loader`,
       options: {
         enableListener: true,
         preconnect: [`https://fonts.googleapis.com`, `https://fonts.gstatic.com`],
