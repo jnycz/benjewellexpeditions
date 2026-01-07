@@ -1,135 +1,276 @@
-# Gatsby + Decap CMS Starter
+# Jewell Expeditions Website
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/b654c94e-08a6-4b79-b443-7837581b1d8d/deploy-status)](https://app.netlify.com/sites/gatsby-starter-netlify-cms-ci/deploys)
+A professional fly fishing guide service website built with Gatsby and Decap CMS. The site showcases Ben Jewell's year-round fishing guide service in the Ruidoso, New Mexico area.
 
-**Note:** This starter uses [Gatsby v4](https://www.gatsbyjs.com/gatsby-4/).
+**Live Site:** [jewellexpeditions.com](https://jewellexpeditions.com)
 
-This repo contains an example business website that is built with [Gatsby](https://www.gatsbyjs.org/), and [Decap CMS](https://www.decapcms.org): **[Demo Link](https://gatsby-netlify-cms.netlify.com/)**.
+## About the Site
 
-It follows the [JAMstack architecture](https://jamstack.org) by using Git as a single source of truth, and [Netlify](https://www.netlify.com) for continuous deployment, and CDN distribution.
+Jewell Expeditions is a year-round fly fishing guide service offering half and full day excursions on public lakes, freestone streams, and an exclusive private spring creek in the Ruidoso, New Mexico area. Ben Jewell, the guide, has over 17 years of experience in New Mexico, Montana, and Yellowstone National Park.
+
+### Key Pages
+- **Home** - Landing page with hero image, features, testimonials, and gallery links
+- **About** - Guide background and experience
+- **Book** - Trip booking form (Netlify Forms)
+- **FAQs** - Frequently asked questions about trips, pricing, and requirements
+- **Photos** - Photo gallery with lightbox
+- **Testimonials** - Customer reviews and testimonials
+- **Contact** - Contact form
+- **Blog** - Blog posts (optional feature)
 
 ## Features
 
-- A simple landing page with blog functionality built with Decap CMS
-- Editable Pages: Landing, About, Product, Blog-Collection and Contact page with Netlify Form support
-- Create Blog posts from decap CMS
-- Tags: Separate page for posts under each tag
-- Basic directory organization
-- Uses Bulma for styling, but size is reduced by `gatsy-plugin-purgecss`
-- Blazing fast loading times thanks to pre-rendered HTML and automatic chunk loading of JS files
-- Uses `gatsby-plugin-image` with Decap CMS preview support
-- Separate components for everything
-- Netlify deploy configuration
-- Netlify function support, see `netlify/functions` folder
-- Perfect score on Lighthouse for SEO, Accessibility and Performance (wip:PWA)
-- ..and more
+### Custom Features
+- **Seasonal Modals** - Promotional pop-ups that appear:
+  - Fall modal: September 22 - December 1
+  - Winter modal: December 12 - March 1
+  - Each modal has a 30-day dismissal window stored in localStorage
+- **Responsive Design** - Mobile-first design using Bulma CSS framework
+- **Image Optimization** - All images optimized via `gatsby-plugin-image`
+- **CMS Integration** - Content managed through Decap CMS (formerly Netlify CMS)
+- **Form Handling** - Contact and booking forms processed via Netlify Forms
+- **SEO Optimized** - Canonical URLs, sitemap, robots.txt, and meta tags
+- **Photo Gallery** - LightGallery integration for photo viewing
+- **Testimonials Slider** - Swiper.js powered testimonial carousel
+
+### Technical Stack
+- **Framework:** Gatsby v5
+- **CMS:** Decap CMS (Netlify CMS)
+- **Styling:** Bulma CSS + Sass (with PurgeCSS)
+- **Images:** Gatsby Image Plugin + Sharp
+- **Deployment:** Netlify (with automatic deployments)
+- **Analytics:** Google Analytics (G-58WYLVBMW7)
+- **Fonts:** Roboto (loaded via gatsby-omni-font-loader)
 
 ## Prerequisites
 
-- Minimal Node.js version 14.15.0
-- [Gatsby CLI](https://www.gatsbyjs.com/docs/reference/gatsby-cli/)
-- [Netlify CLI](https://github.com/netlify/cli)
+- **Node.js** version 14.15.0 or higher (see `package.json` engines)
+- **npm** or **yarn** package manager
+- **Git** for version control
 
-## Getting Started (Recommended)
+Optional:
+- **Netlify CLI** for local development with functions: `npm install -g netlify-cli`
 
-Decap CMS can run in any frontend web environment, but the quickest way to try it out is by running it on a pre-configured starter site with Netlify. The example here is the Kaldi coffee company template (adapted from [One Click Hugo CMS](https://github.com/decaporg/one-click-hugo-cms)). Use the button below to build and deploy your own copy of the repository:
+## Getting Started
 
-<a href="https://app.netlify.com/start/deploy?repository=https://github.com/decaporg/gatsby-starter-decap-cms&amp;stack=cms"><img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify"></a>
+### Install Dependencies
 
-After clicking that button, you’ll authenticate with GitHub and choose a repository name. Netlify will then automatically create a repository in your GitHub account with a copy of the files from the template. Next, it will build and deploy the new site on Netlify, bringing you to the site dashboard when the build is complete. Next, you’ll need to set up Netlify’s Identity service to authorize users to log in to the CMS.
-
-### Access Locally
-
-Pulldown a local copy of the Github repository Netlify created for you, with the name you specified in the previous step
-
-```
-$ git clone https://github.com/[GITHUB_USERNAME]/[REPO_NAME].git
-$ cd [REPO_NAME]
-$ yarn
-$ netlify dev # or ntl dev
+```bash
+yarn install
+# or
+npm install
 ```
 
-This uses [Netlify Dev](https://www.netlify.com/products/dev/?utm_source=blog&utm_medium=netlifycms&utm_campaign=devex) CLI feature to serve any functions you have in the `netlify/functions` folder.
+### Development Server
 
-To test the CMS locally, you'll need to run a production build of the site:
+Start the development server with hot reloading:
 
-```
-$ npm run build
-$ netlify dev # or ntl dev
-```
-
-### Media Libraries (installed, but optional)
-
-Media Libraries have been included in this starter as a default. If you are not planning to use `Uploadcare` or `Cloudinary` in your project, you **can** remove them from module import and registration in `src/cms/cms.js`. Here is an example of the lines to comment or remove them your project.
-
-```javascript
-import CMS from "netlify-cms-app";
-// import uploadcare from 'netlify-cms-media-library-uploadcare'
-// import cloudinary from 'netlify-cms-media-library-cloudinary'
-
-import AboutPagePreview from "./preview-templates/AboutPagePreview";
-import BlogPostPreview from "./preview-templates/BlogPostPreview";
-import ProductPagePreview from "./preview-templates/ProductPagePreview";
-import IndexPagePreview from "./preview-templates/IndexPagePreview";
-
-// CMS.registerMediaLibrary(uploadcare);
-// CMS.registerMediaLibrary(cloudinary);
-
-CMS.registerPreviewTemplate("index", IndexPagePreview);
-CMS.registerPreviewTemplate("about", AboutPagePreview);
-CMS.registerPreviewTemplate("products", ProductPagePreview);
-CMS.registerPreviewTemplate("blog", BlogPostPreview);
+```bash
+yarn develop
+# or
+npm run develop
 ```
 
-Note: Don't forget to also remove them from `package.json` and `yarn.lock` / `package-lock.json` using `yarn` or `npm`. During the build netlify-cms-app will bundle the media libraries as well, having them removed will save you build time.
-Example:
+The site will be available at `http://localhost:8000`
 
-```
-yarn remove netlify-cms-media-library-uploadcare
-```
+**Note:** The `develop` script automatically runs `gatsby clean` first to clear the cache.
 
-OR
+### Build for Production
 
-```
-yarn remove netlify-cms-media-library-cloudinary
-```
+Create an optimized production build:
 
-## Getting Started (Without Netlify)
-
-```
-$ gatsby new [SITE_DIRECTORY_NAME] https://github.com/decaporg/gatsby-starter-decap-cms/
-$ cd [SITE_DIRECTORY_NAME]
-$ npm run build
-$ npm run start
+```bash
+yarn build
+# or
+npm run build
 ```
 
-### Setting up the CMS
+### Serve Production Build Locally
 
-Follow the [Decap CMS Quick Start Guide](https://www.netlifycms.org/docs/quick-start/#authentication) to set up authentication, and hosting for production.
+Preview the production build:
 
-If you want use Decap CMS locally, run the site in one terminal with `npm run start` and in another
-Terminal you can use `npx netlify-cms-proxy-server` which proxy requests so you'll be automatically logged
-in as a user on [http:localhost:3000/admin](http:localhost:3000/admin).
-
-## Debugging
-
-Windows users, who aren't using [WSL](https://docs.microsoft.com/en-us/windows/wsl/about), might encounter `node-gyp` errors when trying to npm install.
-To resolve, make sure that you have both Python 2.7 and the Visual C++ build environment installed.
-
-```
-npm config set python python2.7
-npm install --global --production windows-build-tools
+```bash
+yarn serve
+# or
+npm run serve
 ```
 
-[Full details here](https://www.npmjs.com/package/node-gyp "NPM node-gyp page").
+Serves the production build at `http://localhost:9000`
 
-MacOS and WSL users who might also encounter some errors, check [node-gyp](https://github.com/nodejs/node-gyp) for more info. We recommend using the latest stable node version.
+### Clean Cache
 
-## Purgecss
+Clear Gatsby's cache and `.cache` directory:
 
-This plugin uses [gatsby-plugin-purgecss](https://www.gatsbyjs.org/packages/gatsby-plugin-purgecss/) and [bulma](https://bulma.io/). The bulma builds are usually ~170K but reduced 90% by purgecss.
+```bash
+yarn clean
+# or
+npm run clean
+```
 
-# CONTRIBUTING
+### Format Code
 
-Contributions are always welcome, no matter how large or small. Before contributing,
-please read the [code of conduct](CODE_OF_CONDUCT.md).
+Format JavaScript files with Prettier:
+
+```bash
+yarn format
+# or
+npm run format
+```
+
+## Available Scripts
+
+| Command | Description |
+|---------|-------------|
+| `yarn start` | Alias for `develop` |
+| `yarn develop` | Start development server (cleans cache first) |
+| `yarn build` | Build production site (cleans cache first) |
+| `yarn serve` | Serve production build locally |
+| `yarn clean` | Clear Gatsby cache |
+| `yarn format` | Format code with Prettier |
+
+## CMS Access
+
+Content is managed through Decap CMS (formerly Netlify CMS).
+
+### Access CMS in Production
+Visit `https://jewellexpeditions.com/admin` and log in with Netlify Identity.
+
+### Test CMS Locally
+
+To test the CMS locally, you need to run a production build first:
+
+```bash
+yarn build
+netlify dev
+```
+
+Or use the Netlify CMS proxy server:
+
+```bash
+# Terminal 1: Run Gatsby
+yarn build
+yarn serve
+
+# Terminal 2: Run CMS proxy (auto-login)
+npx netlify-cms-proxy-server
+```
+
+Then visit `http://localhost:8000/admin`
+
+## Project Structure
+
+```
+benjewellexpeditions/
+├── src/
+│   ├── components/      # React components (Layout, Navbar, Footer, etc.)
+│   ├── pages/          # Page templates and markdown content
+│   ├── templates/      # Page templates for CMS content
+│   ├── cms/            # CMS configuration and preview templates
+│   └── img/            # Logo and icon assets
+├── static/
+│   ├── admin/          # CMS configuration (config.yml)
+│   └── img/            # Static image assets
+├── netlify/
+│   └── functions/      # Netlify serverless functions
+├── gatsby-config.js    # Gatsby configuration
+├── gatsby-node.js      # Gatsby Node APIs
+└── netlify.toml        # Netlify deployment configuration
+```
+
+## Key Configuration Files
+
+- **`gatsby-config.js`** - Gatsby plugins and site configuration
+- **`static/admin/config.yml`** - Decap CMS content model and collections
+- **`netlify.toml`** - Netlify deployment settings
+- **`package.json`** - Dependencies and scripts
+
+## Deployment
+
+The site is automatically deployed to Netlify when changes are pushed to the main branch.
+
+### Manual Deployment
+
+If using Netlify CLI:
+
+```bash
+netlify deploy --prod
+```
+
+### Environment Variables
+
+The site uses environment variables for:
+- Site URL (defaults to `https://jewellexpeditions.com`)
+- Google Analytics tracking ID (hardcoded in `gatsby-config.js`)
+
+## Custom Features Explained
+
+### Seasonal Modals
+
+Located in `src/components/Layout.js`, the seasonal modals automatically appear during specific date ranges:
+
+- **Fall Modal** (Sep 22 - Dec 1): Promotes fall fishing season
+- **Winter Modal** (Dec 12 - Mar 1): Promotes winter fishing season
+
+Each modal:
+- Shows once per 30-day period (stored in localStorage)
+- Respects date windows (only shows during specified seasons)
+- Can be dismissed and won't reappear for 30 days
+- Links to the booking page
+
+To modify modal dates or messages, edit the date logic and content in `Layout.js`.
+
+### Form Handling
+
+Contact and booking forms use Netlify Forms. Form submissions are sent to Netlify and can be viewed in the Netlify dashboard under Forms.
+
+Form configuration:
+- Booking form: `/src/pages/book/index.js`
+- Contact form: `/src/pages/contact/index.js`
+
+Both forms include:
+- Netlify Forms integration (`data-netlify="true"`)
+- Honeypot field for spam protection
+- Form name for submission tracking
+
+## Browser Support
+
+See `package.json` for browserslist configuration. Production build targets:
+- Last 2 versions of major browsers
+- Firefox ESR
+- >0.5% global usage
+- Not dead browsers
+- Not Opera Mini
+
+## Troubleshooting
+
+### Build Issues
+
+If you encounter build errors:
+1. Clear cache: `yarn clean`
+2. Delete `node_modules` and reinstall: `rm -rf node_modules && yarn install`
+3. Check Node.js version: Should be >= 14.15.0
+
+### Image Issues
+
+If images aren't loading:
+- Ensure images are in `/static/img/` or properly referenced in markdown frontmatter
+- Check that image paths in markdown use `/img/` prefix
+- Verify `gatsby-source-filesystem` paths in `gatsby-config.js`
+
+### CMS Access Issues
+
+If you can't access the CMS:
+- Verify Netlify Identity is enabled in Netlify dashboard
+- Check that `static/admin/config.yml` exists
+- Ensure you're logged into Netlify Identity
+
+## License
+
+MIT
+
+## Contact
+
+For questions about the site or booking a trip:
+- **Website:** [jewellexpeditions.com](https://jewellexpeditions.com)
+- **Email:** [jewellexpeditions@gmail.com](mailto:jewellexpeditions@gmail.com)
+- **Phone:** (575) 973-1396
