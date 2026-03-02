@@ -14,19 +14,17 @@ const TemplateWrapper = ({ children }) => {
 
   const isWithinFallWindow = React.useCallback(() => {
     const now = new Date();
-    const year = now.getFullYear();
     // Show from Sep 22 (inclusive) through Nov 30 (i.e., before Dec 1) each year
-    const seasonStart = new Date(year, 8, 22); // Sep 22
-    const seasonEnd = new Date(year, 11, 1); // Dec 1
+    const seasonStart = new Date(now.getFullYear(), 8, 22); // Sep 22
+    const seasonEnd = new Date(now.getFullYear(), 11, 1); // Dec 1
     return now >= seasonStart && now < seasonEnd;
   }, []);
 
   const isWithinWinterWindow = React.useCallback(() => {
     const now = new Date();
-    const year = now.getFullYear();
     const month = now.getMonth();
     const date = now.getDate();
-    
+
     // Show from Dec 12 (inclusive) through Feb 28/29 (i.e., before March 1) each year
     // If we're in Jan-Feb (months 0-1), we're in winter season
     if (month < 2) {
