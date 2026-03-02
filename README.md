@@ -56,8 +56,6 @@ Optional:
 ### Install Dependencies
 
 ```bash
-yarn install
-# or
 npm install
 ```
 
@@ -66,9 +64,7 @@ npm install
 Start the development server with hot reloading:
 
 ```bash
-yarn develop
-# or
-npm run develop
+npm run dev
 ```
 
 The site will be available at `http://localhost:8000`
@@ -80,8 +76,6 @@ The site will be available at `http://localhost:8000`
 Create an optimized production build:
 
 ```bash
-yarn build
-# or
 npm run build
 ```
 
@@ -90,8 +84,6 @@ npm run build
 Preview the production build:
 
 ```bash
-yarn serve
-# or
 npm run serve
 ```
 
@@ -102,8 +94,6 @@ Serves the production build at `http://localhost:9000`
 Clear Gatsby's cache and `.cache` directory:
 
 ```bash
-yarn clean
-# or
 npm run clean
 ```
 
@@ -112,21 +102,19 @@ npm run clean
 Format JavaScript files with Prettier:
 
 ```bash
-yarn format
-# or
 npm run format
 ```
 
 ## Available Scripts
 
-| Command | Description |
-|---------|-------------|
-| `yarn start` | Alias for `develop` |
-| `yarn develop` | Start development server (cleans cache first) |
-| `yarn build` | Build production site (cleans cache first) |
-| `yarn serve` | Serve production build locally |
-| `yarn clean` | Clear Gatsby cache |
-| `yarn format` | Format code with Prettier |
+| Command        | Description                                   |
+|----------------|-----------------------------------------------|
+| `npm run dev`  | Start development server (cleans cache first) |
+| `npm start`    | Alias for `npm run dev`                       |
+| `npm run build`| Build production site (cleans cache first)    |
+| `npm run serve`| Serve production build locally                |
+| `npm run clean`| Clear Gatsby cache                            |
+| `npm run format`| Format code with Prettier                    |
 
 ## CMS Access
 
@@ -140,16 +128,15 @@ Visit `https://jewellexpeditions.com/admin` and log in with Netlify Identity.
 To test the CMS locally, you need to run a production build first:
 
 ```bash
-yarn build
+npm run build
 netlify dev
-```
 
 Or use the Netlify CMS proxy server:
 
 ```bash
 # Terminal 1: Run Gatsby
-yarn build
-yarn serve
+npm run build
+npm run serve
 
 # Terminal 2: Run CMS proxy (auto-login)
 npx netlify-cms-proxy-server
@@ -246,8 +233,8 @@ See `package.json` for browserslist configuration. Production build targets:
 ### Build Issues
 
 If you encounter build errors:
-1. Clear cache: `yarn clean`
-2. Delete `node_modules` and reinstall: `rm -rf node_modules && yarn install`
+1. Clear cache: `npm run clean`
+2. Delete `node_modules` and reinstall: `rm -rf node_modules && npm install`
 3. Check Node.js version: Should be >= 14.15.0
 
 ### Image Issues
