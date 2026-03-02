@@ -126,6 +126,7 @@ const TemplateWrapper = ({ children }) => {
         <html lang="en" className="has-navbar-fixed-top" />
         <title>{title}</title>
         <meta name="description" content={description} />
+        <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" async />
         <link
           rel="apple-touch-icon"
           sizes="180x180"
