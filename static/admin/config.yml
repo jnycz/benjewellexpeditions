@@ -243,4 +243,47 @@ collections:
                   },
                 ],
             }
-            
+  - name: "seasonal"
+    label: "Seasonal Modals"
+    files:
+      - file: "src/data/seasonal.md"
+        label: "Seasonal popup messages & dates"
+        name: "seasonal"
+        fields:
+          - label: "Fall"
+            name: "fall"
+            widget: "object"
+            collapsed: false
+            fields:
+              - { label: "Show this modal", name: "enabled", widget: "boolean", default: true }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Body text", name: "body", widget: "text" }
+              - { label: "Start month (1–12)", name: "startMonth", widget: "number", value_type: "int", min: 1, max: 12 }
+              - { label: "Start day", name: "startDay", widget: "number", value_type: "int", min: 1, max: 31 }
+              - { label: "End month (1–12)", name: "endMonth", widget: "number", value_type: "int", min: 1, max: 12 }
+              - { label: "End day (exclusive)", name: "endDay", widget: "number", value_type: "int", min: 1, max: 31 }
+          - label: "Winter"
+            name: "winter"
+            widget: "object"
+            collapsed: false
+            fields:
+              - { label: "Show this modal", name: "enabled", widget: "boolean", default: true }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Body text", name: "body", widget: "text" }
+              - { label: "Start month (1–12)", name: "startMonth", widget: "number", value_type: "int", min: 1, max: 12 }
+              - { label: "Start day", name: "startDay", widget: "number", value_type: "int", min: 1, max: 31 }
+              - { label: "End month (1–12)", name: "endMonth", widget: "number", value_type: "int", min: 1, max: 12 }
+              - { label: "End day (exclusive)", name: "endDay", widget: "number", value_type: "int", min: 1, max: 31 }
+          - label: "Spring"
+            name: "spring"
+            widget: "object"
+            collapsed: false
+            fields:
+              - { label: "Show this modal", name: "enabled", widget: "boolean", default: true }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Body text", name: "body", widget: "text" }
+              - { label: "Start month (1–12)", name: "startMonth", widget: "number", value_type: "int", min: 1, max: 12 }
+              - { label: "Start day", name: "startDay", widget: "number", value_type: "int", min: 1, max: 31 }
+              - { label: "End month (1–12)", name: "endMonth", widget: "number", value_type: "int", min: 1, max: 12 }
+              - { label: "End day (exclusive)", name: "endDay", widget: "number", value_type: "int", min: 1, max: 31 }
+

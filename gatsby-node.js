@@ -28,8 +28,13 @@ exports.createPages = ({ actions, graphql }) => {
       return Promise.reject(result.errors)
     }
 
+    // Only create pages for markdown files that have a templateKey (excludes data files like seasonal.md).
+    const edgesWithTemplate = result.data.allMarkdownRemark.edges.filter(
+      (edge) => edge.node.frontmatter?.templateKey
+    )
+
     // Testimonials.
-    const testimonials = result.data.allMarkdownRemark.edges
+    const testimonials = edgesWithTemplate
     testimonials.forEach((edge) => {
         const id = edge.node.id
         createPage({
@@ -45,7 +50,7 @@ exports.createPages = ({ actions, graphql }) => {
     })
 
     // Posts.
-    const posts = result.data.allMarkdownRemark.edges
+    const posts = edgesWithTemplate
     posts.forEach((edge) => {
       const id = edge.node.id
       createPage({

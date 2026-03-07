@@ -1,5 +1,6 @@
 import * as React from "react";
 import { Helmet } from "react-helmet";
+import { useStaticQuery, graphql } from "gatsby";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import "./all.sass";
@@ -7,43 +8,107 @@ import useSiteMetadata from "./SiteMetadata";
 import { withPrefix } from "gatsby";
 import { Link } from "gatsby";
 
+// CMS months are 1–12; end date is exclusive. Handles year wrap (e.g. Dec–Mar).
+function isWithinDateRange(now, startMonth, startDay, endMonth, endDay) {
+  if (startMonth == null || startDay == null || endMonth == null || endDay == null) return false;
+  const y = now.getFullYear();
+  const start = new Date(y, Number(startMonth) - 1, Number(startDay));
+  let end = new Date(y, Number(endMonth) - 1, Number(endDay));
+  if (endMonth < startMonth) end = new Date(y + 1, Number(endMonth) - 1, Number(endDay));
+  return now >= start && now < end;
+}
+
+const FALL_DEFAULTS = { title: "🍂 Fall is our best season", body: "Prime conditions, optimal water temps, and fewer crowds — the best fishing of the year." };
+const WINTER_DEFAULTS = { title: "❄️ Winter fishing has been great", body: "Winter fishing has been great due to mild temperatures. Book Now!" };
+const SPRING_DEFAULTS = { title: "🌸 Spring is our best season", body: "Spring is our best season book now!" };
+
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata();
   const [isFallModalOpen, setIsFallModalOpen] = React.useState(false);
   const [isWinterModalOpen, setIsWinterModalOpen] = React.useState(false);
   const [isSpringModalOpen, setIsSpringModalOpen] = React.useState(false);
 
+  const { seasonal: seasonalQuery } = useStaticQuery(graphql`
+    query SeasonalModalsQuery {
+      seasonal: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/seasonal.md/" } }) {
+        edges {
+          node {
+            frontmatter {
+              fall {
+                enabled
+                title
+                body
+                startMonth
+                startDay
+                endMonth
+                endDay
+              }
+              winter {
+                enabled
+                title
+                body
+                startMonth
+                startDay
+                endMonth
+                endDay
+              }
+              spring {
+                enabled
+                title
+                body
+                startMonth
+                startDay
+                endMonth
+                endDay
+              }
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  const seasonal = seasonalQuery?.edges?.[0]?.node?.frontmatter ?? null;
+
   const isWithinFallWindow = React.useCallback(() => {
     const now = new Date();
-    // Show from Sep 22 (inclusive) through Nov 30 (i.e., before Dec 1) each year
-    const seasonStart = new Date(now.getFullYear(), 8, 22); // Sep 22
-    const seasonEnd = new Date(now.getFullYear(), 11, 1); // Dec 1
+    if (seasonal?.fall != null) {
+      if (!seasonal.fall.enabled) return false;
+      if (seasonal.fall.startMonth != null) {
+        return isWithinDateRange(now, seasonal.fall.startMonth, seasonal.fall.startDay, seasonal.fall.endMonth, seasonal.fall.endDay);
+      }
+    }
+    const seasonStart = new Date(now.getFullYear(), 8, 22);
+    const seasonEnd = new Date(now.getFullYear(), 11, 1);
     return now >= seasonStart && now < seasonEnd;
-  }, []);
+  }, [seasonal?.fall]);
 
   const isWithinWinterWindow = React.useCallback(() => {
     const now = new Date();
+    if (seasonal?.winter != null) {
+      if (!seasonal.winter.enabled) return false;
+      if (seasonal.winter.startMonth != null) {
+        return isWithinDateRange(now, seasonal.winter.startMonth, seasonal.winter.startDay, seasonal.winter.endMonth, seasonal.winter.endDay);
+      }
+    }
     const month = now.getMonth();
     const date = now.getDate();
-
-    // Show from Dec 12 (inclusive) through Feb 28/29 (i.e., before March 1) each year
-    // If we're in Jan-Feb (months 0-1), we're in winter season
-    if (month < 2) {
-      return true;
-    }
-    // If we're in Dec (month 11) and date >= 12, we're in winter season
-    if (month === 11 && date >= 12) {
-      return true;
-    }
+    if (month < 2) return true;
+    if (month === 11 && date >= 12) return true;
     return false;
-  }, []);
+  }, [seasonal?.winter]);
 
   const isWithinSpringWindow = React.useCallback(() => {
     const now = new Date();
+    if (seasonal?.spring != null) {
+      if (!seasonal.spring.enabled) return false;
+      if (seasonal.spring.startMonth != null) {
+        return isWithinDateRange(now, seasonal.spring.startMonth, seasonal.spring.startDay, seasonal.spring.endMonth, seasonal.spring.endDay);
+      }
+    }
     const month = now.getMonth();
-    // Spring: March (2) through May (4)
     return month >= 2 && month <= 4;
-  }, []);
+  }, [seasonal?.spring]);
 
   React.useEffect(() => {
     if (typeof window === "undefined") return;
@@ -222,11 +287,11 @@ const TemplateWrapper = ({ children }) => {
         />
         <div className="modal-card">
           <header className="modal-card-head">
-            <p className="modal-card-title" id="fall-modal-title">🍂 Fall is our best season</p>
+            <p className="modal-card-title" id="fall-modal-title">{seasonal?.fall?.title ?? FALL_DEFAULTS.title}</p>
             <button className="delete" aria-label="close" onClick={closeFallModal} />
           </header>
           <section className="modal-card-body">
-            <p className="is-size-5">Prime conditions, optimal water temps, and fewer crowds — the best fishing of the year.</p>
+            <p className="is-size-5">{seasonal?.fall?.body ?? FALL_DEFAULTS.body}</p>
           </section>
           <footer className="modal-card-foot" style={{ justifyContent: "flex-end" }}>
             <button className="button" onClick={closeFallModal}>Maybe later</button>
@@ -245,11 +310,11 @@ const TemplateWrapper = ({ children }) => {
         />
         <div className="modal-card">
           <header className="modal-card-head">
-            <p className="modal-card-title" id="winter-modal-title">❄️ Winter fishing has been great</p>
+            <p className="modal-card-title" id="winter-modal-title">{seasonal?.winter?.title ?? WINTER_DEFAULTS.title}</p>
             <button className="delete" aria-label="close" onClick={closeWinterModal} />
           </header>
           <section className="modal-card-body">
-            <p className="is-size-5">Winter fishing has been great due to mild temperatures. Book Now!</p>
+            <p className="is-size-5">{seasonal?.winter?.body ?? WINTER_DEFAULTS.body}</p>
           </section>
           <footer className="modal-card-foot" style={{ justifyContent: "flex-end" }}>
             <button className="button" onClick={closeWinterModal}>Maybe later</button>
@@ -268,11 +333,11 @@ const TemplateWrapper = ({ children }) => {
         />
         <div className="modal-card">
           <header className="modal-card-head">
-            <p className="modal-card-title" id="spring-modal-title">🌸 Spring update</p>
+            <p className="modal-card-title" id="spring-modal-title">{seasonal?.spring?.title ?? SPRING_DEFAULTS.title}</p>
             <button className="delete" aria-label="close" onClick={closeSpringModal} />
           </header>
           <section className="modal-card-body">
-            <p className="is-size-5">Spring is our best season book now!</p>
+            <p className="is-size-5">{seasonal?.spring?.body ?? SPRING_DEFAULTS.body}</p>
           </section>
           <footer className="modal-card-foot" style={{ justifyContent: "flex-end" }}>
             <button className="button" onClick={closeSpringModal}>Maybe later</button>
