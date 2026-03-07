@@ -11,8 +11,15 @@
   background-color: override-variables.$light-sky-blue
 .bg-light-light-blue
   background-color: override-variables.$alice-blue
-.ribbon-btn
-  background: override-variables.$brand-blue
+// Book Now buttons (navbar + ribbon CTA) – blue treatment
+.book-now-btn
+  background-color: override-variables.$brand-blue
+  color: #fff
+  border: none
+  &:hover
+    background-color: #5eb8e8
+    color: #fff
+    border: none
 
 .booking-form
   border-radius: 1rem
@@ -28,10 +35,20 @@
   @include bulma.desktop
     max-height: 2.75rem
 .navbar-brand
+  display: flex
+  align-items: center
+  justify-content: space-between
+  min-height: override-variables.$navbar-height
   > .navbar-item
+    display: flex
+    align-items: center
     img
-      max-height: 2.75rem      
- 
+      max-height: 2.75rem
+  .navbar-burger
+    margin-left: 0
+    align-self: center
+    flex-shrink: 0
+
 #navMenu
   &.navbar-menu
     height: 100vh
@@ -45,15 +62,25 @@
     line-height: 4rem
     text-transform: uppercase
     font-weight: 600
-    :hover
-      border: none
+    &:hover
+      color: override-variables.$brand-blue
+      border-top: 2px solid transparent
+      @include bulma.desktop
+        border: none
+        border-bottom: 2px solid override-variables.$brand-blue
+    &.is-active
+      color: override-variables.$brand-blue
+      @include bulma.desktop
+        border-bottom: 2px solid override-variables.$brand-blue
+        border-radius: 0
     &.last
       border-bottom: 2px dotted #2e362848 
       @include bulma.desktop
-        border: none
+        border-bottom: 2px solid transparent
     @include bulma.desktop
       font-size: inherit
       border: none
+      border-bottom: 2px solid transparent
   .cta
     .navbar-item
       padding-top: 1.5rem
@@ -78,16 +105,29 @@
 // Footer
 .footer
   padding-bottom: 1rem
-.footer-menu 
-  @include bulma.desktop
-    display: flex
-    align-items: center
-    justify-content: center
-  a
+.footer-copyright
+  font-size: 0.75rem
+  small
+    font-size: inherit
+.footer-contact-link
+  color: override-variables.$black-olive
+  text-decoration: none
+  &:hover
+    color: override-variables.$brand-blue
+.footer-menu
+  .footer-link
     display: block
     text-align: center
     padding: 1rem
     line-height: 1.5
+    color: override-variables.$black-olive
+    &:hover,
+    &.is-active
+      color: override-variables.$brand-blue
+  @include bulma.desktop
+    display: flex
+    align-items: center
+    justify-content: center
 
 
 // Testimonials
@@ -103,6 +143,13 @@
       font-size: 1.25rem
     .author
       font-size: 1.25rem
+  // Testimonials page: readable quote and author
+  .testimonials-quote
+    font-size: 1rem
+    font-weight: 400
+    line-height: 1.65
+  .testimonials-author
+    font-size: 0.9375rem
   .custom-pagination
     text-align: right 
 
@@ -136,7 +183,11 @@
 
 .content
   a
+    color: override-variables.$brand-blue
     text-decoration: underline
+    &:hover
+      color: override-variables.$brand-blue
+      opacity: 0.9
 
 .more-link
   display: block

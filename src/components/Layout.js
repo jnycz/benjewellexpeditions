@@ -23,7 +23,25 @@ const WINTER_DEFAULTS = { title: "❄️ Winter fishing has been great", body: "
 const SPRING_DEFAULTS = { title: "🌸 Spring is our best season", body: "Spring is our best season book now!" };
 
 const TemplateWrapper = ({ children }) => {
-  const { title, description } = useSiteMetadata();
+  const { title, description, siteUrl } = useSiteMetadata();
+  const baseUrl = siteUrl || "https://jewellexpeditions.com";
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: title,
+    description,
+    url: baseUrl,
+    telephone: "+15759731396",
+    email: "jewellexpeditions@gmail.com",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Ruidoso",
+      addressRegion: "NM",
+      addressCountry: "US",
+    },
+    areaServed: "Ruidoso, New Mexico area",
+    priceRange: "$$",
+  };
   const [isFallModalOpen, setIsFallModalOpen] = React.useState(false);
   const [isWinterModalOpen, setIsWinterModalOpen] = React.useState(false);
   const [isSpringModalOpen, setIsSpringModalOpen] = React.useState(false);
@@ -274,6 +292,9 @@ const TemplateWrapper = ({ children }) => {
           property="og:image"
           content={`${withPrefix("/")}img/og-image.jpg`}
         />
+        <script type="application/ld+json">
+          {JSON.stringify(organizationSchema)}
+        </script>
       </Helmet>
       <Navbar />
       <div className={`modal fall-modal ${isFallModalOpen ? "is-active" : ""}`} role="dialog" aria-modal="true" aria-labelledby="fall-modal-title">

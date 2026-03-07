@@ -8,4 +8,4 @@ featuredimage: /img/android-chrome-192x192.png
 tags:
   - blog
 ---
-S﻿oon
+Soon

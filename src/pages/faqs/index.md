@@ -2,6 +2,7 @@
 templateKey: faqs-page
 path: /faqs
 title: Frequently Asked Questions
+subheading: Common questions about guided trips and booking.
 image: /img/hero-rainbow-landscape-mountains.jpg
 ---
 ### What type of guided trips are available?
@@ -44,7 +45,7 @@ I (Ben Jewell) will be your fishing guide.
 
 15-20% of the price of the guide trip is standard and greatly appreciated.  
 
-### What forms of payment do you except?
+### What forms of payment do you accept?
 
 Cash or Venmo
 

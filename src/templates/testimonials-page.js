@@ -38,8 +38,8 @@ export const TestimonialsPageTemplate = ({
                     <div className="column">
                         <div className="is-centered content card p-5">
                             <FaQuoteLeft />
-                            <div className='quote is-size-5 has-text-grey title' dangerouslySetInnerHTML={{ __html: toHTML(item.text) }} />
-                            <div className='author is-size-6 is-italic subtitle mt-1'>{item.author}</div>
+                            <div className='quote testimonials-quote has-text-grey' dangerouslySetInnerHTML={{ __html: toHTML(item.text) }} />
+                            <div className='author testimonials-author is-italic mt-3'>{item.author}</div>
                         </div>
                     </div>
                 </div>

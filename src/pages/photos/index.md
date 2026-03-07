@@ -2,6 +2,7 @@
 templateKey: photos-page
 path: /photos
 title: Photo Gallery
+subheading: A glimpse of the waters, fish, and adventures that await.
 image: /img/landscape-water-mountains.png
 gallery:
   items:
@@ -23,4 +24,4 @@ gallery:
     - image: /img/rb-oct-23-1.jpg
     - image: /img/rb-oct-23-2.jpg
 ---
-J﻿ewell Expeditions Photo Gallery
+Jewell Expeditions Photo Gallery

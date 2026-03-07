@@ -1,7 +1,17 @@
 import * as React from "react";
-import { navigate } from "gatsby";
+import { navigate, graphql } from "gatsby";
 import Layout from "../../components/Layout";
 // import Recaptcha from "react-google-recaptcha";
+
+export const query = graphql`
+  query BookPage {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+  }
+`;
 
 function encode(data) {
   return Object.keys(data)

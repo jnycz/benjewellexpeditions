@@ -13,7 +13,7 @@ const RibbonCTA = () => (
                             </div>
                             <div className="btn has-text-centered">
                                 <Link to="/book">
-                                    <button className="button is-rounded has-text-weight-semibold is-normal ribbon-btn">Book Now</button>
+                                    <button className="button is-rounded has-text-weight-semibold is-normal book-now-btn">Book Now</button>
                                 </Link>
                             </div>
                         </div>

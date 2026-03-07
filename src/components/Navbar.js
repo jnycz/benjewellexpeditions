@@ -1,9 +1,18 @@
 import React, { useState } from "react";
 import { Link } from "gatsby";
+import { useLocation } from "@gatsbyjs/reach-router";
 import logo from "../img/jewell-expedition-logo.svg";
 
 const Navbar = () => {
   const [isActive, setIsActive] = useState(false);
+  const location = useLocation();
+  const path = location.pathname?.replace(/\/$/, "") || "";
+
+  const isActivePath = (to) => {
+    const normalized = to.replace(/\/$/, "");
+    if (normalized === "") return path === "";
+    return path === normalized || path.startsWith(normalized + "/");
+  };
 
   return (
     <nav
@@ -33,27 +42,27 @@ const Navbar = () => {
 
           <ul className="navbar-end">
             <li className="navbar-item" style={{ padding: "0px" }}>
-              <Link className="navbar-item" to="/about">
+              <Link className={`navbar-item ${isActivePath("/about") ? "is-active" : ""}`} to="/about">
                 About
               </Link>
             </li>
             <li className="navbar-item" style={{ padding: "0px" }}>
-              <Link className="navbar-item" to="/testimonials">
+              <Link className={`navbar-item ${isActivePath("/testimonials") ? "is-active" : ""}`} to="/testimonials">
                 Testimonials
               </Link>
             </li>
             <li className="navbar-item" style={{ padding: "0px" }}>
-              <Link className="navbar-item" to="/faqs">
+              <Link className={`navbar-item ${isActivePath("/faqs") ? "is-active" : ""}`} to="/faqs">
                 FAQs
               </Link>
             </li>
             <li className="navbar-item" style={{ padding: "0px" }}>
-              <Link className="navbar-item" to="/photos">
+              <Link className={`navbar-item ${isActivePath("/photos") ? "is-active" : ""}`} to="/photos">
                 Photos
               </Link>
             </li>
             <li className="navbar-item" style={{ padding: "0px" }}>
-              <Link className="navbar-item last" to="/contact">
+              <Link className={`navbar-item last ${isActivePath("/contact") ? "is-active" : ""}`} to="/contact">
                 Contact
               </Link>
             </li>
@@ -62,7 +71,7 @@ const Navbar = () => {
           <div className="navbar-end cta">
             <div className="navbar-item">
               <Link to="/book">
-                <button className="button is-rounded contact has-text-weight-semibold is-normal is-fullwidth">Book Now</button>
+                <button className="button is-rounded book-now-btn has-text-weight-semibold is-normal is-fullwidth">Book Now</button>
               </Link>
             </div>
           </div>

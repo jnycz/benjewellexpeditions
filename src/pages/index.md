@@ -39,7 +39,7 @@ testimonials:
         analyzing insect life, and tirelessly putting us on wonderful trout. 
         His enthusiasm for our sport is infectious.  Ben is the best.
       author: "- PJP"
-    - text: Ben Jewel is the most passionate angler I’ve ever met.  I’ve fished with
+    - text: Ben Jewell is the most passionate angler I’ve ever met.  I’ve fished with
         guides all over the world but I always come back to Ben.  His energy is
         contagious and his knowledge of fish and insect patterns are
         unparalleled.  Ben is a hard worker.  I’ve used many guides that know
@@ -51,7 +51,7 @@ testimonials:
         Ben Jewell for over a decade.  During that time Ben has never failed to
         go above and beyond to provide his clients with an outstanding
         experience.  Whether it's dredging with Nymphs for big browns or
-        floating the Yellowstones in search of cutthroats with dry fly's Ben
+        floating the Yellowstones in search of cutthroats with dry flies Ben
         always over delivers and has provided us with an amazing experience.  I
         would highly recommend using Ben Jewell's services if you can, You will
         not regret it.  Ben will help make you a much better fly fisher, and you
