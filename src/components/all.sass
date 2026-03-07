@@ -1,31 +1,31 @@
-@import "~bulma/sass/utilities/initial-variables"
-@import "override-variables.sass"
-@import "~bulma"
+@use "bulma/sass/utilities/initial-variables"
+@use "override-variables.sass"
+@use "bulma/bulma.sass"
 
 // BG Coloras
 .bg-brand-green
-  background-color: $brand-green
+  background-color: override-variables.$brand-green
 .bg-brand-blue
-  background-color: $brand-blue
+  background-color: override-variables.$brand-blue
 .bg-light-blue
-  background-color: $light-sky-blue
+  background-color: override-variables.$light-sky-blue
 .bg-light-light-blue
-  background-color: $alice-blue
+  background-color: override-variables.$alice-blue
 .ribbon-btn
-  background: $brand-blue
+  background: override-variables.$brand-blue
 
 .booking-form
   border-radius: 1rem
   background-color: #fff
   padding: 1rem
-  @include tablet
+  @include bulma.tablet
     padding: 2rem
-  @include desktop
+  @include bulma.desktop
     padding: 4rem
   
 // Navbar
 .navbar-item img
-  @include desktop
+  @include bulma.desktop
     max-height: 2.75rem
 .navbar-brand
   > .navbar-item
@@ -36,7 +36,7 @@
   &.navbar-menu
     height: 100vh
     padding: 0
-    @include desktop
+    @include bulma.desktop
       height: auto
   a.navbar-item
     font-size: 1.5rem
@@ -49,15 +49,15 @@
       border: none
     &.last
       border-bottom: 2px dotted #2e362848 
-      @include desktop
+      @include bulma.desktop
         border: none
-    @include desktop
+    @include bulma.desktop
       font-size: inherit
       border: none
   .cta
     .navbar-item
       padding-top: 1.5rem
-      @include desktop
+      @include bulma.desktop
         padding-top: .5rem
 
 .hero-text
@@ -79,7 +79,7 @@
 .footer
   padding-bottom: 1rem
 .footer-menu 
-  @include desktop
+  @include bulma.desktop
     display: flex
     align-items: center
     justify-content: center
@@ -92,13 +92,13 @@
 
 // Testimonials
 .testimonials
-  background: $light-sky-blue
+  background: override-variables.$light-sky-blue
   .quote
     font-size: .8rem
     font-weight: 600
   .author
     font-size: .8rem
-  @include desktop
+  @include bulma.desktop
     .quote
       font-size: 1.25rem
     .author
@@ -108,12 +108,12 @@
 
 // Ribbon CTA
 .ribbon-cta
-  background: $light-sky-blue
+  background: override-variables.$light-sky-blue
   h4
     line-height: 1.5
   .btn
     margin-top: 2rem
-    @include desktop
+    @include bulma.desktop
       margin-top: 0
 
 .is-overlay-bg
@@ -144,7 +144,7 @@
   font-weight: 600
   padding-top: 1rem
   &.black-text
-    color: $black-olive
+    color: override-variables.$black-olive
   svg
     vertical-align: middle
     font-size: 1.25rem
@@ -155,7 +155,7 @@
     border-radius: .75rem
     overflow: hidden
   .modal-card-head
-    background: $brand-blue
+    background: override-variables.$brand-blue
     .modal-card-title
       color: #fff
       font-weight: 700
@@ -164,8 +164,8 @@
   .modal-card-foot
     background: #fff
     .button.is-primary
-      background: $brand-green
-      border-color: $brand-green
+      background: override-variables.$brand-green
+      border-color: override-variables.$brand-green
       color: #fff
       &:hover
         filter: brightness(0.95)

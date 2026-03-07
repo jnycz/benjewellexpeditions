@@ -1,5 +1,5 @@
 import * as React from "react";
-import { navigate } from "gatsby-link";
+import { navigate } from "gatsby";
 import { Link } from "gatsby";
 import Layout from "../../components/Layout";
 // import Recaptcha from "react-google-recaptcha";

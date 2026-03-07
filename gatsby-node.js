@@ -99,3 +99,14 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     })
   }
 }
+
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    ignoreWarnings: [
+      {
+        module: /gatsby-plugin-netlify-cms/,
+        message: /Critical dependency: the request of a dependency is an expression/,
+      },
+    ],
+  })
+}

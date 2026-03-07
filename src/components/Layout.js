@@ -11,6 +11,7 @@ const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata();
   const [isFallModalOpen, setIsFallModalOpen] = React.useState(false);
   const [isWinterModalOpen, setIsWinterModalOpen] = React.useState(false);
+  const [isSpringModalOpen, setIsSpringModalOpen] = React.useState(false);
 
   const isWithinFallWindow = React.useCallback(() => {
     const now = new Date();
@@ -35,6 +36,13 @@ const TemplateWrapper = ({ children }) => {
       return true;
     }
     return false;
+  }, []);
+
+  const isWithinSpringWindow = React.useCallback(() => {
+    const now = new Date();
+    const month = now.getMonth();
+    // Spring: March (2) through May (4)
+    return month >= 2 && month <= 4;
   }, []);
 
   React.useEffect(() => {
@@ -85,6 +93,30 @@ const TemplateWrapper = ({ children }) => {
     }
   }, [isWithinWinterWindow]);
 
+  React.useEffect(() => {
+    if (typeof window === "undefined") return;
+    try {
+      if (!isWithinSpringWindow()) return;
+      const storageKey = "springModalNextAllowedAt";
+      const nextAllowedAt = window.localStorage.getItem(storageKey);
+      if (!nextAllowedAt) {
+        setIsSpringModalOpen(true);
+        return;
+      }
+      const now = Date.now();
+      const next = parseInt(nextAllowedAt, 10);
+      if (Number.isFinite(next)) {
+        if (now >= next) {
+          setIsSpringModalOpen(true);
+        }
+      } else {
+        setIsSpringModalOpen(true);
+      }
+    } catch (e) {
+      setIsSpringModalOpen(true);
+    }
+  }, [isWithinSpringWindow]);
+
   const closeFallModal = React.useCallback(() => {
     if (typeof window !== "undefined") {
       try {
@@ -107,6 +139,17 @@ const TemplateWrapper = ({ children }) => {
     setIsWinterModalOpen(false);
   }, []);
 
+  const closeSpringModal = React.useCallback(() => {
+    if (typeof window !== "undefined") {
+      try {
+        const thirtyDaysMs = 30 * 24 * 60 * 60 * 1000;
+        const nextAllowedAt = Date.now() + thirtyDaysMs;
+        window.localStorage.setItem("springModalNextAllowedAt", String(nextAllowedAt));
+      } catch (e) { }
+    }
+    setIsSpringModalOpen(false);
+  }, []);
+
   const handleFallBackdropKeyDown = React.useCallback((e) => {
     if (e.key === "Escape" || e.key === "Enter" || e.key === " ") {
       e.preventDefault();
@@ -120,6 +163,13 @@ const TemplateWrapper = ({ children }) => {
       closeWinterModal();
     }
   }, [closeWinterModal]);
+
+  const handleSpringBackdropKeyDown = React.useCallback((e) => {
+    if (e.key === "Escape" || e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      closeSpringModal();
+    }
+  }, [closeSpringModal]);
   return (
     <div>
       <Helmet>
@@ -204,6 +254,29 @@ const TemplateWrapper = ({ children }) => {
           <footer className="modal-card-foot" style={{ justifyContent: "flex-end" }}>
             <button className="button" onClick={closeWinterModal}>Maybe later</button>
             <Link to="/book" className="button is-primary has-text-weight-semibold" onClick={closeWinterModal}>Book now</Link>
+          </footer>
+        </div>
+      </div>
+      <div className={`modal fall-modal ${isSpringModalOpen ? "is-active" : ""}`} role="dialog" aria-modal="true" aria-labelledby="spring-modal-title">
+        <div
+          className="modal-background"
+          role="button"
+          tabIndex={0}
+          aria-label="Close seasonal announcement"
+          onClick={closeSpringModal}
+          onKeyDown={handleSpringBackdropKeyDown}
+        />
+        <div className="modal-card">
+          <header className="modal-card-head">
+            <p className="modal-card-title" id="spring-modal-title">🌸 Spring update</p>
+            <button className="delete" aria-label="close" onClick={closeSpringModal} />
+          </header>
+          <section className="modal-card-body">
+            <p className="is-size-5">Spring is our best season book now!</p>
+          </section>
+          <footer className="modal-card-foot" style={{ justifyContent: "flex-end" }}>
+            <button className="button" onClick={closeSpringModal}>Maybe later</button>
+            <Link to="/book" className="button is-primary has-text-weight-semibold" onClick={closeSpringModal}>Book now</Link>
           </footer>
         </div>
       </div>
