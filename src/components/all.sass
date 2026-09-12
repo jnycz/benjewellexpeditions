@@ -220,3 +220,91 @@
       color: #fff
       &:hover
         filter: brightness(0.95)
+
+// Relocation splash — full-screen gate shown while the site is in maintenance
+// mode (see src/data/site-status.md). Remove nothing here to restore the site;
+// just turn the CMS flag off.
+html.is-maintenance-locked, body.is-maintenance-locked
+  overflow: hidden
+  height: 100%
+
+.maintenance-backdrop
+  height: 100vh
+  overflow: hidden
+  filter: blur(14px)
+  pointer-events: none
+  user-select: none
+  // Scaling up hides the soft, under-blurred edge the filter leaves behind.
+  transform: scale(1.04)
+  transform-origin: center top
+
+.maintenance-overlay
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  z-index: 60
+  display: flex
+  align-items: center
+  justify-content: center
+  padding: 1.5rem
+  overflow-y: auto
+  background: rgba(46, 54, 40, 0.62)
+
+.maintenance-card
+  width: 100%
+  max-width: 34rem
+  margin: auto
+  padding: 2rem 1.5rem
+  border-radius: 1rem
+  background: #fff
+  text-align: center
+  box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.28)
+  outline: none
+  @include bulma.tablet
+    padding: 3rem 2.5rem
+
+.maintenance-logo
+  height: 3.5rem
+  margin-bottom: 1.5rem
+
+.maintenance-heading
+  margin-bottom: 1rem
+  color: override-variables.$black-olive
+  font-size: 1.75rem
+  font-weight: 700
+  line-height: 1.2
+  @include bulma.tablet
+    font-size: 2.25rem
+
+.maintenance-body
+  margin-bottom: 1rem
+  font-size: 1.125rem
+  line-height: 1.6
+
+.maintenance-subtext
+  margin-bottom: 1.75rem
+  color: override-variables.$slate-gray
+  line-height: 1.6
+  // No contact block below it — don't leave a dangling gap above the card edge.
+  &:last-child
+    margin-bottom: 0
+
+.maintenance-contact
+  padding-top: 1.25rem
+  border-top: 1px solid #e8e8e8
+  font-size: .9375rem
+  color: override-variables.$slate-gray
+  a
+    color: override-variables.$brand-green
+    font-weight: 600
+    word-break: break-word
+    &:hover
+      text-decoration: underline
+
+.forms-disabled-notice
+  background-color: override-variables.$alice-blue
+  color: override-variables.$black-olive
+  font-size: 1.125rem
+  text-align: center

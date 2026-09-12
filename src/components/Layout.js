@@ -7,6 +7,8 @@ import "./all.sass";
 import useSiteMetadata from "./SiteMetadata";
 import { withPrefix } from "gatsby";
 import { Link } from "gatsby";
+import MaintenanceSplash from "./MaintenanceSplash";
+import useSiteStatus from "./useSiteStatus";
 
 // CMS months are 1–12; end date is exclusive. Handles year wrap (e.g. Dec–Mar).
 function isWithinDateRange(now, startMonth, startDay, endMonth, endDay) {
@@ -25,26 +27,48 @@ const SPRING_DEFAULTS = { title: "🌸 Spring is our best season", body: "Spring
 const TemplateWrapper = ({ children }) => {
   const { title, description, siteUrl } = useSiteMetadata();
   const baseUrl = siteUrl || "https://jewellexpeditions.com";
+  const siteStatus = useSiteStatus();
+  const isMaintenance = siteStatus.enabled;
+  const backdropRef = React.useRef(null);
+
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     name: title,
     description,
     url: baseUrl,
-    telephone: "+15759731396",
     email: "jewellexpeditions@gmail.com",
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Ruidoso",
-      addressRegion: "NM",
-      addressCountry: "US",
-    },
-    areaServed: "Ruidoso, New Mexico area",
-    priceRange: "$$",
+    // Phone and street location are withheld from structured data while the
+    // business is relocating, so search results don't surface stale contact info.
+    ...(isMaintenance
+      ? {}
+      : {
+          telephone: "+15759731396",
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: "Ruidoso",
+            addressRegion: "NM",
+            addressCountry: "US",
+          },
+          areaServed: "Ruidoso, New Mexico area",
+          priceRange: "$$",
+        }),
   };
   const [isFallModalOpen, setIsFallModalOpen] = React.useState(false);
   const [isWinterModalOpen, setIsWinterModalOpen] = React.useState(false);
   const [isSpringModalOpen, setIsSpringModalOpen] = React.useState(false);
+
+
+  // Take the blurred site out of the tab order and off the accessibility tree
+  // entirely, so the splash is genuinely the only thing a visitor can reach.
+  React.useEffect(() => {
+    const node = backdropRef.current;
+    if (!node) return undefined;
+    node.inert = isMaintenance;
+    return () => {
+      node.inert = false;
+    };
+  }, [isMaintenance]);
 
   const { seasonal: seasonalQuery } = useStaticQuery(graphql`
     query SeasonalModalsQuery {
@@ -130,6 +154,7 @@ const TemplateWrapper = ({ children }) => {
 
   React.useEffect(() => {
     if (typeof window === "undefined") return;
+    if (isMaintenance) return;
     try {
       if (!isWithinFallWindow()) return;
       const storageKey = "fallModalNextAllowedAt";
@@ -150,10 +175,11 @@ const TemplateWrapper = ({ children }) => {
     } catch (e) {
       setIsFallModalOpen(true);
     }
-  }, [isWithinFallWindow]);
+  }, [isWithinFallWindow, isMaintenance]);
 
   React.useEffect(() => {
     if (typeof window === "undefined") return;
+    if (isMaintenance) return;
     try {
       if (!isWithinWinterWindow()) return;
       const storageKey = "winterModalNextAllowedAt";
@@ -174,10 +200,11 @@ const TemplateWrapper = ({ children }) => {
     } catch (e) {
       setIsWinterModalOpen(true);
     }
-  }, [isWithinWinterWindow]);
+  }, [isWithinWinterWindow, isMaintenance]);
 
   React.useEffect(() => {
     if (typeof window === "undefined") return;
+    if (isMaintenance) return;
     try {
       if (!isWithinSpringWindow()) return;
       const storageKey = "springModalNextAllowedAt";
@@ -198,7 +225,7 @@ const TemplateWrapper = ({ children }) => {
     } catch (e) {
       setIsSpringModalOpen(true);
     }
-  }, [isWithinSpringWindow]);
+  }, [isWithinSpringWindow, isMaintenance]);
 
   const closeFallModal = React.useCallback(() => {
     if (typeof window !== "undefined") {
@@ -256,7 +283,15 @@ const TemplateWrapper = ({ children }) => {
   return (
     <div>
       <Helmet>
-        <html lang="en" className="has-navbar-fixed-top" />
+        <html
+          lang="en"
+          className={
+            isMaintenance
+              ? "has-navbar-fixed-top is-maintenance-locked"
+              : "has-navbar-fixed-top"
+          }
+        />
+        <body className={isMaintenance ? "is-maintenance-locked" : ""} />
         <title>{title}</title>
         <meta name="description" content={description} />
         <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" async />
@@ -296,78 +331,101 @@ const TemplateWrapper = ({ children }) => {
           {JSON.stringify(organizationSchema)}
         </script>
       </Helmet>
-      <Navbar />
-      <div className={`modal fall-modal ${isFallModalOpen ? "is-active" : ""}`} role="dialog" aria-modal="true" aria-labelledby="fall-modal-title">
-        <div
-          className="modal-background"
-          role="button"
-          tabIndex={0}
-          aria-label="Close seasonal announcement"
-          onClick={closeFallModal}
-          onKeyDown={handleFallBackdropKeyDown}
-        />
-        <div className="modal-card">
-          <header className="modal-card-head">
-            <p className="modal-card-title" id="fall-modal-title">{seasonal?.fall?.title ?? FALL_DEFAULTS.title}</p>
-            <button className="delete" aria-label="close" onClick={closeFallModal} />
-          </header>
-          <section className="modal-card-body">
-            <p className="is-size-5">{seasonal?.fall?.body ?? FALL_DEFAULTS.body}</p>
-          </section>
-          <footer className="modal-card-foot" style={{ justifyContent: "flex-end" }}>
-            <button className="button" onClick={closeFallModal}>Maybe later</button>
-            <Link to="/book" className="button is-primary has-text-weight-semibold" onClick={closeFallModal}>Book now</Link>
-          </footer>
-        </div>
-      </div>
-      <div className={`modal fall-modal ${isWinterModalOpen ? "is-active" : ""}`} role="dialog" aria-modal="true" aria-labelledby="winter-modal-title">
-        <div
-          className="modal-background"
-          role="button"
-          tabIndex={0}
-          aria-label="Close seasonal announcement"
-          onClick={closeWinterModal}
-          onKeyDown={handleWinterBackdropKeyDown}
-        />
-        <div className="modal-card">
-          <header className="modal-card-head">
-            <p className="modal-card-title" id="winter-modal-title">{seasonal?.winter?.title ?? WINTER_DEFAULTS.title}</p>
-            <button className="delete" aria-label="close" onClick={closeWinterModal} />
-          </header>
-          <section className="modal-card-body">
-            <p className="is-size-5">{seasonal?.winter?.body ?? WINTER_DEFAULTS.body}</p>
-          </section>
-          <footer className="modal-card-foot" style={{ justifyContent: "flex-end" }}>
-            <button className="button" onClick={closeWinterModal}>Maybe later</button>
-            <Link to="/book" className="button is-primary has-text-weight-semibold" onClick={closeWinterModal}>Book now</Link>
-          </footer>
-        </div>
-      </div>
-      <div className={`modal fall-modal ${isSpringModalOpen ? "is-active" : ""}`} role="dialog" aria-modal="true" aria-labelledby="spring-modal-title">
-        <div
-          className="modal-background"
-          role="button"
-          tabIndex={0}
-          aria-label="Close seasonal announcement"
-          onClick={closeSpringModal}
-          onKeyDown={handleSpringBackdropKeyDown}
-        />
-        <div className="modal-card">
-          <header className="modal-card-head">
-            <p className="modal-card-title" id="spring-modal-title">{seasonal?.spring?.title ?? SPRING_DEFAULTS.title}</p>
-            <button className="delete" aria-label="close" onClick={closeSpringModal} />
-          </header>
-          <section className="modal-card-body">
-            <p className="is-size-5">{seasonal?.spring?.body ?? SPRING_DEFAULTS.body}</p>
-          </section>
-          <footer className="modal-card-foot" style={{ justifyContent: "flex-end" }}>
-            <button className="button" onClick={closeSpringModal}>Maybe later</button>
-            <Link to="/book" className="button is-primary has-text-weight-semibold" onClick={closeSpringModal}>Book now</Link>
-          </footer>
-        </div>
-      </div>
-      <div>{children}</div>
-      <Footer />
+      {isMaintenance ? (
+        <>
+          <div
+            className="maintenance-backdrop"
+            ref={backdropRef}
+            aria-hidden="true"
+          >
+            <Navbar />
+            <div>{children}</div>
+            <Footer />
+          </div>
+          <MaintenanceSplash
+            heading={siteStatus.heading}
+            body={siteStatus.body}
+            subtext={siteStatus.subtext}
+            contactLabel={siteStatus.contactLabel}
+            contactEmail={siteStatus.contactEmail}
+          />
+        </>
+      ) : (
+        <>
+          <Navbar />
+          <div className={`modal fall-modal ${isFallModalOpen ? "is-active" : ""}`} role="dialog" aria-modal="true" aria-labelledby="fall-modal-title">
+            <div
+              className="modal-background"
+              role="button"
+              tabIndex={0}
+              aria-label="Close seasonal announcement"
+              onClick={closeFallModal}
+              onKeyDown={handleFallBackdropKeyDown}
+            />
+            <div className="modal-card">
+              <header className="modal-card-head">
+                <p className="modal-card-title" id="fall-modal-title">{seasonal?.fall?.title ?? FALL_DEFAULTS.title}</p>
+                <button className="delete" aria-label="close" onClick={closeFallModal} />
+              </header>
+              <section className="modal-card-body">
+                <p className="is-size-5">{seasonal?.fall?.body ?? FALL_DEFAULTS.body}</p>
+              </section>
+              <footer className="modal-card-foot" style={{ justifyContent: "flex-end" }}>
+                <button className="button" onClick={closeFallModal}>Maybe later</button>
+                <Link to="/book" className="button is-primary has-text-weight-semibold" onClick={closeFallModal}>Book now</Link>
+              </footer>
+            </div>
+          </div>
+          <div className={`modal fall-modal ${isWinterModalOpen ? "is-active" : ""}`} role="dialog" aria-modal="true" aria-labelledby="winter-modal-title">
+            <div
+              className="modal-background"
+              role="button"
+              tabIndex={0}
+              aria-label="Close seasonal announcement"
+              onClick={closeWinterModal}
+              onKeyDown={handleWinterBackdropKeyDown}
+            />
+            <div className="modal-card">
+              <header className="modal-card-head">
+                <p className="modal-card-title" id="winter-modal-title">{seasonal?.winter?.title ?? WINTER_DEFAULTS.title}</p>
+                <button className="delete" aria-label="close" onClick={closeWinterModal} />
+              </header>
+              <section className="modal-card-body">
+                <p className="is-size-5">{seasonal?.winter?.body ?? WINTER_DEFAULTS.body}</p>
+              </section>
+              <footer className="modal-card-foot" style={{ justifyContent: "flex-end" }}>
+                <button className="button" onClick={closeWinterModal}>Maybe later</button>
+                <Link to="/book" className="button is-primary has-text-weight-semibold" onClick={closeWinterModal}>Book now</Link>
+              </footer>
+            </div>
+          </div>
+          <div className={`modal fall-modal ${isSpringModalOpen ? "is-active" : ""}`} role="dialog" aria-modal="true" aria-labelledby="spring-modal-title">
+            <div
+              className="modal-background"
+              role="button"
+              tabIndex={0}
+              aria-label="Close seasonal announcement"
+              onClick={closeSpringModal}
+              onKeyDown={handleSpringBackdropKeyDown}
+            />
+            <div className="modal-card">
+              <header className="modal-card-head">
+                <p className="modal-card-title" id="spring-modal-title">{seasonal?.spring?.title ?? SPRING_DEFAULTS.title}</p>
+                <button className="delete" aria-label="close" onClick={closeSpringModal} />
+              </header>
+              <section className="modal-card-body">
+                <p className="is-size-5">{seasonal?.spring?.body ?? SPRING_DEFAULTS.body}</p>
+              </section>
+              <footer className="modal-card-foot" style={{ justifyContent: "flex-end" }}>
+                <button className="button" onClick={closeSpringModal}>Maybe later</button>
+                <Link to="/book" className="button is-primary has-text-weight-semibold" onClick={closeSpringModal}>Book now</Link>
+              </footer>
+            </div>
+          </div>
+          <div>{children}</div>
+          <Footer />
+        </>
+      )}
     </div>
   );
 };

@@ -1,9 +1,47 @@
 const _ = require('lodash')
 const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
+const fs = require('fs')
 
-exports.createPages = ({ actions, graphql }) => {
-  const { createPage } = actions
+const SITE_STATUS_QUERY = `
+  {
+    allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/site-status/" } }) {
+      edges {
+        node {
+          frontmatter {
+            maintenance {
+              enabled
+            }
+          }
+        }
+      }
+    }
+  }
+`
+
+const isMaintenanceMode = async (graphql) => {
+  const result = await graphql(SITE_STATUS_QUERY)
+  return (
+    result.data?.allMarkdownRemark?.edges?.[0]?.node?.frontmatter?.maintenance
+      ?.enabled === true
+  )
+}
+
+exports.createPages = async ({ actions, graphql }) => {
+  const { createPage, createRedirect } = actions
+
+  // While the site is in maintenance mode, any unknown URL should serve the
+  // relocation splash with a 200 rather than dead-ending on a 404. Netlify only
+  // applies this rule when no real page matches, so existing routes are
+  // untouched. Driven by the same CMS flag as everything else, so turning
+  // maintenance off drops the rule on the next build.
+  if (await isMaintenanceMode(graphql)) {
+    createRedirect({
+      fromPath: `/*`,
+      toPath: `/`,
+      statusCode: 200,
+    })
+  }
 
   return graphql(`
     {
@@ -114,4 +152,28 @@ exports.onCreateWebpackConfig = ({ actions }) => {
       },
     ],
   })
+}
+
+// `createRedirect` above only reaches Netlify through gatsby-adapter-netlify,
+// which engages when it detects a Netlify build. Write the rule directly as
+// well so the catch-all does not depend on that detection. Skipped when a
+// catch-all is already present, and not written at all once maintenance mode
+// is switched off.
+exports.onPostBuild = async ({ graphql }) => {
+  if (!(await isMaintenanceMode(graphql))) return
+
+  const redirectsPath = path.join(__dirname, 'public', '_redirects')
+  const rule = '/*  /index.html  200'
+
+  let existing = ''
+  try {
+    existing = fs.readFileSync(redirectsPath, 'utf8')
+  } catch (e) {
+    // No _redirects yet — we are writing the first one.
+  }
+
+  if (existing.split('\n').some((line) => line.trim().startsWith('/*'))) return
+
+  const next = existing.trim() ? `${existing.trimEnd()}\n${rule}\n` : `${rule}\n`
+  fs.writeFileSync(redirectsPath, next)
 }

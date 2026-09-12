@@ -4,10 +4,14 @@ import { useLocation } from "@gatsbyjs/reach-router";
 import { MdPhone, MdEmail, MdLocationOn } from "react-icons/md";
 import { AiFillInstagram } from "react-icons/ai";
 import logo from "../img/jewell-expedition-logo.svg";
+import useSiteStatus from "./useSiteStatus";
 
 const Footer = () => {
     const today = new Date();
     const year = today.getFullYear();
+    // While the site is relocating, phone / address / social are omitted from the
+    // markup entirely rather than just hidden — nothing for visitors or scrapers.
+    const { enabled: isMaintenance } = useSiteStatus();
     const location = useLocation();
     const path = location.pathname?.replace(/\/$/, "") || "";
 
@@ -55,6 +59,7 @@ const Footer = () => {
                 </div>
               </div>
 
+              {isMaintenance ? null : (
               <div className="column social">
                 <div className="is-flex is-justify-content-center is-align-items-center"><MdLocationOn />
                   <a className="footer-contact-link pl-1 has-text-weight-semibold" href="https://goo.gl/maps/quVphP69HmNssmyGA?coh=178572&entry=tt">Ruidoso, New Mexico</a>
@@ -69,6 +74,7 @@ const Footer = () => {
                   <a className="footer-contact-link pl-1 has-text-weight-semibold" title="Instagram | Ben Jewell Fly Fishing" target="_blank" rel="noreferrer" href="https://www.instagram.com/benjewellflyfishing_/">Instagram</a>
                 </div>
               </div>
+              )}
 
           </div>
           <div className="footer-copyright pt-2 has-text-centered"><small>Copyright © {year} Jewell Expeditions</small></div>

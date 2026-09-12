@@ -287,3 +287,38 @@ collections:
               - { label: "End month (1–12)", name: "endMonth", widget: "number", value_type: "int", min: 1, max: 12 }
               - { label: "End day (exclusive)", name: "endDay", widget: "number", value_type: "int", min: 1, max: 31 }
 
+  - name: "site-status"
+    label: "Site Status"
+    files:
+      - file: "src/data/site-status.md"
+        label: "Relocation / maintenance splash"
+        name: "site-status"
+        fields:
+          - label: "Maintenance mode"
+            name: "maintenance"
+            widget: "object"
+            collapsed: false
+            fields:
+              - {
+                  label: "Site is in maintenance mode",
+                  name: "enabled",
+                  widget: "boolean",
+                  default: false,
+                  hint: "ON puts the whole site behind the splash screen, turns off the booking and contact forms, and hides the phone number, address and social links. OFF restores the normal site.",
+                }
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Main message", name: "body", widget: "text" }
+              - { label: "Secondary message", name: "subtext", widget: "text", required: false }
+              - { label: "Contact prompt", name: "contactLabel", widget: "string", required: false }
+              - {
+                  label: "Contact email",
+                  name: "contactEmail",
+                  widget: "string",
+                  required: false,
+                  hint: "Leave blank to show no contact details at all on the splash.",
+                }
+              - {
+                  label: "Message shown in place of the forms",
+                  name: "formsDisabledMessage",
+                  widget: "text",
+                }
